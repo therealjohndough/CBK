@@ -7,9 +7,10 @@
 
   <section class="about-grid" style="display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; margin: 4rem 0; align-items: start;">
     <div>
-      <div class="about-photo">
+      <div style="width: 100%; height: 300px; background: var(--cbkny-light-gray); border-radius: 1rem; display: flex; align-items: center; justify-content: center; color: var(--cbkny-gray); overflow: hidden;">
         <img src="<?php echo esc_url(cbkny_get_option('cbkny_about_photo_url', 'http://johnd501.sg-host.com/wp-content/uploads/2025/10/Rosanna-St-John-Canna-Bookkeeper-New-York-Cannabis-Industry.webp')); ?>" 
              alt="Rosanna St. John, Certified Cannabis Bookkeeper in New York" 
+             style="width: 100%; height: 100%; object-fit: cover; display: block;"
              loading="lazy">
       </div>
     </div>

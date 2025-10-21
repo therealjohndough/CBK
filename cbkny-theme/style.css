@@ -10,20 +10,60 @@ Text Domain: cbkny
 */
 :root {
   --cbkny-gap: 1rem;
-  --cbkny-pink: #F8BBD9;
+  --cbkny-pink: #E91E63; /* More vibrant, accessible pink */
   --cbkny-white: #FFFFFF;
   --cbkny-black: #000000;
-  --cbkny-gray: #666666;
-  --cbkny-light-gray: #FEF7F7;
-  --cbkny-light-pink: #FEF7F7;
+  --cbkny-gray: #333333; /* Darker gray for better contrast */
+  --cbkny-light-gray: #F8F9FA; /* Neutral light gray */
+  --cbkny-light-pink: #FCE4EC; /* Lighter pink for backgrounds */
+  --cbkny-dark-gray: #212529; /* For better text contrast */
+  --cbkny-border: #E9ECEF; /* Subtle borders */
 }
 
 body { 
   margin:0; 
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji"; 
   line-height: 1.55; 
-  color: var(--cbkny-black);
+  color: var(--cbkny-dark-gray);
   background: var(--cbkny-white);
+}
+
+/* Typography - Accessible headings */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--cbkny-black);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+  color: var(--cbkny-black);
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: var(--cbkny-black);
+}
+
+h4 {
+  font-size: 1.25rem;
+  color: var(--cbkny-dark-gray);
+}
+
+h5, h6 {
+  font-size: 1.1rem;
+  color: var(--cbkny-dark-gray);
+}
+
+p {
+  color: var(--cbkny-dark-gray);
+  margin-bottom: 1rem;
 }
 
 .container { max-width: 1120px; margin: 0 auto; padding: 0 1rem; }
