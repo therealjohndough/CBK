@@ -247,7 +247,7 @@ function cbkny_create_resource_category_pages() {
     if (!$resources_page) {
         return; // Resources page doesn't exist yet
     }
-    
+
     $pages = array(
         array(
             'title' => 'Free Guides',
@@ -268,11 +268,19 @@ function cbkny_create_resource_category_pages() {
             'template' => 'page-assessment-tools.php'
         )
     );
-    
+
     foreach ($pages as $page) {
-        // Check if page already exists
-        $existing_page = get_page_by_path($page['slug']);
+        // Check if page already exists as a child of resources page
+        $existing_page = get_page_by_path($page['slug'] . '/' . $resources_page->post_name);
         
+        // Also check if there's a standalone page with this slug
+        $standalone_page = get_page_by_path($page['slug']);
+        
+        // If there's a standalone page that's not a child of resources, delete it
+        if ($standalone_page && $standalone_page->post_parent != $resources_page->ID) {
+            wp_delete_post($standalone_page->ID, true);
+        }
+
         if (!$existing_page) {
             $page_id = wp_insert_post(array(
                 'post_title' => $page['title'],
@@ -366,3 +374,22 @@ function cbkny_force_create_legal_pages() {
     }
 }
 add_action('init', 'cbkny_force_create_legal_pages');
+
+// Clean up phantom pages (run once)
+function cbkny_cleanup_phantom_pages() {
+    $resources_page = get_page_by_path('resources');
+    if (!$resources_page) return;
+    
+    // List of pages that should only exist as children of resources
+    $phantom_slugs = array('free-guides', 'templates', 'assessment-tools');
+    
+    foreach ($phantom_slugs as $slug) {
+        $standalone_page = get_page_by_path($slug);
+        
+        // If there's a standalone page that's not a child of resources, delete it
+        if ($standalone_page && $standalone_page->post_parent != $resources_page->ID) {
+            wp_delete_post($standalone_page->ID, true);
+        }
+    }
+}
+add_action('init', 'cbkny_cleanup_phantom_pages');
