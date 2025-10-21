@@ -393,3 +393,55 @@ add_action('after_switch_theme', 'cbkny_create_legal_pages');
 //     }
 // }
 // add_action('init', 'cbkny_cleanup_phantom_pages');
+
+// Manual function to create missing service pages (run once)
+function cbkny_create_missing_service_pages() {
+    $pages = array(
+        array(
+            'title' => 'Monthly Bookkeeping',
+            'slug' => 'monthly-bookkeeping',
+            'template' => 'page-monthly-bookkeeping.php'
+        ),
+        array(
+            'title' => 'Clean Up / Catch Up',
+            'slug' => 'cleanup-catchup',
+            'template' => 'page-cleanup-catchup.php'
+        ),
+        array(
+            'title' => 'Chief Compliance Officer',
+            'slug' => 'chief-compliance-officer',
+            'template' => 'page-chief-compliance-officer.php'
+        )
+    );
+
+    foreach ($pages as $page) {
+        // Check if page already exists
+        $existing_page = get_page_by_path($page['slug']);
+        
+        if (!$existing_page) {
+            $page_id = wp_insert_post(array(
+                'post_title' => $page['title'],
+                'post_name' => $page['slug'],
+                'post_content' => '<!-- Content handled by page template -->',
+                'post_status' => 'publish',
+                'post_type' => 'page',
+                'post_author' => 1,
+                'meta_input' => array(
+                    '_wp_page_template' => $page['template']
+                )
+            ));
+            
+            if ($page_id) {
+                // Page created successfully
+            }
+        }
+    }
+}
+
+// Add admin notice to trigger page creation
+add_action('admin_notices', function() {
+    if (isset($_GET['create_missing_pages']) && $_GET['create_missing_pages'] == '1') {
+        cbkny_create_missing_service_pages();
+        echo '<div class="notice notice-success is-dismissible"><p>Missing service pages created successfully!</p></div>';
+    }
+});
