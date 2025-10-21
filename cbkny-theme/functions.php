@@ -67,3 +67,6 @@ require_once get_template_directory() . '/inc/widgets.php';
 
 // Cookie consent
 require_once get_template_directory() . '/inc/cookie-consent.php';
+
+// File management system
+require_once get_template_directory() . '/inc/file-manager.php';

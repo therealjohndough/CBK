@@ -29,7 +29,7 @@
         <h3>📥 Get Your Free Download</h3>
         <p>Enter your email below to get instant access to this comprehensive compliance checklist:</p>
         
-        <form id="download-form" style="display: flex; flex-direction: column; gap: 1rem;">
+        <form id="download-form" class="cbkny-download-form" data-file-id="compliance-checklist" style="display: flex; flex-direction: column; gap: 1rem;">
           <div>
             <label for="download-email" style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Email Address *</label>
             <input type="email" id="download-email" name="email" required 
@@ -165,59 +165,6 @@
   </section>
 </main>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const form = document.getElementById('download-form');
-  const successDiv = document.getElementById('download-success');
-  const errorDiv = document.getElementById('download-error');
-  
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const email = document.getElementById('download-email').value;
-    const business = document.getElementById('download-business').value;
-    const consent = document.getElementById('download-consent').checked;
-    
-    if (!email || !consent) {
-      alert('Please fill in your email and agree to receive communications.');
-      return;
-    }
-    
-    // Hide error messages
-    errorDiv.style.display = 'none';
-    
-    // Show loading state
-    const submitBtn = form.querySelector('button[type="submit"]');
-    const originalText = submitBtn.textContent;
-    submitBtn.textContent = 'Processing...';
-    submitBtn.disabled = true;
-    
-    // Simulate form submission (replace with actual API call)
-    setTimeout(() => {
-      // Show success message
-      form.style.display = 'none';
-      successDiv.style.display = 'block';
-      
-      // Track download in analytics
-      if (typeof gtag !== 'undefined') {
-        gtag('event', 'download', {
-          'event_category': 'lead_magnet',
-          'event_label': 'NY Cannabis Compliance Checklist',
-          'value': 1
-        });
-      }
-      
-      // Track in Meta Pixel
-      if (typeof fbq !== 'undefined') {
-        fbq('track', 'Lead', {
-          content_name: 'NY Cannabis Compliance Checklist',
-          content_category: 'download'
-        });
-      }
-      
-    }, 2000);
-  });
-});
-</script>
+<!-- Download form is now handled by download-handler.js -->
 
 <?php get_footer(); ?>
