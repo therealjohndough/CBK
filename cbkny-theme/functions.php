@@ -55,3 +55,12 @@ require_once get_template_directory() . '/inc/schema.php';
 
 // Shortcodes
 require_once get_template_directory() . '/inc/shortcodes.php';
+
+// Customizer options
+require_once get_template_directory() . '/inc/customizer.php';
+
+// Page templates
+require_once get_template_directory() . '/inc/page-templates.php';
+
+// Widget areas
+require_once get_template_directory() . '/inc/widgets.php';

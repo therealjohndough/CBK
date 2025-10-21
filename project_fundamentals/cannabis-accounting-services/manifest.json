@@ -1,0 +1,11 @@
+{
+  "project_name": "Cannabis Accounting Services",
+  "owner": "Case Study Labs",
+  "description": "End-to-end brand, web, and marketing setup for a cannabis accounting firm.",
+  "primary_files": [
+    "presentation/comprehensive-value-presentation.pdf",
+    "03_Keyword_Research/keyword-research-report.md",
+    "05_Marketing_Strategy/audience-segmentation.md"
+  ],
+  "tags": ["cannabis", "accounting", "marketing", "wordpress", "crm"]
+}

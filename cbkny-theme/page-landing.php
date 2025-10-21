@@ -18,6 +18,14 @@
     </div>
   </section>
 
+  <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+    <section style="margin: 4rem 0;">
+      <div class="card" style="padding: 2rem;">
+        <?php the_content(); ?>
+      </div>
+    </section>
+  <?php endwhile; endif; ?>
+
   <section class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); margin: 4rem 0;">
     <div class="card">
       <h3><?php echo esc_html(cbkny_get_option('cbkny_service_1_title', 'Monthly Bookkeeping')); ?></h3>
@@ -58,7 +66,9 @@
   <section style="text-align: center; margin: 4rem 0;">
     <h2 style="color: var(--cbkny-black); margin-bottom: 1rem;">Ready to Get Compliant?</h2>
     <p style="font-size: 1.25rem; color: var(--cbkny-gray); margin-bottom: 2rem;">Let's make your books compliant, transparent, and ready for growth.</p>
-    <a class="btn btn-primary" href="/contact" style="font-size: 1.1rem; padding: 1rem 2rem;">Book Your Free Consultation</a>
+    <a class="btn btn-primary" href="<?php echo esc_url(cbkny_get_option('cbkny_hero_primary_button_link', '/contact')); ?>" style="font-size: 1.1rem; padding: 1rem 2rem;">
+      <?php echo esc_html(cbkny_get_option('cbkny_hero_primary_button_text', 'Book Your Free Consultation')); ?>
+    </a>
   </section>
 </main>
 <?php get_footer(); ?>

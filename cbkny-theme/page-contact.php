@@ -1,0 +1,139 @@
+<?php get_header(); ?>
+<main class="container">
+  <section class="hero">
+    <h1>Contact Canna Bookkeeper</h1>
+    <p>Get in touch for your free cannabis accounting consultation</p>
+  </section>
+
+  <section style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin: 4rem 0;">
+    
+    <div>
+      <h2 style="color: var(--cbkny-pink); margin-bottom: 2rem;">Get In Touch</h2>
+      
+      <div style="margin-bottom: 2rem;">
+        <h3 style="color: var(--cbkny-black); margin-bottom: 0.5rem;">Phone</h3>
+        <p style="font-size: 1.1rem;"><a href="tel:<?php echo esc_attr(cbkny_get_option('cbkny_phone', '(716) XXX-XXXX')); ?>" style="color: var(--cbkny-pink); text-decoration: none;"><?php echo esc_html(cbkny_get_option('cbkny_phone', '(716) XXX-XXXX')); ?></a></p>
+        <p style="color: var(--cbkny-gray); font-size: 0.9rem;">Available Monday-Friday, 9am-5pm EST</p>
+      </div>
+
+      <div style="margin-bottom: 2rem;">
+        <h3 style="color: var(--cbkny-black); margin-bottom: 0.5rem;">Email</h3>
+        <p style="font-size: 1.1rem;"><a href="mailto:<?php echo esc_attr(cbkny_get_option('cbkny_email', 'info@cbkny.com')); ?>" style="color: var(--cbkny-pink); text-decoration: none;"><?php echo esc_html(cbkny_get_option('cbkny_email', 'info@cbkny.com')); ?></a></p>
+        <p style="color: var(--cbkny-gray); font-size: 0.9rem;">We respond within 24 hours</p>
+      </div>
+
+      <div style="margin-bottom: 2rem;">
+        <h3 style="color: var(--cbkny-black); margin-bottom: 0.5rem;">Location</h3>
+        <p style="font-size: 1.1rem;"><?php echo esc_html(cbkny_get_option('cbkny_address', 'Buffalo, New York')); ?></p>
+        <p style="color: var(--cbkny-gray); font-size: 0.9rem;">Serving all of New York State</p>
+      </div>
+
+      <div style="background: var(--cbkny-light-gray); padding: 1.5rem; border-radius: 0.5rem; margin-top: 2rem;">
+        <h4 style="color: var(--cbkny-pink); margin-bottom: 1rem;">Quick Response Guarantee</h4>
+        <p style="margin-bottom: 0;">We respond to all inquiries within 24 hours, and often much sooner. For urgent matters, call or text our direct line.</p>
+      </div>
+    </div>
+
+    <div>
+      <div class="card" style="padding: 2rem;">
+        <h2 style="color: var(--cbkny-pink); margin-bottom: 1.5rem;">Contact Form</h2>
+        <form id="contact-form" style="display: grid; gap: 1rem;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div>
+              <label for="first-name" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">First Name *</label>
+              <input type="text" id="first-name" name="first_name" required style="width: 100%;">
+            </div>
+            <div>
+              <label for="last-name" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Last Name *</label>
+              <input type="text" id="last-name" name="last_name" required style="width: 100%;">
+            </div>
+          </div>
+          
+          <div>
+            <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Email *</label>
+            <input type="email" id="email" name="email" required style="width: 100%;">
+          </div>
+          
+          <div>
+            <label for="phone" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Phone *</label>
+            <input type="tel" id="phone" name="phone" required style="width: 100%;">
+          </div>
+          
+          <div>
+            <label for="business-name" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Business Name *</label>
+            <input type="text" id="business-name" name="business_name" required style="width: 100%;">
+          </div>
+          
+          <div>
+            <label for="business-type" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Business Type *</label>
+            <select id="business-type" name="business_type" required style="width: 100%;">
+              <option value="">Select Business Type</option>
+              <option value="dispensary">Dispensary</option>
+              <option value="cultivator">Cultivator</option>
+              <option value="processor">Processor</option>
+              <option value="lab">Lab</option>
+              <option value="distributor">Distributor</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          
+          <div>
+            <label for="license-status" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">License Status</label>
+            <select id="license-status" name="license_status" style="width: 100%;">
+              <option value="">Select License Status</option>
+              <option value="pre-revenue">Pre-revenue</option>
+              <option value="conditional">Conditional</option>
+              <option value="provisional">Provisional</option>
+              <option value="active">Active</option>
+            </select>
+          </div>
+          
+          <div>
+            <label for="message" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">How can we help? *</label>
+            <textarea id="message" name="message" rows="4" required style="width: 100%; resize: vertical;"></textarea>
+          </div>
+          
+          <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 1.1rem; padding: 1rem;">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: var(--cbkny-light-gray); padding: 3rem; border-radius: 1rem; margin: 4rem 0;">
+    <h2 style="text-align: center; color: var(--cbkny-black); margin-bottom: 3rem;">Frequently Asked Questions</h2>
+    <div style="max-width: 800px; margin: 0 auto;">
+      
+      <div style="margin-bottom: 2rem; padding: 1.5rem; background: var(--cbkny-white); border-radius: 0.5rem; border-left: 4px solid var(--cbkny-pink);">
+        <h3 style="color: var(--cbkny-pink); margin-bottom: 1rem;">Do you work with pre-revenue or conditional licensees?</h3>
+        <p>Yes! We help operators at every stage, from pre-revenue planning through full operations. We can set up your books correctly from day one or clean up existing systems.</p>
+      </div>
+
+      <div style="margin-bottom: 2rem; padding: 1.5rem; background: var(--cbkny-white); border-radius: 0.5rem; border-left: 4px solid var(--cbkny-pink);">
+        <h3 style="color: var(--cbkny-pink); margin-bottom: 1rem;">What's your monthly pricing range?</h3>
+        <p>Our monthly bookkeeping packages start at $500 and scale based on transaction volume and complexity. We'll provide transparent pricing in your free consultation.</p>
+      </div>
+
+      <div style="margin-bottom: 2rem; padding: 1.5rem; background: var(--cbkny-white); border-radius: 0.5rem; border-left: 4px solid var(--cbkny-pink);">
+        <h3 style="color: var(--cbkny-pink); margin-bottom: 1rem;">Can you clean up books from last year?</h3>
+        <p>Absolutely. We offer catch-up bookkeeping services to reconstruct historical records and get you compliant for tax filing.</p>
+      </div>
+
+      <div style="margin-bottom: 2rem; padding: 1.5rem; background: var(--cbkny-white); border-radius: 0.5rem; border-left: 4px solid var(--cbkny-pink);">
+        <h3 style="color: var(--cbkny-pink); margin-bottom: 1rem;">Are you local to New York?</h3>
+        <p>Yes, we're based in NY and specialize in NYS cannabis regulations, OCM requirements, and multi-entity structures common in this industry.</p>
+      </div>
+
+      <div style="margin-bottom: 2rem; padding: 1.5rem; background: var(--cbkny-white); border-radius: 0.5rem; border-left: 4px solid var(--cbkny-pink);">
+        <h3 style="color: var(--cbkny-pink); margin-bottom: 1rem;">What accounting software do you use?</h3>
+        <p>We work with QuickBooks Online, Xero, and other major platforms. We can help you choose the best system for your cannabis business needs.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="text-align: center; margin: 4rem 0;">
+    <h2 style="color: var(--cbkny-black); margin-bottom: 1rem;">Ready to Get Started?</h2>
+    <p style="font-size: 1.25rem; color: var(--cbkny-gray); margin-bottom: 2rem;">Book your free consultation today and let's discuss how we can help your cannabis business stay compliant.</p>
+    <a class="btn btn-primary" href="/contact" style="font-size: 1.1rem; padding: 1rem 2rem;">Book Free Consultation</a>
+  </section>
+</main>
+<?php get_footer(); ?>

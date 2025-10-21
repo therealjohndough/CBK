@@ -1,10 +1,57 @@
 </main>
 <footer class="footer">
-  <div class="container" style="display:flex; gap:1rem; justify-content:space-between; flex-wrap:wrap;">
-    <div>&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?></div>
-    <nav aria-label="<?php esc_attr_e('Footer', 'cbkny'); ?>">
-      <?php wp_nav_menu([ 'theme_location'=>'footer', 'container'=>false, 'menu_class'=>'menu', 'fallback_cb'=>false ]); ?>
-    </nav>
+  <div class="container">
+    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+      
+      <div>
+        <h3 style="color: var(--cbkny-pink); margin-bottom: 1rem;"><?php echo esc_html(cbkny_get_option('cbkny_business_name', 'Canna Bookkeeper™ NY')); ?></h3>
+        <p style="margin-bottom: 1rem;">Professional cannabis accounting services for New York operators. 280E compliance, OCM reporting, and audit-ready bookkeeping.</p>
+        <p style="font-size: 0.9rem; color: var(--cbkny-gray);">
+          <strong>Phone:</strong> <?php echo esc_html(cbkny_get_option('cbkny_phone', '(716) XXX-XXXX')); ?><br>
+          <strong>Email:</strong> <?php echo esc_html(cbkny_get_option('cbkny_email', 'info@cbkny.com')); ?><br>
+          <strong>Location:</strong> <?php echo esc_html(cbkny_get_option('cbkny_address', 'Buffalo, NY')); ?>
+        </p>
+      </div>
+
+      <div>
+        <h4 style="color: var(--cbkny-black); margin-bottom: 1rem;">Services</h4>
+        <ul style="list-style: none; padding: 0; margin: 0;">
+          <li style="margin-bottom: 0.5rem;"><a href="/services" style="color: var(--cbkny-gray); text-decoration: none;">Monthly Bookkeeping</a></li>
+          <li style="margin-bottom: 0.5rem;"><a href="/services" style="color: var(--cbkny-gray); text-decoration: none;">Tax Preparation</a></li>
+          <li style="margin-bottom: 0.5rem;"><a href="/services" style="color: var(--cbkny-gray); text-decoration: none;">Cleanup Services</a></li>
+          <li style="margin-bottom: 0.5rem;"><a href="/services" style="color: var(--cbkny-gray); text-decoration: none;">CFO Advisory</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 style="color: var(--cbkny-black); margin-bottom: 1rem;">Resources</h4>
+        <ul style="list-style: none; padding: 0; margin: 0;">
+          <li style="margin-bottom: 0.5rem;"><a href="/resources" style="color: var(--cbkny-gray); text-decoration: none;">Free Guides</a></li>
+          <li style="margin-bottom: 0.5rem;"><a href="/resources" style="color: var(--cbkny-gray); text-decoration: none;">Templates</a></li>
+          <li style="margin-bottom: 0.5rem;"><a href="/resources" style="color: var(--cbkny-gray); text-decoration: none;">Assessment Tools</a></li>
+          <li style="margin-bottom: 0.5rem;"><a href="/contact" style="color: var(--cbkny-gray); text-decoration: none;">Free Consultation</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 style="color: var(--cbkny-black); margin-bottom: 1rem;">Quick Links</h4>
+        <ul style="list-style: none; padding: 0; margin: 0;">
+          <li style="margin-bottom: 0.5rem;"><a href="/about" style="color: var(--cbkny-gray); text-decoration: none;">About Us</a></li>
+          <li style="margin-bottom: 0.5rem;"><a href="/contact" style="color: var(--cbkny-gray); text-decoration: none;">Contact</a></li>
+          <li style="margin-bottom: 0.5rem;"><a href="/privacy" style="color: var(--cbkny-gray); text-decoration: none;">Privacy Policy</a></li>
+          <li style="margin-bottom: 0.5rem;"><a href="/terms" style="color: var(--cbkny-gray); text-decoration: none;">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="border-top: 1px solid #ddd; padding-top: 1rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+      <div style="color: var(--cbkny-gray); font-size: 0.9rem;">
+        &copy; <?php echo date('Y'); ?> Canna Bookkeeper™ LLC. All rights reserved.
+      </div>
+      <div style="color: var(--cbkny-gray); font-size: 0.8rem; text-align: right;">
+        <p style="margin: 0;">Canna Bookkeeper provides accounting services. We are not attorneys and do not provide legal advice.</p>
+      </div>
+    </div>
   </div>
 </footer>
 <?php wp_footer(); ?>
