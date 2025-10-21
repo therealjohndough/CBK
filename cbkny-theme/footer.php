@@ -26,9 +26,9 @@
       <div>
         <h4 style="color: var(--cbkny-black); margin-bottom: 1rem;">Resources</h4>
         <ul style="list-style: none; padding: 0; margin: 0;">
-          <li style="margin-bottom: 0.5rem;"><a href="/resources" style="color: var(--cbkny-gray); text-decoration: none;">Free Guides</a></li>
-          <li style="margin-bottom: 0.5rem;"><a href="/resources" style="color: var(--cbkny-gray); text-decoration: none;">Templates</a></li>
-          <li style="margin-bottom: 0.5rem;"><a href="/resources" style="color: var(--cbkny-gray); text-decoration: none;">Assessment Tools</a></li>
+          <li style="margin-bottom: 0.5rem;"><a href="/resources/free-guides" style="color: var(--cbkny-gray); text-decoration: none;">Free Guides</a></li>
+          <li style="margin-bottom: 0.5rem;"><a href="/resources/templates" style="color: var(--cbkny-gray); text-decoration: none;">Templates</a></li>
+          <li style="margin-bottom: 0.5rem;"><a href="/resources/assessment-tools" style="color: var(--cbkny-gray); text-decoration: none;">Assessment Tools</a></li>
           <li style="margin-bottom: 0.5rem;"><a href="/contact" style="color: var(--cbkny-gray); text-decoration: none;">Free Consultation</a></li>
         </ul>
       </div>

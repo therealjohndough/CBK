@@ -1,5 +1,13 @@
 <?php get_header(); ?>
 <main class="container">
+  <!-- Breadcrumb Navigation -->
+  <nav style="margin: 1rem 0; font-size: 0.9rem;">
+    <a href="/" style="color: var(--cbkny-gray); text-decoration: none;">Home</a> > 
+    <a href="/resources" style="color: var(--cbkny-gray); text-decoration: none;">Resources</a> > 
+    <a href="/resources/free-guides" style="color: var(--cbkny-gray); text-decoration: none;">Free Guides</a> > 
+    <span style="color: var(--cbkny-pink);">NY Cannabis Compliance Checklist</span>
+  </nav>
+
   <section class="hero">
     <h1>NY Cannabis Tax Compliance Checklist</h1>
     <p>Your Complete Guide to OCM & 280E Compliance</p>

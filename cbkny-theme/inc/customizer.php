@@ -208,7 +208,7 @@ function cbkny_customize_register($wp_customize) {
     'priority' => 30,
   ]);
 
-  // Service 1
+  // Service 1: Monthly Bookkeeping
   $wp_customize->add_setting('cbkny_service_1_title', [
     'default' => 'Monthly Bookkeeping',
     'sanitize_callback' => 'sanitize_text_field',
@@ -220,13 +220,23 @@ function cbkny_customize_register($wp_customize) {
   ]);
 
   $wp_customize->add_setting('cbkny_service_1_description', [
-    'default' => 'Full cannabis accounting & reconciliations built for OCM and IRS 280E compliance. Stay audit-ready with accurate expense categorization.',
+    'default' => 'Professional monthly bookkeeping starting at $250/month. We process, record, organize, and track your business\'s financial transactions, forming the foundation of your financial records and compliance.',
     'sanitize_callback' => 'sanitize_textarea_field',
   ]);
   $wp_customize->add_control('cbkny_service_1_description', [
     'label' => 'Service 1 Description',
     'section' => 'cbkny_services',
     'type' => 'textarea',
+  ]);
+
+  $wp_customize->add_setting('cbkny_service_1_pricing', [
+    'default' => 'Starting at $250/month',
+    'sanitize_callback' => 'sanitize_text_field',
+  ]);
+  $wp_customize->add_control('cbkny_service_1_pricing', [
+    'label' => 'Service 1 Pricing',
+    'section' => 'cbkny_services',
+    'type' => 'text',
   ]);
 
   // Service 2

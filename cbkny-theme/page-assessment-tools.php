@@ -1,0 +1,101 @@
+<?php get_header(); ?>
+<main class="container">
+  <!-- Breadcrumb Navigation -->
+  <nav style="margin: 1rem 0; font-size: 0.9rem;">
+    <a href="/" style="color: var(--cbkny-gray); text-decoration: none;">Home</a> > 
+    <a href="/resources" style="color: var(--cbkny-gray); text-decoration: none;">Resources</a> > 
+    <span style="color: var(--cbkny-pink);">Assessment Tools</span>
+  </nav>
+
+  <section class="hero">
+    <h1>Free Cannabis Compliance Assessment Tools</h1>
+    <p>Interactive tools to evaluate your business compliance and get personalized recommendations</p>
+  </section>
+
+  <section class="grid" style="grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2rem; margin: 4rem 0;">
+    
+    <div class="card" style="padding: 2rem; text-align: center;">
+      <div style="display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: var(--cbkny-pink); font-size: 3rem;"><i class="fas fa-search-plus"></i></div>
+      <h3 style="color: var(--cbkny-pink); margin-bottom: 1rem;">Cannabis Business Audit Readiness Assessment</h3>
+      <p style="margin-bottom: 1.5rem;">Take our interactive quiz to see how audit-ready your cannabis business is and get personalized recommendations.</p>
+      <ul style="text-align: left; margin-bottom: 2rem; font-size: 0.9rem; list-style: none; padding-left: 0;">
+        <li style="margin-bottom: 0.5rem;">✓ 10-question assessment</li>
+        <li style="margin-bottom: 0.5rem;">✓ Instant results & recommendations</li>
+        <li style="margin-bottom: 0.5rem;">✓ Priority action items</li>
+        <li style="margin-bottom: 0.5rem;">✓ Compliance score</li>
+      </ul>
+      <a href="/audit-readiness-quiz" class="btn btn-primary" style="width: 100%; max-width: 100%; display: block; text-align: center; text-decoration: none; box-sizing: border-box;">Take Assessment</a>
+    </div>
+
+    <div class="card" style="padding: 2rem; text-align: center;">
+      <div style="display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: var(--cbkny-pink); font-size: 3rem;"><i class="fas fa-calculator"></i></div>
+      <h3 style="color: var(--cbkny-pink); margin-bottom: 1rem;">280E Tax Impact Calculator</h3>
+      <p style="margin-bottom: 1.5rem;">Calculate exactly how 280E affects your tax burden and see potential savings from optimization strategies.</p>
+      <ul style="text-align: left; margin-bottom: 2rem; font-size: 0.9rem; list-style: none; padding-left: 0;">
+        <li style="margin-bottom: 0.5rem;">✓ Real-time tax calculations</li>
+        <li style="margin-bottom: 0.5rem;">✓ 280E impact analysis</li>
+        <li style="margin-bottom: 0.5rem;">✓ Multi-entity savings calculator</li>
+        <li style="margin-bottom: 0.5rem;">✓ Visual tax breakdown charts</li>
+      </ul>
+      <a href="/280e-tax-calculator" class="btn btn-primary" style="width: 100%; max-width: 100%; display: block; text-align: center; text-decoration: none; box-sizing: border-box;">Use Calculator</a>
+    </div>
+  </section>
+
+  <section style="background: var(--cbkny-light-gray); padding: 3rem; border-radius: 1rem; margin: 4rem 0; text-align: center;">
+    <h2 style="color: var(--cbkny-black); margin-bottom: 2rem;">Why Take Our Assessments?</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; max-width: 800px; margin: 0 auto;">
+      
+      <div style="background: var(--cbkny-white); padding: 1.5rem; border-radius: 0.5rem;">
+        <div style="color: var(--cbkny-pink); font-size: 2rem; margin-bottom: 1rem;"><i class="fas fa-clipboard-list"></i></div>
+        <h4 style="color: var(--cbkny-black); margin-bottom: 1rem;">Get Instant Results</h4>
+        <p>Receive immediate feedback on your compliance status with actionable recommendations.</p>
+      </div>
+
+      <div style="background: var(--cbkny-white); padding: 1.5rem; border-radius: 0.5rem;">
+        <div style="color: var(--cbkny-pink); font-size: 2rem; margin-bottom: 1rem;"><i class="fas fa-exclamation-triangle"></i></div>
+        <h4 style="color: var(--cbkny-black); margin-bottom: 1rem;">Identify Risk Areas</h4>
+        <p>Spot potential compliance issues before they become costly problems or audit triggers.</p>
+      </div>
+
+      <div style="background: var(--cbkny-white); padding: 1.5rem; border-radius: 0.5rem;">
+        <div style="color: var(--cbkny-pink); font-size: 2rem; margin-bottom: 1rem;"><i class="fas fa-chart-line"></i></div>
+        <h4 style="color: var(--cbkny-black); margin-bottom: 1rem;">Optimize Your Business</h4>
+        <p>Discover opportunities to improve efficiency and reduce your tax burden legally.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: linear-gradient(135deg, var(--cbkny-pink) 0%, #f8bbd9 100%); padding: 3rem; border-radius: 1rem; margin: 4rem 0; text-align: center; color: white;">
+    <h2 style="color: white; margin-bottom: 2rem;">What Happens After Your Assessment?</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; max-width: 800px; margin: 0 auto;">
+      
+      <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 0.5rem;">
+        <div style="font-size: 2rem; margin-bottom: 1rem;">1</div>
+        <h4 style="margin-bottom: 1rem;">Get Your Results</h4>
+        <p style="margin: 0;">Instant compliance score and personalized recommendations.</p>
+      </div>
+
+      <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 0.5rem;">
+        <div style="font-size: 2rem; margin-bottom: 1rem;">2</div>
+        <h4 style="margin-bottom: 1rem;">Review Recommendations</h4>
+        <p style="margin: 0;">Priority action items tailored to your specific business.</p>
+      </div>
+
+      <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 0.5rem;">
+        <div style="font-size: 2rem; margin-bottom: 1rem;">3</div>
+        <h4 style="margin-bottom: 1rem;">Schedule Consultation</h4>
+        <p style="margin: 0;">Free consultation to discuss your results and next steps.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="text-align: center; margin: 4rem 0;">
+    <h2 style="color: var(--cbkny-black); margin-bottom: 1rem;">Ready to Assess Your Business?</h2>
+    <p style="font-size: 1.25rem; color: var(--cbkny-gray); margin-bottom: 2rem;">Start with our free assessment tools and get personalized insights for your cannabis business.</p>
+    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+      <a href="/audit-readiness-quiz" class="btn btn-primary" style="font-size: 1.1rem; padding: 1rem 2rem;">Take Audit Assessment</a>
+      <a href="/280e-tax-calculator" class="btn" style="background: var(--cbkny-gray); color: white; font-size: 1.1rem; padding: 1rem 2rem;">Use Tax Calculator</a>
+    </div>
+  </section>
+</main>
+<?php get_footer(); ?>

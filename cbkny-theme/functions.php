@@ -239,3 +239,71 @@ function cbkny_update_phone_number() {
     }
 }
 add_action('customize_save_after', 'cbkny_update_phone_number');
+
+// Create resource category pages on theme activation
+function cbkny_create_resource_category_pages() {
+    // Get the resources page ID
+    $resources_page = get_page_by_path('resources');
+    if (!$resources_page) {
+        return; // Resources page doesn't exist yet
+    }
+    
+    $pages = array(
+        array(
+            'title' => 'Free Guides',
+            'slug' => 'free-guides',
+            'parent' => $resources_page->ID,
+            'template' => 'page-free-guides.php'
+        ),
+        array(
+            'title' => 'Templates',
+            'slug' => 'templates',
+            'parent' => $resources_page->ID,
+            'template' => 'page-templates.php'
+        ),
+        array(
+            'title' => 'Assessment Tools',
+            'slug' => 'assessment-tools',
+            'parent' => $resources_page->ID,
+            'template' => 'page-assessment-tools.php'
+        )
+    );
+    
+    foreach ($pages as $page) {
+        // Check if page already exists
+        $existing_page = get_page_by_path($page['slug']);
+        
+        if (!$existing_page) {
+            $page_id = wp_insert_post(array(
+                'post_title' => $page['title'],
+                'post_name' => $page['slug'],
+                'post_content' => '<!-- Content handled by page template -->',
+                'post_status' => 'publish',
+                'post_type' => 'page',
+                'post_author' => 1,
+                'post_parent' => $page['parent'],
+                'meta_input' => array(
+                    '_wp_page_template' => $page['template']
+                )
+            ));
+            
+            if ($page_id) {
+                echo "Created resource category page: {$page['title']}\n";
+            }
+        }
+    }
+}
+
+// Force create resource category pages on theme load (one-time only)
+function cbkny_force_create_resource_category_pages() {
+    // Check if category pages already exist
+    $free_guides_page = get_page_by_path('free-guides');
+    $templates_page = get_page_by_path('templates');
+    $assessment_tools_page = get_page_by_path('assessment-tools');
+    
+    // Only create if they don't exist
+    if (!$free_guides_page || !$templates_page || !$assessment_tools_page) {
+        cbkny_create_resource_category_pages();
+    }
+}
+add_action('init', 'cbkny_force_create_resource_category_pages');

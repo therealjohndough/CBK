@@ -1,8 +1,24 @@
 <?php get_header(); ?>
 <main class="container">
+  <!-- Breadcrumb Navigation -->
+  <nav style="margin: 1rem 0; font-size: 0.9rem;">
+    <a href="/" style="color: var(--cbkny-gray); text-decoration: none;">Home</a> > 
+    <span style="color: var(--cbkny-pink);">Resources</span>
+  </nav>
+
   <section class="hero">
     <h1>Free Cannabis Accounting Resources</h1>
     <p>Download our expert guides and tools to help your cannabis business stay compliant</p>
+  </section>
+
+  <!-- Category Navigation -->
+  <section style="text-align: center; margin: 2rem 0;">
+    <h3 style="color: var(--cbkny-black); margin-bottom: 1rem;">Browse by Category</h3>
+    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+      <a href="/resources/free-guides" class="btn" style="background: var(--cbkny-pink); color: white; padding: 0.75rem 1.5rem;">Free Guides</a>
+      <a href="/resources/templates" class="btn" style="background: var(--cbkny-pink); color: white; padding: 0.75rem 1.5rem;">Templates</a>
+      <a href="/resources/assessment-tools" class="btn" style="background: var(--cbkny-pink); color: white; padding: 0.75rem 1.5rem;">Assessment Tools</a>
+    </div>
   </section>
 
   <section class="grid" style="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin: 4rem 0;">
