@@ -43,7 +43,7 @@
         <li style="margin-bottom: 0.5rem;">✓ Priority action items</li>
         <li style="margin-bottom: 0.5rem;">✓ Compliance score</li>
       </ul>
-      <button class="btn btn-primary" onclick="openResourceModal('audit-quiz')" style="width: 100%;">Take Assessment</button>
+      <a href="/audit-readiness-quiz" class="btn btn-primary" style="width: 100%; display: inline-block; text-align: center; text-decoration: none;">Take Assessment</a>
     </div>
 
     <div class="card" style="padding: 2rem; text-align: center;">
@@ -216,8 +216,8 @@ function openResourceModal(resourceType) {
         </div>
         
         <div style="text-align: center;">
-          <button class="btn btn-primary" onclick="startAssessment()" style="width: 100%; margin-bottom: 1rem;">Start Assessment</button>
-          <p style="font-size: 0.9rem; color: var(--cbkny-gray);">Assessment coming soon! Contact us for a free consultation.</p>
+          <a href="/audit-readiness-quiz" class="btn btn-primary" style="width: 100%; margin-bottom: 1rem; display: inline-block; text-align: center; text-decoration: none;">Start Assessment</a>
+          <p style="font-size: 0.9rem; color: var(--cbkny-gray);">Take our comprehensive 10-question audit readiness quiz.</p>
         </div>
       `;
       break;
