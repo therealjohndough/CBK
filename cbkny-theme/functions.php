@@ -76,3 +76,81 @@ function cbkny_enqueue_lottie_loader() {
     wp_enqueue_script('cbkny-lottie-loader', get_template_directory_uri() . '/assets/js/lottie-loader.js', array(), '1.0.0', true);
 }
 add_action('wp_enqueue_scripts', 'cbkny_enqueue_lottie_loader');
+
+// Create download pages on theme activation
+function cbkny_create_download_pages() {
+    $pages = array(
+        array(
+            'title' => 'NY Cannabis Tax Compliance Checklist',
+            'slug' => 'ny-cannabis-compliance-checklist',
+            'template' => 'page-ny-cannabis-compliance-checklist.php'
+        ),
+        array(
+            'title' => '280E Deduction Guide',
+            'slug' => '280e-deduction-guide',
+            'template' => 'page-280e-deduction-guide.php'
+        ),
+        array(
+            'title' => 'Audit Readiness Quiz',
+            'slug' => 'audit-readiness-quiz',
+            'template' => 'page-audit-readiness-quiz.php'
+        ),
+        array(
+            'title' => '280E Tax Calculator',
+            'slug' => '280e-tax-calculator',
+            'template' => 'page-280e-tax-calculator.php'
+        )
+    );
+    
+    foreach ($pages as $page) {
+        // Check if page already exists
+        $existing_page = get_page_by_path($page['slug']);
+        
+        if (!$existing_page) {
+            $page_id = wp_insert_post(array(
+                'post_title' => $page['title'],
+                'post_name' => $page['slug'],
+                'post_content' => '<!-- Content handled by page template -->',
+                'post_status' => 'publish',
+                'post_type' => 'page',
+                'post_author' => 1,
+                'meta_input' => array(
+                    '_wp_page_template' => $page['template']
+                )
+            ));
+            
+            if ($page_id) {
+                echo "Created page: {$page['title']}\n";
+            }
+        }
+    }
+}
+add_action('after_switch_theme', 'cbkny_create_download_pages');
+
+// Add admin menu for page creation
+function cbkny_add_admin_menu() {
+    add_management_page(
+        'Create Download Pages',
+        'Create Download Pages',
+        'manage_options',
+        'cbkny-create-pages',
+        'cbkny_create_pages_admin_page'
+    );
+}
+add_action('admin_menu', 'cbkny_add_admin_menu');
+
+// Admin page for creating download pages
+function cbkny_create_pages_admin_page() {
+    if (isset($_POST['create_pages'])) {
+        cbkny_create_download_pages();
+        echo '<div class="notice notice-success"><p>Download pages created successfully!</p></div>';
+    }
+    
+    echo '<div class="wrap">';
+    echo '<h1>Create Download Pages</h1>';
+    echo '<p>Click the button below to create the download pages for your lead magnets.</p>';
+    echo '<form method="post">';
+    echo '<input type="submit" name="create_pages" class="button button-primary" value="Create Download Pages">';
+    echo '</form>';
+    echo '</div>';
+}
