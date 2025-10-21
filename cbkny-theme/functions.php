@@ -143,9 +143,9 @@ function cbkny_create_download_pages() {
                 )
             ));
             
-            if ($page_id) {
-                echo "Created page: {$page['title']}\n";
-            }
+                if ($page_id) {
+                    // Page created successfully - don't echo during page load
+                }
         }
     }
 }
@@ -159,8 +159,8 @@ function cbkny_force_create_pages() {
     $quiz_page = get_page_by_path('audit-readiness-quiz');
     $calculator_page = get_page_by_path('280e-tax-calculator');
     
-    // Only create if they don't exist
-    if (!$checklist_page || !$guide_page || !$quiz_page || !$calculator_page) {
+    // Only create if they don't exist and we're in admin or doing a one-time setup
+    if ((!$checklist_page || !$guide_page || !$quiz_page || !$calculator_page) && (is_admin() || defined('DOING_CRON'))) {
         cbkny_create_download_pages();
     }
 }
@@ -288,7 +288,7 @@ function cbkny_create_resource_category_pages() {
             ));
             
             if ($page_id) {
-                echo "Created resource category page: {$page['title']}\n";
+                // Page created successfully - don't echo during page load
             }
         }
     }
@@ -301,8 +301,8 @@ function cbkny_force_create_resource_category_pages() {
     $templates_page = get_page_by_path('templates');
     $assessment_tools_page = get_page_by_path('assessment-tools');
     
-    // Only create if they don't exist
-    if (!$free_guides_page || !$templates_page || !$assessment_tools_page) {
+    // Only create if they don't exist and we're in admin or doing a one-time setup
+    if ((!$free_guides_page || !$templates_page || !$assessment_tools_page) && (is_admin() || defined('DOING_CRON'))) {
         cbkny_create_resource_category_pages();
     }
 }
