@@ -220,3 +220,22 @@ function cbkny_create_pages_admin_page() {
     echo '</form>';
     echo '</div>';
 }
+
+// Auto-update phone number when customizer phone_update field changes
+function cbkny_update_phone_number() {
+    $phone_update = get_theme_mod('cbkny_phone_update', '');
+    
+    if (!empty($phone_update)) {
+        // Update the main phone setting
+        set_theme_mod('cbkny_phone', $phone_update);
+        
+        // Clear the update field
+        set_theme_mod('cbkny_phone_update', '');
+        
+        // Optional: Add admin notice
+        add_action('admin_notices', function() {
+            echo '<div class="notice notice-success is-dismissible"><p>Phone number updated successfully!</p></div>';
+        });
+    }
+}
+add_action('customize_save_after', 'cbkny_update_phone_number');

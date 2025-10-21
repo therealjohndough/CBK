@@ -166,6 +166,41 @@ function cbkny_customize_register($wp_customize) {
     'type' => 'text',
   ]);
 
+  // Phone number update control
+  $wp_customize->add_setting('cbkny_phone_update', [
+    'default' => '',
+    'sanitize_callback' => 'sanitize_text_field',
+  ]);
+  $wp_customize->add_control('cbkny_phone_update', [
+    'label' => 'Update Phone Number',
+    'section' => 'cbkny_business_info',
+    'type' => 'text',
+    'description' => 'Enter new phone number to update across the site',
+    'input_attrs' => [
+      'placeholder' => 'e.g., (716) 555-1234',
+    ],
+  ]);
+
+  // Add JavaScript to sync phone number updates
+  $wp_customize->add_setting('cbkny_phone_update_js', [
+    'default' => '',
+    'sanitize_callback' => 'sanitize_text_field',
+  ]);
+  
+  // Add JavaScript for real-time phone number updates
+  add_action('customize_preview_init', function() {
+    wp_add_inline_script('customize-preview', '
+      wp.customize("cbkny_phone_update", function(value) {
+        value.bind(function(newval) {
+          if (newval) {
+            // Update the main phone setting
+            wp.customize("cbkny_phone").set(newval);
+          }
+        });
+      });
+    ');
+  });
+
   // === SERVICES SECTION ===
   $wp_customize->add_section('cbkny_services', [
     'title' => 'Services',
