@@ -17,14 +17,7 @@
         <li>✓ Quarterly tax deadlines</li>
         <li>✓ Audit preparation checklist</li>
       </ul>
-      <form id="download-form-checklist" class="cbkny-download-form" data-file-id="compliance-checklist" style="display: flex; flex-direction: column; gap: 1rem;">
-        <input type="email" placeholder="Enter your email" required style="padding: 0.75rem; border: 2px solid #ddd; border-radius: 0.5rem;">
-        <input type="text" placeholder="Business name" style="padding: 0.75rem; border: 2px solid #ddd; border-radius: 0.5rem;">
-        <label style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">
-          <input type="checkbox" required> I agree to receive cannabis accounting tips and updates
-        </label>
-        <button type="submit" class="btn btn-primary" style="width: 100%;">Download Free Guide</button>
-      </form>
+      <button class="btn btn-primary" onclick="openResourceModal('compliance-checklist')" style="width: 100%;">View & Download Guide</button>
     </div>
 
     <div class="card" style="padding: 2rem; text-align: center;">
@@ -37,14 +30,7 @@
         <li>✓ Multi-entity strategies</li>
         <li>✓ Audit defense tactics</li>
       </ul>
-      <form id="download-form-guide" class="cbkny-download-form" data-file-id="280e-guide" style="display: flex; flex-direction: column; gap: 1rem;">
-        <input type="email" placeholder="Enter your email" required style="padding: 0.75rem; border: 2px solid #ddd; border-radius: 0.5rem;">
-        <input type="text" placeholder="Business name" style="padding: 0.75rem; border: 2px solid #ddd; border-radius: 0.5rem;">
-        <label style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">
-          <input type="checkbox" required> I agree to receive cannabis accounting tips and updates
-        </label>
-        <button type="submit" class="btn btn-primary" style="width: 100%;">Download Free Guide</button>
-      </form>
+      <button class="btn btn-primary" onclick="openResourceModal('280e-guide')" style="width: 100%;">View & Download Guide</button>
     </div>
 
     <div class="card" style="padding: 2rem; text-align: center;">
@@ -57,7 +43,7 @@
         <li>✓ Priority action items</li>
         <li>✓ Compliance score</li>
       </ul>
-      <button class="btn btn-primary" onclick="startAssessment()" style="width: 100%;">Take Assessment</button>
+      <button class="btn btn-primary" onclick="openResourceModal('audit-quiz')" style="width: 100%;">Take Assessment</button>
     </div>
 
     <div class="card" style="padding: 2rem; text-align: center;">
@@ -83,7 +69,7 @@
         <li>✓ Multi-entity savings calculator</li>
         <li>✓ Visual tax breakdown charts</li>
       </ul>
-      <button class="btn btn-primary" onclick="startCalculator()" style="width: 100%;">Use Calculator</button>
+      <button class="btn btn-primary" onclick="openResourceModal('tax-calculator')" style="width: 100%;">Use Calculator</button>
     </div>
   </section>
 
@@ -136,7 +122,149 @@
   </section>
 </main>
 
+<!-- Resource Modal -->
+<div id="resourceModal" class="resource-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 10000; overflow-y: auto;">
+  <div class="modal-content" style="background: white; margin: 2rem auto; max-width: 800px; border-radius: 1rem; padding: 2rem; position: relative;">
+    <button class="close-modal" onclick="closeResourceModal()" style="position: absolute; top: 1rem; right: 1rem; background: none; border: none; font-size: 2rem; cursor: pointer; color: var(--cbkny-gray);">&times;</button>
+    
+    <div id="modalContent">
+      <!-- Content will be loaded here -->
+    </div>
+  </div>
+</div>
+
 <script>
+// Modal functionality
+function openResourceModal(resourceType) {
+  const modal = document.getElementById('resourceModal');
+  const modalContent = document.getElementById('modalContent');
+  
+  // Load content based on resource type
+  let content = '';
+  
+  switch(resourceType) {
+    case 'compliance-checklist':
+      content = `
+        <h2 style="color: var(--cbkny-pink); margin-bottom: 1rem;">NY Cannabis Tax Compliance Checklist</h2>
+        <p style="margin-bottom: 2rem;">Download our comprehensive 8-page checklist covering all NY cannabis tax requirements, 280E compliance, and OCM reporting deadlines.</p>
+        
+        <div style="background: var(--cbkny-light-gray); padding: 1.5rem; border-radius: 0.5rem; margin-bottom: 2rem;">
+          <h4 style="color: var(--cbkny-black); margin-bottom: 1rem;">What's Included:</h4>
+          <ul style="margin: 0; padding-left: 1.5rem;">
+            <li>✓ 280E deduction guidelines</li>
+            <li>✓ OCM reporting requirements</li>
+            <li>✓ Quarterly tax deadlines</li>
+            <li>✓ Audit preparation checklist</li>
+            <li>✓ Monthly compliance tasks</li>
+            <li>✓ Record-keeping requirements</li>
+          </ul>
+        </div>
+        
+        <form id="download-form-checklist" class="cbkny-download-form" data-file-id="compliance-checklist" style="display: flex; flex-direction: column; gap: 1rem;">
+          <input type="email" placeholder="Enter your email" required style="padding: 0.75rem; border: 2px solid #ddd; border-radius: 0.5rem;">
+          <input type="text" placeholder="Business name" style="padding: 0.75rem; border: 2px solid #ddd; border-radius: 0.5rem;">
+          <label style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">
+            <input type="checkbox" required> I agree to receive cannabis accounting tips and updates
+          </label>
+          <button type="submit" class="btn btn-primary" style="width: 100%;">Download Free Guide</button>
+        </form>
+      `;
+      break;
+      
+    case '280e-guide':
+      content = `
+        <h2 style="color: var(--cbkny-pink); margin-bottom: 1rem;">280E Deduction Guide for Cannabis Businesses</h2>
+        <p style="margin-bottom: 2rem;">Learn how to maximize your deductions under 280E while staying fully compliant with IRS regulations.</p>
+        
+        <div style="background: var(--cbkny-light-gray); padding: 1.5rem; border-radius: 0.5rem; margin-bottom: 2rem;">
+          <h4 style="color: var(--cbkny-black); margin-bottom: 1rem;">What's Included:</h4>
+          <ul style="margin: 0; padding-left: 1.5rem;">
+            <li>✓ Deductible vs non-deductible expenses</li>
+            <li>✓ COGS calculation methods</li>
+            <li>✓ Multi-entity strategies</li>
+            <li>✓ Audit defense tactics</li>
+            <li>✓ Real-world case studies</li>
+            <li>✓ Implementation checklist</li>
+          </ul>
+        </div>
+        
+        <form id="download-form-guide" class="cbkny-download-form" data-file-id="280e-guide" style="display: flex; flex-direction: column; gap: 1rem;">
+          <input type="email" placeholder="Enter your email" required style="padding: 0.75rem; border: 2px solid #ddd; border-radius: 0.5rem;">
+          <input type="text" placeholder="Business name" style="padding: 0.75rem; border: 2px solid #ddd; border-radius: 0.5rem;">
+          <label style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">
+            <input type="checkbox" required> I agree to receive cannabis accounting tips and updates
+          </label>
+          <button type="submit" class="btn btn-primary" style="width: 100%;">Download Free Guide</button>
+        </form>
+      `;
+      break;
+      
+    case 'audit-quiz':
+      content = `
+        <h2 style="color: var(--cbkny-pink); margin-bottom: 1rem;">Cannabis Business Audit Readiness Assessment</h2>
+        <p style="margin-bottom: 2rem;">Take our interactive quiz to see how audit-ready your cannabis business is and get personalized recommendations.</p>
+        
+        <div style="background: var(--cbkny-light-gray); padding: 1.5rem; border-radius: 0.5rem; margin-bottom: 2rem;">
+          <h4 style="color: var(--cbkny-black); margin-bottom: 1rem;">Assessment Includes:</h4>
+          <ul style="margin: 0; padding-left: 1.5rem;">
+            <li>✓ 10-question assessment</li>
+            <li>✓ Instant results & recommendations</li>
+            <li>✓ Priority action items</li>
+            <li>✓ Compliance score</li>
+            <li>✓ Personalized improvement plan</li>
+          </ul>
+        </div>
+        
+        <div style="text-align: center;">
+          <button class="btn btn-primary" onclick="startAssessment()" style="width: 100%; margin-bottom: 1rem;">Start Assessment</button>
+          <p style="font-size: 0.9rem; color: var(--cbkny-gray);">Assessment coming soon! Contact us for a free consultation.</p>
+        </div>
+      `;
+      break;
+      
+    case 'tax-calculator':
+      content = `
+        <h2 style="color: var(--cbkny-pink); margin-bottom: 1rem;">280E Tax Impact Calculator</h2>
+        <p style="margin-bottom: 2rem;">Calculate exactly how 280E affects your tax burden and see potential savings from optimization strategies.</p>
+        
+        <div style="background: var(--cbkny-light-gray); padding: 1.5rem; border-radius: 0.5rem; margin-bottom: 2rem;">
+          <h4 style="color: var(--cbkny-black); margin-bottom: 1rem;">Calculator Features:</h4>
+          <ul style="margin: 0; padding-left: 1.5rem;">
+            <li>✓ Real-time tax calculations</li>
+            <li>✓ 280E impact analysis</li>
+            <li>✓ Multi-entity savings calculator</li>
+            <li>✓ Visual tax breakdown charts</li>
+            <li>✓ Scenario comparisons</li>
+          </ul>
+        </div>
+        
+        <div style="text-align: center;">
+          <button class="btn btn-primary" onclick="startCalculator()" style="width: 100%; margin-bottom: 1rem;">Use Calculator</button>
+          <p style="font-size: 0.9rem; color: var(--cbkny-gray);">Calculator coming soon! Contact us for a free consultation.</p>
+        </div>
+      `;
+      break;
+  }
+  
+  modalContent.innerHTML = content;
+  modal.style.display = 'block';
+  document.body.style.overflow = 'hidden';
+}
+
+function closeResourceModal() {
+  const modal = document.getElementById('resourceModal');
+  modal.style.display = 'none';
+  document.body.style.overflow = 'auto';
+}
+
+// Close modal when clicking outside
+document.addEventListener('click', function(event) {
+  const modal = document.getElementById('resourceModal');
+  if (event.target === modal) {
+    closeResourceModal();
+  }
+});
+
 function downloadResource(resourceType) {
   // This would integrate with your lead capture system
   // For now, we'll show a simple prompt
