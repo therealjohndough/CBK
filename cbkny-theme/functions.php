@@ -458,3 +458,53 @@ add_action('admin_notices', function() {
 //     }
 // }
 // add_action('init', 'cbkny_create_missing_pages_once');
+
+// Function to list all pages for cleanup (admin only)
+function cbkny_list_all_pages() {
+    if (!is_admin()) return;
+    
+    if (isset($_GET['list_pages']) && $_GET['list_pages'] == '1') {
+        $pages = get_posts(array(
+            'post_type' => 'page',
+            'numberposts' => -1,
+            'post_status' => 'publish'
+        ));
+        
+        echo '<div class="notice notice-info"><p><strong>All Pages on Site:</strong></p><ul>';
+        foreach ($pages as $page) {
+            $parent_info = $page->post_parent ? " (Child of: " . get_the_title($page->post_parent) . ")" : " (Top Level)";
+            echo '<li><a href="' . get_edit_post_link($page->ID) . '">' . $page->post_title . '</a> - /' . $page->post_name . '/' . $parent_info . '</li>';
+        }
+        echo '</ul></div>';
+    }
+}
+add_action('admin_notices', 'cbkny_list_all_pages');
+
+// Function to delete specific pages by slug (admin only)
+function cbkny_delete_pages_by_slug() {
+    if (!is_admin()) return;
+    
+    if (isset($_GET['delete_pages']) && $_GET['delete_pages'] == '1') {
+        // List of page slugs to delete (add the ones you want to remove)
+        $pages_to_delete = array(
+            // Add page slugs here that you want to delete
+            // 'example-page-slug',
+        );
+        
+        $deleted_count = 0;
+        foreach ($pages_to_delete as $slug) {
+            $page = get_page_by_path($slug);
+            if ($page) {
+                wp_delete_post($page->ID, true);
+                $deleted_count++;
+            }
+        }
+        
+        if ($deleted_count > 0) {
+            echo '<div class="notice notice-success"><p>Deleted ' . $deleted_count . ' pages.</p></div>';
+        } else {
+            echo '<div class="notice notice-warning"><p>No pages found to delete. Add page slugs to the $pages_to_delete array in functions.php</p></div>';
+        }
+    }
+}
+add_action('admin_notices', 'cbkny_delete_pages_by_slug');
