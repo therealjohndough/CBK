@@ -142,6 +142,22 @@ function cbkny_force_create_pages() {
 }
 add_action('init', 'cbkny_force_create_pages');
 
+// Fix resources page slug typo
+function cbkny_fix_resources_slug() {
+    // Check if there's a page with the wrong slug
+    $wrong_page = get_page_by_path('resouces');
+    $correct_page = get_page_by_path('resources');
+    
+    if ($wrong_page && !$correct_page) {
+        // Update the slug
+        wp_update_post(array(
+            'ID' => $wrong_page->ID,
+            'post_name' => 'resources'
+        ));
+    }
+}
+add_action('init', 'cbkny_fix_resources_slug');
+
 // Add admin menu for page creation
 function cbkny_add_admin_menu() {
     add_management_page(
