@@ -445,3 +445,16 @@ add_action('admin_notices', function() {
         echo '<div class="notice notice-success is-dismissible"><p>Missing service pages created successfully!</p></div>';
     }
 });
+
+// One-time page creation on theme load (temporary)
+function cbkny_create_missing_pages_once() {
+    // Check if we've already created them
+    $monthly_page = get_page_by_path('monthly-bookkeeping');
+    $cleanup_page = get_page_by_path('cleanup-catchup');
+    $cco_page = get_page_by_path('chief-compliance-officer');
+    
+    if (!$monthly_page || !$cleanup_page || !$cco_page) {
+        cbkny_create_missing_service_pages();
+    }
+}
+add_action('init', 'cbkny_create_missing_pages_once');
