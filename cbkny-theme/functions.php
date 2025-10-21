@@ -70,3 +70,9 @@ require_once get_template_directory() . '/inc/cookie-consent.php';
 
 // File management system
 require_once get_template_directory() . '/inc/file-manager.php';
+
+// Enqueue Lottie loader
+function cbkny_enqueue_lottie_loader() {
+    wp_enqueue_script('cbkny-lottie-loader', get_template_directory_uri() . '/assets/js/lottie-loader.js', array(), '1.0.0', true);
+}
+add_action('wp_enqueue_scripts', 'cbkny_enqueue_lottie_loader');

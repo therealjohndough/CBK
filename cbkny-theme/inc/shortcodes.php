@@ -67,3 +67,45 @@ add_shortcode('contact_form', function($atts){
   <?php
   return ob_get_clean();
 });
+
+/**
+ * Lottie animation shortcode
+ * [cbkny_lottie animation="saas-hand" width="300" height="200"]
+ */
+function cbkny_lottie_shortcode($atts) {
+    $atts = shortcode_atts(array(
+        'animation' => 'saas-hand',
+        'width' => 'auto',
+        'height' => 'auto',
+        'class' => '',
+        'loop' => 'true',
+        'autoplay' => 'true',
+        'speed' => '1'
+    ), $atts);
+
+    $animation_name = sanitize_text_field($atts['animation']);
+    $width = sanitize_text_field($atts['width']);
+    $height = sanitize_text_field($atts['height']);
+    $class = sanitize_text_field($atts['class']);
+    $loop = $atts['loop'] === 'true';
+    $autoplay = $atts['autoplay'] === 'true';
+    $speed = floatval($atts['speed']);
+
+    $style = '';
+    if ($width !== 'auto') {
+        $style .= "width: {$width};";
+    }
+    if ($height !== 'auto') {
+        $style .= "height: {$height};";
+    }
+
+    $output = '<div class="cbkny-lottie-container ' . esc_attr($class) . '" style="' . esc_attr($style) . '"';
+    $output .= ' data-lottie="' . esc_attr($animation_name) . '"';
+    $output .= ' data-loop="' . ($loop ? 'true' : 'false') . '"';
+    $output .= ' data-autoplay="' . ($autoplay ? 'true' : 'false') . '"';
+    $output .= ' data-speed="' . esc_attr($speed) . '"';
+    $output .= '></div>';
+
+    return $output;
+}
+add_shortcode('cbkny_lottie', 'cbkny_lottie_shortcode');

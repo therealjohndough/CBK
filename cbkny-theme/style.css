@@ -174,6 +174,28 @@ input:focus, textarea:focus, select:focus {
   border-color: var(--cbkny-pink);
 }
 
+/* Lottie animations */
+.cbkny-lottie-container {
+  display: inline-block;
+  max-width: 100%;
+}
+
+.cbkny-lottie-container svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Lottie animation states */
+.cbkny-lottie-loading {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.cbkny-lottie-loaded {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .menu {
@@ -187,5 +209,10 @@ input:focus, textarea:focus, select:focus {
   
   .grid {
     grid-template-columns: 1fr;
+  }
+  
+  .cbkny-lottie-container {
+    width: 100% !important;
+    height: auto !important;
   }
 }
