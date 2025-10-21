@@ -37,8 +37,10 @@
           </a>
           <?php endif; ?>
           
-          <?php if (cbkny_get_option('cbkny_instagram_url')): ?>
-          <a href="<?php echo esc_url(cbkny_get_option('cbkny_instagram_url')); ?>" target="_blank" rel="noopener" style="color: var(--cbkny-pink); font-size: 1.5rem; text-decoration: none;" aria-label="Instagram">
+          <?php 
+          $instagram_url = cbkny_get_option('cbkny_instagram_url', 'https://www.instagram.com/cannabookkeeper');
+          if ($instagram_url): ?>
+          <a href="<?php echo esc_url($instagram_url); ?>" target="_blank" rel="noopener" style="color: var(--cbkny-pink); font-size: 1.5rem; text-decoration: none;" aria-label="Instagram">
             <i class="fab fa-instagram"></i>
           </a>
           <?php endif; ?>
