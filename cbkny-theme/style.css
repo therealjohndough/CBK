@@ -8,13 +8,14 @@ Version: 0.1.0
 License: GNU General Public License v2 or later
 Text Domain: cbkny
 */
-:root { 
+:root {
   --cbkny-gap: 1rem;
-  --cbkny-pink: #FF4D4D;
+  --cbkny-pink: #F8BBD9;
   --cbkny-white: #FFFFFF;
   --cbkny-black: #000000;
   --cbkny-gray: #666666;
-  --cbkny-light-gray: #F5F5F5;
+  --cbkny-light-gray: #FEF7F7;
+  --cbkny-light-pink: #FEF7F7;
 }
 
 body { 
