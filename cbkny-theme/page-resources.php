@@ -17,7 +17,7 @@
         <li style="margin-bottom: 0.5rem;">✓ Quarterly tax deadlines</li>
         <li style="margin-bottom: 0.5rem;">✓ Audit preparation checklist</li>
       </ul>
-      <button class="btn btn-primary" onclick="openResourceModal('compliance-checklist')" style="width: 100%;">View & Download Guide</button>
+      <button class="btn btn-primary" onclick="openResourceModal('compliance-checklist')" style="width: 100%; max-width: 100%; display: block; text-align: center; box-sizing: border-box;">View & Download Guide</button>
     </div>
 
     <div class="card" style="padding: 2rem; text-align: center;">
@@ -30,7 +30,7 @@
         <li style="margin-bottom: 0.5rem;">✓ Multi-entity strategies</li>
         <li style="margin-bottom: 0.5rem;">✓ Audit defense tactics</li>
       </ul>
-      <button class="btn btn-primary" onclick="openResourceModal('280e-guide')" style="width: 100%;">View & Download Guide</button>
+      <button class="btn btn-primary" onclick="openResourceModal('280e-guide')" style="width: 100%; max-width: 100%; display: block; text-align: center; box-sizing: border-box;">View & Download Guide</button>
     </div>
 
     <div class="card" style="padding: 2rem; text-align: center;">
@@ -43,7 +43,7 @@
         <li style="margin-bottom: 0.5rem;">✓ Priority action items</li>
         <li style="margin-bottom: 0.5rem;">✓ Compliance score</li>
       </ul>
-      <a href="/audit-readiness-quiz" class="btn btn-primary" style="width: 100%; display: inline-block; text-align: center; text-decoration: none;">Take Assessment</a>
+      <a href="/audit-readiness-quiz" class="btn btn-primary" style="width: 100%; max-width: 100%; display: block; text-align: center; text-decoration: none; box-sizing: border-box;">Take Assessment</a>
     </div>
 
     <div class="card" style="padding: 2rem; text-align: center;">
@@ -56,7 +56,7 @@
         <li style="margin-bottom: 0.5rem;">✓ Monthly tracking sheets</li>
         <li style="margin-bottom: 0.5rem;">✓ Year-end summary reports</li>
       </ul>
-      <button class="btn btn-primary" onclick="downloadResource('cogs-template')" style="width: 100%;">Download Template</button>
+      <button class="btn btn-primary" onclick="openResourceModal('cogs-template')" style="width: 100%; max-width: 100%; display: block; text-align: center; box-sizing: border-box;">View & Download Template</button>
     </div>
 
     <div class="card" style="padding: 2rem; text-align: center;">
@@ -69,7 +69,7 @@
         <li style="margin-bottom: 0.5rem;">✓ Multi-entity savings calculator</li>
         <li style="margin-bottom: 0.5rem;">✓ Visual tax breakdown charts</li>
       </ul>
-      <button class="btn btn-primary" onclick="openResourceModal('tax-calculator')" style="width: 100%;">Use Calculator</button>
+      <button class="btn btn-primary" onclick="openResourceModal('tax-calculator')" style="width: 100%; max-width: 100%; display: block; text-align: center; box-sizing: border-box;">Use Calculator</button>
     </div>
   </section>
 
@@ -219,6 +219,34 @@ function openResourceModal(resourceType) {
           <a href="/audit-readiness-quiz" class="btn btn-primary" style="width: 100%; margin-bottom: 1rem; display: inline-block; text-align: center; text-decoration: none;">Start Assessment</a>
           <p style="font-size: 0.9rem; color: var(--cbkny-gray);">Take our comprehensive 10-question audit readiness quiz.</p>
         </div>
+      `;
+      break;
+      
+    case 'cogs-template':
+      content = `
+        <h2 style="color: var(--cbkny-pink); margin-bottom: 1rem;">Cannabis COGS Tracking Template</h2>
+        <p style="margin-bottom: 2rem;">Download our Excel template for tracking Cost of Goods Sold, inventory, and 280E-compliant expense categorization.</p>
+        
+        <div style="background: var(--cbkny-light-gray); padding: 1.5rem; border-radius: 0.5rem; margin-bottom: 2rem;">
+          <h4 style="color: var(--cbkny-black); margin-bottom: 1rem;">Template Features:</h4>
+          <ul style="margin: 0; padding-left: 1.5rem;">
+            <li>✓ Pre-built Excel formulas</li>
+            <li>✓ 280E-compliant categories</li>
+            <li>✓ Monthly tracking sheets</li>
+            <li>✓ Year-end summary reports</li>
+            <li>✓ Inventory tracking integration</li>
+            <li>✓ COGS calculation automation</li>
+          </ul>
+        </div>
+        
+        <form id="download-form-template" class="cbkny-download-form" data-file-id="cogs-tracker" style="display: flex; flex-direction: column; gap: 1rem;">
+          <input type="email" placeholder="Enter your email" required style="padding: 0.75rem; border: 2px solid #ddd; border-radius: 0.5rem;">
+          <input type="text" placeholder="Business name" style="padding: 0.75rem; border: 2px solid #ddd; border-radius: 0.5rem;">
+          <label style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">
+            <input type="checkbox" required> I agree to receive cannabis accounting tips and updates
+          </label>
+          <button type="submit" class="btn btn-primary" style="width: 100%;">Download Template</button>
+        </form>
       `;
       break;
       
