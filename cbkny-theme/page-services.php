@@ -8,7 +8,7 @@
   <section class="grid" style="grid-template-columns: 1fr; gap: 3rem; margin: 4rem 0;">
     
     <div class="card" style="padding: 2rem;">
-      <h2 style="color: var(--cbkny-pink); margin-bottom: 1rem;">Monthly Bookkeeping</h2>
+      <h2 style="color: var(--cbkny-black); margin-bottom: 1rem;">Monthly Bookkeeping</h2>
       <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">Full cannabis accounting & reconciliations built for OCM and IRS 280E compliance.</p>
       
       <h4 style="color: var(--cbkny-black); margin-bottom: 1rem;">What's Included:</h4>
@@ -28,7 +28,7 @@
     </div>
 
     <div class="card" style="padding: 2rem;">
-      <h2 style="color: var(--cbkny-pink); margin-bottom: 1rem;">Tax Preparation & 280E Strategy</h2>
+      <h2 style="color: var(--cbkny-black); margin-bottom: 1rem;">Tax Preparation & 280E Strategy</h2>
       <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">Stay audit-ready with accurate expense categorization and strategic tax planning.</p>
       
       <h4 style="color: var(--cbkny-black); margin-bottom: 1rem;">What's Included:</h4>
@@ -47,7 +47,7 @@
     </div>
 
     <div class="card" style="padding: 2rem;">
-      <h2 style="color: var(--cbkny-pink); margin-bottom: 1rem;">Cleanup & Catch-Up Services</h2>
+      <h2 style="color: var(--cbkny-black); margin-bottom: 1rem;">Cleanup & Catch-Up Services</h2>
       <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">Historical bookkeeping services to reconstruct records and get you compliant.</p>
       
       <h4 style="color: var(--cbkny-black); margin-bottom: 1rem;">What's Included:</h4>
@@ -66,7 +66,7 @@
     </div>
 
     <div class="card" style="padding: 2rem;">
-      <h2 style="color: var(--cbkny-pink); margin-bottom: 1rem;">CFO Advisory Services</h2>
+      <h2 style="color: var(--cbkny-black); margin-bottom: 1rem;">CFO Advisory Services</h2>
       <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">Strategic financial guidance to improve cash flow, cost tracking, and license scalability.</p>
       
       <h4 style="color: var(--cbkny-black); margin-bottom: 1rem;">What's Included:</h4>

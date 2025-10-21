@@ -98,7 +98,7 @@ function openResourceModal(resourceType) {
   switch(resourceType) {
     case 'cogs-template':
       content = `
-        <h2 style="color: var(--cbkny-pink); margin-bottom: 1rem;">Cannabis COGS Tracking Template</h2>
+        <h2 style="color: var(--cbkny-black); margin-bottom: 1rem;">Cannabis COGS Tracking Template</h2>
         <p style="margin-bottom: 2rem;">Download our Excel template for tracking Cost of Goods Sold, inventory, and 280E-compliant expense categorization.</p>
         
         <div style="background: var(--cbkny-light-gray); padding: 1.5rem; border-radius: 0.5rem; margin-bottom: 2rem;">
@@ -126,7 +126,7 @@ function openResourceModal(resourceType) {
       
     case 'budget-template':
       content = `
-        <h2 style="color: var(--cbkny-pink); margin-bottom: 1rem;">Cannabis Business Budget Template</h2>
+        <h2 style="color: var(--cbkny-black); margin-bottom: 1rem;">Cannabis Business Budget Template</h2>
         <p style="margin-bottom: 2rem;">Download our comprehensive budget planning template with cannabis-specific expense categories and revenue projections.</p>
         
         <div style="background: var(--cbkny-light-gray); padding: 1.5rem; border-radius: 0.5rem; margin-bottom: 2rem;">

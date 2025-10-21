@@ -98,7 +98,7 @@ function openResourceModal(resourceType) {
   switch(resourceType) {
     case 'compliance-checklist':
       content = `
-        <h2 style="color: var(--cbkny-pink); margin-bottom: 1rem;">NY Cannabis Tax Compliance Checklist</h2>
+        <h2 style="color: var(--cbkny-black); margin-bottom: 1rem;">NY Cannabis Tax Compliance Checklist</h2>
         <p style="margin-bottom: 2rem;">Download our comprehensive 8-page checklist covering all NY cannabis tax requirements, 280E compliance, and OCM reporting deadlines.</p>
         
         <div style="background: var(--cbkny-light-gray); padding: 1.5rem; border-radius: 0.5rem; margin-bottom: 2rem;">
@@ -126,7 +126,7 @@ function openResourceModal(resourceType) {
       
     case '280e-guide':
       content = `
-        <h2 style="color: var(--cbkny-pink); margin-bottom: 1rem;">280E Deduction Guide for Cannabis Businesses</h2>
+        <h2 style="color: var(--cbkny-black); margin-bottom: 1rem;">280E Deduction Guide for Cannabis Businesses</h2>
         <p style="margin-bottom: 2rem;">Learn how to maximize your deductions under 280E while staying fully compliant with IRS regulations.</p>
         
         <div style="background: var(--cbkny-light-gray); padding: 1.5rem; border-radius: 0.5rem; margin-bottom: 2rem;">

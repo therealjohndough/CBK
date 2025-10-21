@@ -8,7 +8,7 @@
   <section style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin: 4rem 0;">
     
     <div>
-      <h2 style="color: var(--cbkny-pink); margin-bottom: 2rem;">Get In Touch</h2>
+      <h2 style="color: var(--cbkny-black); margin-bottom: 2rem;">Get In Touch</h2>
       
       <div style="margin-bottom: 2rem;">
         <h3 style="color: var(--cbkny-black); margin-bottom: 0.5rem;">Phone</h3>
@@ -54,7 +54,7 @@
 
     <div>
       <div class="card" style="padding: 2rem;">
-        <h2 style="color: var(--cbkny-pink); margin-bottom: 1.5rem;">Contact Form</h2>
+        <h2 style="color: var(--cbkny-black); margin-bottom: 1.5rem;">Contact Form</h2>
         <form id="contact-form" style="display: grid; gap: 1rem;">
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
             <div>

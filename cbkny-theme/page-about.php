@@ -15,7 +15,7 @@
       </div>
     </div>
     <div>
-      <h2 style="color: var(--cbkny-pink); margin-bottom: 1.5rem;">Rosanna's Story</h2>
+      <h2 style="color: var(--cbkny-black); margin-bottom: 1.5rem;">Rosanna's Story</h2>
       <p style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 1.5rem;">
         I'm Rosanna St. John, a Certified Bookkeeper accredited by the National Association of Certified Public Bookkeepers. My expertise lies in serving high-compliance industries, with a specialized focus on cannabis accounting.
       </p>

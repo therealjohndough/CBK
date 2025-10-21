@@ -11,7 +11,7 @@
   <section style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin: 4rem 0;">
     
     <div>
-      <h2 style="color: var(--cbkny-pink); margin-bottom: 2rem;">What You Get</h2>
+      <h2 style="color: var(--cbkny-black); margin-bottom: 2rem;">What You Get</h2>
       
       <div style="margin-bottom: 2rem;">
         <h3 style="color: var(--cbkny-black); margin-bottom: 1rem;">Monthly Financial Processing</h3>

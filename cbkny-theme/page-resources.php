@@ -161,7 +161,7 @@ function openResourceModal(resourceType) {
   switch(resourceType) {
     case 'compliance-checklist':
       content = `
-        <h2 style="color: var(--cbkny-pink); margin-bottom: 1rem;">NY Cannabis Tax Compliance Checklist</h2>
+        <h2 style="color: var(--cbkny-black); margin-bottom: 1rem;">NY Cannabis Tax Compliance Checklist</h2>
         <p style="margin-bottom: 2rem;">Download our comprehensive 8-page checklist covering all NY cannabis tax requirements, 280E compliance, and OCM reporting deadlines.</p>
         
         <div style="background: var(--cbkny-light-gray); padding: 1.5rem; border-radius: 0.5rem; margin-bottom: 2rem;">
@@ -189,7 +189,7 @@ function openResourceModal(resourceType) {
       
     case '280e-guide':
       content = `
-        <h2 style="color: var(--cbkny-pink); margin-bottom: 1rem;">280E Deduction Guide for Cannabis Businesses</h2>
+        <h2 style="color: var(--cbkny-black); margin-bottom: 1rem;">280E Deduction Guide for Cannabis Businesses</h2>
         <p style="margin-bottom: 2rem;">Learn how to maximize your deductions under 280E while staying fully compliant with IRS regulations.</p>
         
         <div style="background: var(--cbkny-light-gray); padding: 1.5rem; border-radius: 0.5rem; margin-bottom: 2rem;">
@@ -217,7 +217,7 @@ function openResourceModal(resourceType) {
       
     case 'audit-quiz':
       content = `
-        <h2 style="color: var(--cbkny-pink); margin-bottom: 1rem;">Cannabis Business Audit Readiness Assessment</h2>
+        <h2 style="color: var(--cbkny-black); margin-bottom: 1rem;">Cannabis Business Audit Readiness Assessment</h2>
         <p style="margin-bottom: 2rem;">Take our interactive quiz to see how audit-ready your cannabis business is and get personalized recommendations.</p>
         
         <div style="background: var(--cbkny-light-gray); padding: 1.5rem; border-radius: 0.5rem; margin-bottom: 2rem;">
@@ -240,7 +240,7 @@ function openResourceModal(resourceType) {
       
     case 'cogs-template':
       content = `
-        <h2 style="color: var(--cbkny-pink); margin-bottom: 1rem;">Cannabis COGS Tracking Template</h2>
+        <h2 style="color: var(--cbkny-black); margin-bottom: 1rem;">Cannabis COGS Tracking Template</h2>
         <p style="margin-bottom: 2rem;">Download our Excel template for tracking Cost of Goods Sold, inventory, and 280E-compliant expense categorization.</p>
         
         <div style="background: var(--cbkny-light-gray); padding: 1.5rem; border-radius: 0.5rem; margin-bottom: 2rem;">
@@ -268,7 +268,7 @@ function openResourceModal(resourceType) {
       
     case 'tax-calculator':
       content = `
-        <h2 style="color: var(--cbkny-pink); margin-bottom: 1rem;">280E Tax Impact Calculator</h2>
+        <h2 style="color: var(--cbkny-black); margin-bottom: 1rem;">280E Tax Impact Calculator</h2>
         <p style="margin-bottom: 2rem;">Calculate exactly how 280E affects your tax burden and see potential savings from optimization strategies.</p>
         
         <div style="background: var(--cbkny-light-gray); padding: 1.5rem; border-radius: 0.5rem; margin-bottom: 2rem;">
