@@ -307,3 +307,62 @@ function cbkny_force_create_resource_category_pages() {
     }
 }
 add_action('init', 'cbkny_force_create_resource_category_pages');
+
+// Create legal pages on theme activation
+function cbkny_create_legal_pages() {
+    $pages = array(
+        array(
+            'title' => 'Terms of Service',
+            'slug' => 'terms-of-service',
+            'template' => 'page-terms-of-service.php'
+        ),
+        array(
+            'title' => 'Cookie Policy',
+            'slug' => 'cookie-policy',
+            'template' => 'page-cookie-policy.php'
+        ),
+        array(
+            'title' => 'Disclaimer',
+            'slug' => 'disclaimer',
+            'template' => 'page-disclaimer.php'
+        )
+    );
+
+    foreach ($pages as $page) {
+        // Check if page already exists
+        $existing_page = get_page_by_path($page['slug']);
+
+        if (!$existing_page) {
+            $page_id = wp_insert_post(array(
+                'post_title' => $page['title'],
+                'post_name' => $page['slug'],
+                'post_content' => '<!-- Content handled by page template -->',
+                'post_status' => 'publish',
+                'post_type' => 'page',
+                'post_author' => 1,
+                'meta_input' => array(
+                    '_wp_page_template' => $page['template']
+                )
+            ));
+
+            if ($page_id) {
+                // Page created successfully - don't echo during page load
+            }
+        }
+    }
+}
+add_action('after_switch_theme', 'cbkny_create_legal_pages');
+
+// Force create legal pages on theme load (one-time only)
+function cbkny_force_create_legal_pages() {
+    // Check if legal pages already exist
+    $terms_page = get_page_by_path('terms-of-service');
+    $cookie_page = get_page_by_path('cookie-policy');
+    $disclaimer_page = get_page_by_path('disclaimer');
+    
+    // Only create if they don't exist and we're in admin or doing a one-time setup
+    if ((!$terms_page || !$cookie_page || !$disclaimer_page) && (is_admin() || defined('DOING_CRON'))) {
+        cbkny_create_legal_pages();
+    }
+}
+add_action('init', 'cbkny_force_create_legal_pages');
