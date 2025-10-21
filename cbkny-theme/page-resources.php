@@ -8,7 +8,7 @@
   <section class="grid" style="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin: 4rem 0;">
     
     <div class="card" style="padding: 2rem; text-align: center;">
-      <div style="width: 80px; height: 80px; background: var(--cbkny-pink); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: var(--cbkny-white); font-size: 2rem;"><i class="fas fa-clipboard-check"></i></div>
+      <div style="display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: var(--cbkny-pink); font-size: 3rem;"><i class="fas fa-clipboard-check"></i></div>
       <h3 style="color: var(--cbkny-pink); margin-bottom: 1rem;"><?php echo esc_html(cbkny_get_option('cbkny_lead_magnet_1_title', 'NY Cannabis Tax Compliance Checklist')); ?></h3>
       <p style="margin-bottom: 1.5rem;"><?php echo esc_html(cbkny_get_option('cbkny_lead_magnet_1_description', 'A comprehensive checklist covering all NY cannabis tax requirements, 280E compliance, and OCM reporting deadlines.')); ?></p>
       <ul style="text-align: left; margin-bottom: 2rem; font-size: 0.9rem; list-style: none; padding-left: 0;">
@@ -21,7 +21,7 @@
     </div>
 
     <div class="card" style="padding: 2rem; text-align: center;">
-      <div style="width: 80px; height: 80px; background: var(--cbkny-pink); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: var(--cbkny-white); font-size: 2rem;"><i class="fas fa-chart-line"></i></div>
+      <div style="display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: var(--cbkny-pink); font-size: 3rem;"><i class="fas fa-chart-line"></i></div>
       <h3 style="color: var(--cbkny-pink); margin-bottom: 1rem;"><?php echo esc_html(cbkny_get_option('cbkny_lead_magnet_2_title', '280E Deduction Guide for Cannabis Businesses')); ?></h3>
       <p style="margin-bottom: 1.5rem;"><?php echo esc_html(cbkny_get_option('cbkny_lead_magnet_2_description', 'Learn how to maximize your deductions under 280E while staying fully compliant with IRS regulations.')); ?></p>
       <ul style="text-align: left; margin-bottom: 2rem; font-size: 0.9rem; list-style: none; padding-left: 0;">
@@ -34,7 +34,7 @@
     </div>
 
     <div class="card" style="padding: 2rem; text-align: center;">
-      <div style="width: 80px; height: 80px; background: var(--cbkny-pink); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: var(--cbkny-white); font-size: 2rem;"><i class="fas fa-search-plus"></i></div>
+      <div style="display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: var(--cbkny-pink); font-size: 3rem;"><i class="fas fa-search-plus"></i></div>
       <h3 style="color: var(--cbkny-pink); margin-bottom: 1rem;">Cannabis Business Audit Readiness Assessment</h3>
       <p style="margin-bottom: 1.5rem;">Take our interactive quiz to see how audit-ready your cannabis business is and get personalized recommendations.</p>
       <ul style="text-align: left; margin-bottom: 2rem; font-size: 0.9rem; list-style: none; padding-left: 0;">
@@ -47,7 +47,7 @@
     </div>
 
     <div class="card" style="padding: 2rem; text-align: center;">
-      <div style="width: 80px; height: 80px; background: var(--cbkny-pink); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: var(--cbkny-white); font-size: 2rem;"><i class="fas fa-file-excel"></i></div>
+      <div style="display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: var(--cbkny-pink); font-size: 3rem;"><i class="fas fa-file-excel"></i></div>
       <h3 style="color: var(--cbkny-pink); margin-bottom: 1rem;">Cannabis COGS Tracking Template</h3>
       <p style="margin-bottom: 1.5rem;">Download our Excel template for tracking Cost of Goods Sold, inventory, and 280E-compliant expense categorization.</p>
       <ul style="text-align: left; margin-bottom: 2rem; font-size: 0.9rem; list-style: none; padding-left: 0;">
@@ -60,7 +60,7 @@
     </div>
 
     <div class="card" style="padding: 2rem; text-align: center;">
-      <div style="width: 80px; height: 80px; background: var(--cbkny-pink); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: var(--cbkny-white); font-size: 2rem;"><i class="fas fa-calculator"></i></div>
+      <div style="display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: var(--cbkny-pink); font-size: 3rem;"><i class="fas fa-calculator"></i></div>
       <h3 style="color: var(--cbkny-pink); margin-bottom: 1rem;">280E Tax Impact Calculator</h3>
       <p style="margin-bottom: 1.5rem;">Calculate exactly how 280E affects your tax burden and see potential savings from optimization strategies.</p>
       <ul style="text-align: left; margin-bottom: 2rem; font-size: 0.9rem; list-style: none; padding-left: 0;">

@@ -14,12 +14,12 @@
     </div>
 
     <!-- Quiz Content -->
-    <div class="quiz-content" style="padding: 3rem;">
+    <div class="quiz-content" style="padding: 2rem;">
       
       <!-- Welcome Screen -->
       <div id="welcomeScreen" class="quiz-screen">
         <div style="text-align: center; margin-bottom: 2rem;">
-          <div style="width: 100px; height: 100px; background: var(--cbkny-pink); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; color: white; font-size: 3rem;">
+          <div style="display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; color: var(--cbkny-pink); font-size: 4rem;">
             <i class="fas fa-search-plus"></i>
           </div>
           <h2 style="color: var(--cbkny-black); margin-bottom: 1rem;">Audit Readiness Assessment</h2>
@@ -75,9 +75,9 @@
         <div style="background: var(--cbkny-light-gray); padding: 2rem; border-radius: 0.5rem; margin-bottom: 2rem;">
           <h3 style="color: var(--cbkny-black); margin-bottom: 1rem;">Next Steps</h3>
           <p style="margin-bottom: 1.5rem;">Based on your assessment, we recommend scheduling a free consultation to discuss your specific needs.</p>
-          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-            <a href="/contact" class="btn btn-primary">Schedule Free Consultation</a>
-            <a href="/resources" class="btn" style="background: var(--cbkny-gray); color: white;">View More Resources</a>
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
+            <a href="/contact" class="btn btn-primary" style="flex: 1; min-width: 200px; text-align: center;">Schedule Free Consultation</a>
+            <a href="/resources" class="btn" style="background: var(--cbkny-gray); color: white; flex: 1; min-width: 200px; text-align: center;">View More Resources</a>
           </div>
         </div>
 
@@ -251,13 +251,13 @@ function showQuestion(index) {
         `).join('')}
       </div>
       
-      <div style="margin-top: 2rem; display: flex; justify-content: space-between; align-items: center;">
+      <div style="margin-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
         <button id="prevBtn" ${index === 0 ? 'disabled' : ''} 
-                style="padding: 0.75rem 1.5rem; border: 2px solid var(--cbkny-gray); background: white; color: var(--cbkny-gray); border-radius: 0.5rem; cursor: pointer;"
+                style="padding: 0.75rem 1.5rem; border: 2px solid var(--cbkny-gray); background: white; color: var(--cbkny-gray); border-radius: 0.5rem; cursor: pointer; flex-shrink: 0;"
                 ${index === 0 ? 'disabled' : ''}>
           Previous
         </button>
-        <span style="color: var(--cbkny-gray); font-size: 0.9rem;">
+        <span style="color: var(--cbkny-gray); font-size: 0.9rem; flex-grow: 1; text-align: center;">
           ${index + 1} of ${quizData.questions.length}
         </span>
       </div>
