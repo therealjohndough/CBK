@@ -8,66 +8,66 @@
   <section class="grid" style="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin: 4rem 0;">
     
     <div class="card" style="padding: 2rem; text-align: center;">
-      <div style="width: 80px; height: 80px; background: var(--cbkny-pink); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: var(--cbkny-white); font-size: 2rem;">📋</div>
+      <div style="width: 80px; height: 80px; background: var(--cbkny-pink); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: var(--cbkny-white); font-size: 2rem;"><i class="fas fa-clipboard-check"></i></div>
       <h3 style="color: var(--cbkny-pink); margin-bottom: 1rem;"><?php echo esc_html(cbkny_get_option('cbkny_lead_magnet_1_title', 'NY Cannabis Tax Compliance Checklist')); ?></h3>
       <p style="margin-bottom: 1.5rem;"><?php echo esc_html(cbkny_get_option('cbkny_lead_magnet_1_description', 'A comprehensive checklist covering all NY cannabis tax requirements, 280E compliance, and OCM reporting deadlines.')); ?></p>
-      <ul style="text-align: left; margin-bottom: 2rem; font-size: 0.9rem;">
-        <li>✓ 280E deduction guidelines</li>
-        <li>✓ OCM reporting requirements</li>
-        <li>✓ Quarterly tax deadlines</li>
-        <li>✓ Audit preparation checklist</li>
+      <ul style="text-align: left; margin-bottom: 2rem; font-size: 0.9rem; list-style: none; padding-left: 0;">
+        <li style="margin-bottom: 0.5rem;">✓ 280E deduction guidelines</li>
+        <li style="margin-bottom: 0.5rem;">✓ OCM reporting requirements</li>
+        <li style="margin-bottom: 0.5rem;">✓ Quarterly tax deadlines</li>
+        <li style="margin-bottom: 0.5rem;">✓ Audit preparation checklist</li>
       </ul>
       <button class="btn btn-primary" onclick="openResourceModal('compliance-checklist')" style="width: 100%;">View & Download Guide</button>
     </div>
 
     <div class="card" style="padding: 2rem; text-align: center;">
-      <div style="width: 80px; height: 80px; background: var(--cbkny-pink); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: var(--cbkny-white); font-size: 2rem;">📊</div>
+      <div style="width: 80px; height: 80px; background: var(--cbkny-pink); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: var(--cbkny-white); font-size: 2rem;"><i class="fas fa-chart-line"></i></div>
       <h3 style="color: var(--cbkny-pink); margin-bottom: 1rem;"><?php echo esc_html(cbkny_get_option('cbkny_lead_magnet_2_title', '280E Deduction Guide for Cannabis Businesses')); ?></h3>
       <p style="margin-bottom: 1.5rem;"><?php echo esc_html(cbkny_get_option('cbkny_lead_magnet_2_description', 'Learn how to maximize your deductions under 280E while staying fully compliant with IRS regulations.')); ?></p>
-      <ul style="text-align: left; margin-bottom: 2rem; font-size: 0.9rem;">
-        <li>✓ Deductible vs non-deductible expenses</li>
-        <li>✓ COGS calculation methods</li>
-        <li>✓ Multi-entity strategies</li>
-        <li>✓ Audit defense tactics</li>
+      <ul style="text-align: left; margin-bottom: 2rem; font-size: 0.9rem; list-style: none; padding-left: 0;">
+        <li style="margin-bottom: 0.5rem;">✓ Deductible vs non-deductible expenses</li>
+        <li style="margin-bottom: 0.5rem;">✓ COGS calculation methods</li>
+        <li style="margin-bottom: 0.5rem;">✓ Multi-entity strategies</li>
+        <li style="margin-bottom: 0.5rem;">✓ Audit defense tactics</li>
       </ul>
       <button class="btn btn-primary" onclick="openResourceModal('280e-guide')" style="width: 100%;">View & Download Guide</button>
     </div>
 
     <div class="card" style="padding: 2rem; text-align: center;">
-      <div style="width: 80px; height: 80px; background: var(--cbkny-pink); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: var(--cbkny-white); font-size: 2rem;">🔍</div>
+      <div style="width: 80px; height: 80px; background: var(--cbkny-pink); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: var(--cbkny-white); font-size: 2rem;"><i class="fas fa-search-plus"></i></div>
       <h3 style="color: var(--cbkny-pink); margin-bottom: 1rem;">Cannabis Business Audit Readiness Assessment</h3>
       <p style="margin-bottom: 1.5rem;">Take our interactive quiz to see how audit-ready your cannabis business is and get personalized recommendations.</p>
-      <ul style="text-align: left; margin-bottom: 2rem; font-size: 0.9rem;">
-        <li>✓ 10-question assessment</li>
-        <li>✓ Instant results & recommendations</li>
-        <li>✓ Priority action items</li>
-        <li>✓ Compliance score</li>
+      <ul style="text-align: left; margin-bottom: 2rem; font-size: 0.9rem; list-style: none; padding-left: 0;">
+        <li style="margin-bottom: 0.5rem;">✓ 10-question assessment</li>
+        <li style="margin-bottom: 0.5rem;">✓ Instant results & recommendations</li>
+        <li style="margin-bottom: 0.5rem;">✓ Priority action items</li>
+        <li style="margin-bottom: 0.5rem;">✓ Compliance score</li>
       </ul>
       <button class="btn btn-primary" onclick="openResourceModal('audit-quiz')" style="width: 100%;">Take Assessment</button>
     </div>
 
     <div class="card" style="padding: 2rem; text-align: center;">
-      <div style="width: 80px; height: 80px; background: var(--cbkny-pink); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: var(--cbkny-white); font-size: 2rem;">📈</div>
+      <div style="width: 80px; height: 80px; background: var(--cbkny-pink); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: var(--cbkny-white); font-size: 2rem;"><i class="fas fa-file-excel"></i></div>
       <h3 style="color: var(--cbkny-pink); margin-bottom: 1rem;">Cannabis COGS Tracking Template</h3>
       <p style="margin-bottom: 1.5rem;">Download our Excel template for tracking Cost of Goods Sold, inventory, and 280E-compliant expense categorization.</p>
-      <ul style="text-align: left; margin-bottom: 2rem; font-size: 0.9rem;">
-        <li>✓ Pre-built Excel formulas</li>
-        <li>✓ 280E-compliant categories</li>
-        <li>✓ Monthly tracking sheets</li>
-        <li>✓ Year-end summary reports</li>
+      <ul style="text-align: left; margin-bottom: 2rem; font-size: 0.9rem; list-style: none; padding-left: 0;">
+        <li style="margin-bottom: 0.5rem;">✓ Pre-built Excel formulas</li>
+        <li style="margin-bottom: 0.5rem;">✓ 280E-compliant categories</li>
+        <li style="margin-bottom: 0.5rem;">✓ Monthly tracking sheets</li>
+        <li style="margin-bottom: 0.5rem;">✓ Year-end summary reports</li>
       </ul>
       <button class="btn btn-primary" onclick="downloadResource('cogs-template')" style="width: 100%;">Download Template</button>
     </div>
 
     <div class="card" style="padding: 2rem; text-align: center;">
-      <div style="width: 80px; height: 80px; background: var(--cbkny-pink); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: var(--cbkny-white); font-size: 2rem;">🧮</div>
+      <div style="width: 80px; height: 80px; background: var(--cbkny-pink); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: var(--cbkny-white); font-size: 2rem;"><i class="fas fa-calculator"></i></div>
       <h3 style="color: var(--cbkny-pink); margin-bottom: 1rem;">280E Tax Impact Calculator</h3>
       <p style="margin-bottom: 1.5rem;">Calculate exactly how 280E affects your tax burden and see potential savings from optimization strategies.</p>
-      <ul style="text-align: left; margin-bottom: 2rem; font-size: 0.9rem;">
-        <li>✓ Real-time tax calculations</li>
-        <li>✓ 280E impact analysis</li>
-        <li>✓ Multi-entity savings calculator</li>
-        <li>✓ Visual tax breakdown charts</li>
+      <ul style="text-align: left; margin-bottom: 2rem; font-size: 0.9rem; list-style: none; padding-left: 0;">
+        <li style="margin-bottom: 0.5rem;">✓ Real-time tax calculations</li>
+        <li style="margin-bottom: 0.5rem;">✓ 280E impact analysis</li>
+        <li style="margin-bottom: 0.5rem;">✓ Multi-entity savings calculator</li>
+        <li style="margin-bottom: 0.5rem;">✓ Visual tax breakdown charts</li>
       </ul>
       <button class="btn btn-primary" onclick="openResourceModal('tax-calculator')" style="width: 100%;">Use Calculator</button>
     </div>

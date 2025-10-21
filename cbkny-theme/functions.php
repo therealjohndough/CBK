@@ -77,6 +77,12 @@ function cbkny_enqueue_lottie_loader() {
 }
 add_action('wp_enqueue_scripts', 'cbkny_enqueue_lottie_loader');
 
+// Enqueue Font Awesome
+function cbkny_enqueue_fontawesome() {
+    wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css', array(), '6.4.0');
+}
+add_action('wp_enqueue_scripts', 'cbkny_enqueue_fontawesome');
+
 // Create download pages on theme activation
 function cbkny_create_download_pages() {
     $pages = array(
