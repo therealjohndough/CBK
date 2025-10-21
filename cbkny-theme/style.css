@@ -197,6 +197,20 @@ input:focus, textarea:focus, select:focus {
   transition: opacity 0.3s ease;
 }
 
+/* About page specific styles */
+.about-photo {
+  width: 100%;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.about-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .header .container {
@@ -211,6 +225,17 @@ input:focus, textarea:focus, select:focus {
   
   .site-branding img {
     margin: 0 !important;
+  }
+
+  /* About page responsive layout */
+  .about-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+
+  .about-grid .about-photo {
+    max-width: 300px;
+    margin: 0 auto;
   }
   
   .menu {

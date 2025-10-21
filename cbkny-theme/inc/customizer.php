@@ -318,6 +318,18 @@ function cbkny_customize_register($wp_customize) {
     'type' => 'textarea',
   ]);
 
+  // About page photo
+  $wp_customize->add_setting('cbkny_about_photo_url', [
+    'default' => 'http://johnd501.sg-host.com/wp-content/uploads/2025/10/Rosanna-St-John-Canna-Bookkeeper-New-York-Cannabis-Industry.webp',
+    'sanitize_callback' => 'esc_url_raw',
+  ]);
+  $wp_customize->add_control('cbkny_about_photo_url', [
+    'label' => 'About Page Photo URL',
+    'section' => 'cbkny_about',
+    'type' => 'url',
+    'description' => 'Upload a professional photo and paste the URL here',
+  ]);
+
   // === LEAD MAGNETS SECTION ===
   $wp_customize->add_section('cbkny_lead_magnets', [
     'title' => 'Lead Magnets',
