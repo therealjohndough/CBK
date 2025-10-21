@@ -83,6 +83,24 @@ function cbkny_enqueue_fontawesome() {
 }
 add_action('wp_enqueue_scripts', 'cbkny_enqueue_fontawesome');
 
+// Add dynamic CSS from customizer
+function cbkny_customizer_css() {
+    $primary_color = get_theme_mod('cbkny_primary_color', '#F8BBD9');
+    $secondary_color = get_theme_mod('cbkny_secondary_color', '#FFFFFF');
+    $text_color = get_theme_mod('cbkny_text_color', '#000000');
+    
+    $css = "
+    :root {
+        --cbkny-pink: {$primary_color};
+        --cbkny-white: {$secondary_color};
+        --cbkny-black: {$text_color};
+    }
+    ";
+    
+    wp_add_inline_style('cbkny-style', $css);
+}
+add_action('wp_enqueue_scripts', 'cbkny_customizer_css');
+
 // Create download pages on theme activation
 function cbkny_create_download_pages() {
     $pages = array(

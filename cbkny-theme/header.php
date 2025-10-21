@@ -11,8 +11,7 @@
 <header class="header">
   <div class="container" style="display:flex; align-items:center; justify-content:space-between; padding: 1rem 0;">
     <a href="<?php echo esc_url(home_url('/')); ?>" class="site-branding" style="display: flex; align-items: center; text-decoration: none;">
-      <img src="http://johnd501.sg-host.com/wp-content/uploads/2025/10/cbk-logo.webp" alt="<?php echo esc_attr(cbkny_get_option('cbkny_business_name', 'Canna Bookkeeper™ NY')); ?>" style="height: 60px; max-height: 60px; width: auto; margin-right: 0.5rem;">
-      <span class="site-title" style="font-weight:700; color: var(--cbkny-black);"><?php echo esc_html(cbkny_get_option('cbkny_business_name', 'Canna Bookkeeper™ NY')); ?></span>
+      <img src="<?php echo esc_url(cbkny_get_option('cbkny_logo_url', 'http://johnd501.sg-host.com/wp-content/uploads/2025/10/cbk-logo.webp')); ?>" alt="<?php echo esc_attr(cbkny_get_option('cbkny_business_name', 'Canna Bookkeeper™ NY')); ?>" style="height: <?php echo esc_attr(cbkny_get_option('cbkny_logo_height', '60')); ?>px; max-height: <?php echo esc_attr(cbkny_get_option('cbkny_logo_height', '60')); ?>px; width: auto;">
     </a>
     <nav aria-label="<?php esc_attr_e('Primary', 'cbkny'); ?>">
       <?php 

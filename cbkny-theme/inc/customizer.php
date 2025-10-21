@@ -109,6 +109,33 @@ function cbkny_customize_register($wp_customize) {
     'type' => 'text',
   ]);
 
+  // Logo Settings
+  $wp_customize->add_setting('cbkny_logo_url', [
+    'default' => 'http://johnd501.sg-host.com/wp-content/uploads/2025/10/cbk-logo.webp',
+    'sanitize_callback' => 'esc_url_raw',
+  ]);
+  $wp_customize->add_control('cbkny_logo_url', [
+    'label' => 'Logo URL',
+    'section' => 'cbkny_business_info',
+    'type' => 'url',
+    'description' => 'Upload your logo and paste the URL here',
+  ]);
+
+  $wp_customize->add_setting('cbkny_logo_height', [
+    'default' => '60',
+    'sanitize_callback' => 'absint',
+  ]);
+  $wp_customize->add_control('cbkny_logo_height', [
+    'label' => 'Logo Height (px)',
+    'section' => 'cbkny_business_info',
+    'type' => 'number',
+    'input_attrs' => [
+      'min' => 30,
+      'max' => 120,
+      'step' => 5,
+    ],
+  ]);
+
   $wp_customize->add_setting('cbkny_phone', [
     'default' => '(716) XXX-XXXX',
     'sanitize_callback' => 'sanitize_text_field',
@@ -329,6 +356,151 @@ function cbkny_customize_register($wp_customize) {
   $wp_customize->add_control('cbkny_facebook_url', [
     'label' => 'Facebook URL',
     'section' => 'cbkny_social',
+    'type' => 'url',
+  ]);
+
+  // === BRANDING & COLORS SECTION ===
+  $wp_customize->add_section('cbkny_branding', [
+    'title' => 'Branding & Colors',
+    'panel' => 'cbkny_options',
+    'priority' => 70,
+  ]);
+
+  $wp_customize->add_setting('cbkny_primary_color', [
+    'default' => '#F8BBD9',
+    'sanitize_callback' => 'sanitize_hex_color',
+  ]);
+  $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'cbkny_primary_color', [
+    'label' => 'Primary Color (Pink)',
+    'section' => 'cbkny_branding',
+  ]));
+
+  $wp_customize->add_setting('cbkny_secondary_color', [
+    'default' => '#FFFFFF',
+    'sanitize_callback' => 'sanitize_hex_color',
+  ]);
+  $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'cbkny_secondary_color', [
+    'label' => 'Secondary Color (White)',
+    'section' => 'cbkny_branding',
+  ]));
+
+  $wp_customize->add_setting('cbkny_text_color', [
+    'default' => '#000000',
+    'sanitize_callback' => 'sanitize_hex_color',
+  ]);
+  $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'cbkny_text_color', [
+    'label' => 'Text Color (Black)',
+    'section' => 'cbkny_branding',
+  ]));
+
+  // === CONTACT SECTION ===
+  $wp_customize->add_section('cbkny_contact', [
+    'title' => 'Contact Information',
+    'panel' => 'cbkny_options',
+    'priority' => 80,
+  ]);
+
+  $wp_customize->add_setting('cbkny_contact_form_title', [
+    'default' => 'Get Your Free Consultation',
+    'sanitize_callback' => 'sanitize_text_field',
+  ]);
+  $wp_customize->add_control('cbkny_contact_form_title', [
+    'label' => 'Contact Form Title',
+    'section' => 'cbkny_contact',
+    'type' => 'text',
+  ]);
+
+  $wp_customize->add_setting('cbkny_contact_form_subtitle', [
+    'default' => 'Ready to get your cannabis business audit-ready? Let\'s talk.',
+    'sanitize_callback' => 'sanitize_textarea_field',
+  ]);
+  $wp_customize->add_control('cbkny_contact_form_subtitle', [
+    'label' => 'Contact Form Subtitle',
+    'section' => 'cbkny_contact',
+    'type' => 'textarea',
+  ]);
+
+  $wp_customize->add_setting('cbkny_contact_button_text', [
+    'default' => 'Send Message',
+    'sanitize_callback' => 'sanitize_text_field',
+  ]);
+  $wp_customize->add_control('cbkny_contact_button_text', [
+    'label' => 'Contact Button Text',
+    'section' => 'cbkny_contact',
+    'type' => 'text',
+  ]);
+
+  // === FOOTER SECTION ===
+  $wp_customize->add_section('cbkny_footer', [
+    'title' => 'Footer Settings',
+    'panel' => 'cbkny_options',
+    'priority' => 90,
+  ]);
+
+  $wp_customize->add_setting('cbkny_footer_text', [
+    'default' => '© 2024 Canna Bookkeeper™ NY. All rights reserved. | Professional cannabis accounting services in New York.',
+    'sanitize_callback' => 'sanitize_textarea_field',
+  ]);
+  $wp_customize->add_control('cbkny_footer_text', [
+    'label' => 'Footer Copyright Text',
+    'section' => 'cbkny_footer',
+    'type' => 'textarea',
+  ]);
+
+  $wp_customize->add_setting('cbkny_footer_disclaimer', [
+    'default' => 'This website and its content are for informational purposes only and do not constitute professional advice.',
+    'sanitize_callback' => 'sanitize_textarea_field',
+  ]);
+  $wp_customize->add_control('cbkny_footer_disclaimer', [
+    'label' => 'Footer Disclaimer',
+    'section' => 'cbkny_footer',
+    'type' => 'textarea',
+  ]);
+
+  // === CALL-TO-ACTION SECTION ===
+  $wp_customize->add_section('cbkny_cta', [
+    'title' => 'Call-to-Action Sections',
+    'panel' => 'cbkny_options',
+    'priority' => 100,
+  ]);
+
+  $wp_customize->add_setting('cbkny_cta_title', [
+    'default' => 'Ready to Get Started?',
+    'sanitize_callback' => 'sanitize_text_field',
+  ]);
+  $wp_customize->add_control('cbkny_cta_title', [
+    'label' => 'CTA Title',
+    'section' => 'cbkny_cta',
+    'type' => 'text',
+  ]);
+
+  $wp_customize->add_setting('cbkny_cta_subtitle', [
+    'default' => 'Book your free consultation today and take the first step toward audit-ready bookkeeping.',
+    'sanitize_callback' => 'sanitize_textarea_field',
+  ]);
+  $wp_customize->add_control('cbkny_cta_subtitle', [
+    'label' => 'CTA Subtitle',
+    'section' => 'cbkny_cta',
+    'type' => 'textarea',
+  ]);
+
+  $wp_customize->add_setting('cbkny_cta_button_text', [
+    'default' => 'Schedule Free Consultation',
+    'sanitize_callback' => 'sanitize_text_field',
+  ]);
+  $wp_customize->add_control('cbkny_cta_button_text', [
+    'label' => 'CTA Button Text',
+    'section' => 'cbkny_cta',
+    'type' => 'text',
+  ]);
+
+  $wp_customize->add_setting('cbkny_cta_button_link', [
+    'default' => '/contact',
+    'sanitize_callback' => 'esc_url_raw',
+  ]);
+  $wp_customize->add_control('cbkny_cta_button_link', [
+    'label' => 'CTA Button Link',
+    'section' => 'cbkny_cta',
     'type' => 'url',
   ]);
 }
