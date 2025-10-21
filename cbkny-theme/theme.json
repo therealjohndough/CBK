@@ -1,0 +1,60 @@
+{
+  "version": 2,
+  "settings": {
+    "layout": {
+      "contentSize": "720px",
+      "wideSize": "1120px"
+    },
+    "color": {
+      "palette": [
+        {
+          "slug": "ink",
+          "name": "Ink",
+          "color": "#0f172a"
+        },
+        {
+          "slug": "leaf",
+          "name": "Leaf",
+          "color": "#1b5e20"
+        },
+        {
+          "slug": "mist",
+          "name": "Mist",
+          "color": "#f8fafc"
+        },
+        {
+          "slug": "accent",
+          "name": "Accent",
+          "color": "#2563eb"
+        }
+      ]
+    },
+    "typography": {
+      "fontFamilies": [
+        {
+          "fontFamily": "system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial",
+          "slug": "system",
+          "name": "System"
+        }
+      ]
+    }
+  },
+  "styles": {
+    "color": {
+      "text": "#0f172a",
+      "background": "#ffffff"
+    },
+    "elements": {
+      "heading": {
+        "typography": {
+          "fontWeight": "700"
+        }
+      },
+      "link": {
+        "color": {
+          "text": "#2563eb"
+        }
+      }
+    }
+  }
+}
