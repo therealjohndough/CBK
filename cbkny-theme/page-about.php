@@ -44,8 +44,16 @@
   </section>
 
   <section style="margin: 4rem 0;">
-    <h2 style="text-align: center; color: var(--cbkny-black); margin-bottom: 3rem;">Professional Associations</h2>
+    <h2 style="text-align: center; color: var(--cbkny-black); margin-bottom: 3rem;">Professional Associations & Leadership</h2>
     <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+      <div style="text-align: center; padding: 2rem; border: 2px solid var(--cbkny-pink); border-radius: 1rem;">
+        <h4 style="color: var(--cbkny-pink); margin-bottom: 1rem;">Buffalo Cannabis Network</h4>
+        <p><strong>Finance Chair</strong> - Leading financial oversight and strategic planning for Buffalo's premier cannabis industry network.</p>
+      </div>
+      <div style="text-align: center; padding: 2rem; border: 2px solid var(--cbkny-pink); border-radius: 1rem;">
+        <h4 style="color: var(--cbkny-pink); margin-bottom: 1rem;">AAF (Association of Accounting Firms)</h4>
+        <p><strong>Finance Chair</strong> - Managing financial operations and strategic initiatives for the accounting professionals association.</p>
+      </div>
       <div style="text-align: center; padding: 2rem; border: 2px solid var(--cbkny-pink); border-radius: 1rem;">
         <h4 style="color: var(--cbkny-pink); margin-bottom: 1rem;">NY Cannabis Growers & Processors Association</h4>
         <p>Active member supporting the growth and development of New York's cannabis industry.</p>
