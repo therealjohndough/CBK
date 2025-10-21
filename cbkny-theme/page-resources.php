@@ -17,7 +17,14 @@
         <li>✓ Quarterly tax deadlines</li>
         <li>✓ Audit preparation checklist</li>
       </ul>
-      <a href="/ny-cannabis-compliance-checklist" class="btn btn-primary" style="width: 100%; display: inline-block; text-align: center;">Download Free Guide</a>
+      <form id="download-form-checklist" class="cbkny-download-form" data-file-id="compliance-checklist" style="display: flex; flex-direction: column; gap: 1rem;">
+        <input type="email" placeholder="Enter your email" required style="padding: 0.75rem; border: 2px solid #ddd; border-radius: 0.5rem;">
+        <input type="text" placeholder="Business name" style="padding: 0.75rem; border: 2px solid #ddd; border-radius: 0.5rem;">
+        <label style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">
+          <input type="checkbox" required> I agree to receive cannabis accounting tips and updates
+        </label>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Download Free Guide</button>
+      </form>
     </div>
 
     <div class="card" style="padding: 2rem; text-align: center;">
@@ -30,7 +37,14 @@
         <li>✓ Multi-entity strategies</li>
         <li>✓ Audit defense tactics</li>
       </ul>
-      <a href="/280e-deduction-guide" class="btn btn-primary" style="width: 100%; display: inline-block; text-align: center;">Download Free Guide</a>
+      <form id="download-form-guide" class="cbkny-download-form" data-file-id="280e-guide" style="display: flex; flex-direction: column; gap: 1rem;">
+        <input type="email" placeholder="Enter your email" required style="padding: 0.75rem; border: 2px solid #ddd; border-radius: 0.5rem;">
+        <input type="text" placeholder="Business name" style="padding: 0.75rem; border: 2px solid #ddd; border-radius: 0.5rem;">
+        <label style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">
+          <input type="checkbox" required> I agree to receive cannabis accounting tips and updates
+        </label>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Download Free Guide</button>
+      </form>
     </div>
 
     <div class="card" style="padding: 2rem; text-align: center;">
@@ -43,7 +57,7 @@
         <li>✓ Priority action items</li>
         <li>✓ Compliance score</li>
       </ul>
-      <a href="/audit-readiness-quiz" class="btn btn-primary" style="width: 100%; display: inline-block; text-align: center;">Take Assessment</a>
+      <button class="btn btn-primary" onclick="startAssessment()" style="width: 100%;">Take Assessment</button>
     </div>
 
     <div class="card" style="padding: 2rem; text-align: center;">
@@ -69,7 +83,7 @@
         <li>✓ Multi-entity savings calculator</li>
         <li>✓ Visual tax breakdown charts</li>
       </ul>
-      <a href="/280e-tax-calculator" class="btn btn-primary" style="width: 100%; display: inline-block; text-align: center;">Use Calculator</a>
+      <button class="btn btn-primary" onclick="startCalculator()" style="width: 100%;">Use Calculator</button>
     </div>
   </section>
 
@@ -139,6 +153,11 @@ function downloadResource(resourceType) {
 function startAssessment() {
   // This would redirect to the assessment quiz
   alert('Assessment quiz coming soon! For now, please contact us for a free consultation.');
+}
+
+function startCalculator() {
+  // This would redirect to the calculator
+  alert('280E Tax Calculator coming soon! For now, please contact us for a free consultation.');
 }
 </script>
 

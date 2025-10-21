@@ -127,6 +127,21 @@ function cbkny_create_download_pages() {
 }
 add_action('after_switch_theme', 'cbkny_create_download_pages');
 
+// Force create pages on theme load (one-time only)
+function cbkny_force_create_pages() {
+    // Check if pages already exist
+    $checklist_page = get_page_by_path('ny-cannabis-compliance-checklist');
+    $guide_page = get_page_by_path('280e-deduction-guide');
+    $quiz_page = get_page_by_path('audit-readiness-quiz');
+    $calculator_page = get_page_by_path('280e-tax-calculator');
+    
+    // Only create if they don't exist
+    if (!$checklist_page || !$guide_page || !$quiz_page || !$calculator_page) {
+        cbkny_create_download_pages();
+    }
+}
+add_action('init', 'cbkny_force_create_pages');
+
 // Add admin menu for page creation
 function cbkny_add_admin_menu() {
     add_management_page(
@@ -142,13 +157,24 @@ add_action('admin_menu', 'cbkny_add_admin_menu');
 // Admin page for creating download pages
 function cbkny_create_pages_admin_page() {
     if (isset($_POST['create_pages'])) {
-        cbkny_create_download_pages();
-        echo '<div class="notice notice-success"><p>Download pages created successfully!</p></div>';
+        $result = cbkny_create_download_pages();
+        if ($result) {
+            echo '<div class="notice notice-success"><p>Download pages created successfully!</p></div>';
+        } else {
+            echo '<div class="notice notice-error"><p>Some pages may already exist or there was an error.</p></div>';
+        }
     }
     
     echo '<div class="wrap">';
     echo '<h1>Create Download Pages</h1>';
     echo '<p>Click the button below to create the download pages for your lead magnets.</p>';
+    echo '<p><strong>Pages to be created:</strong></p>';
+    echo '<ul>';
+    echo '<li><a href="/ny-cannabis-compliance-checklist" target="_blank">NY Cannabis Tax Compliance Checklist</a></li>';
+    echo '<li><a href="/280e-deduction-guide" target="_blank">280E Deduction Guide</a></li>';
+    echo '<li><a href="/audit-readiness-quiz" target="_blank">Audit Readiness Quiz</a></li>';
+    echo '<li><a href="/280e-tax-calculator" target="_blank">280E Tax Calculator</a></li>';
+    echo '</ul>';
     echo '<form method="post">';
     echo '<input type="submit" name="create_pages" class="button button-primary" value="Create Download Pages">';
     echo '</form>';
