@@ -151,20 +151,20 @@ function cbkny_create_download_pages() {
 }
 add_action('after_switch_theme', 'cbkny_create_download_pages');
 
-// Force create pages on theme load (one-time only)
-function cbkny_force_create_pages() {
-    // Check if pages already exist
-    $checklist_page = get_page_by_path('ny-cannabis-compliance-checklist');
-    $guide_page = get_page_by_path('280e-deduction-guide');
-    $quiz_page = get_page_by_path('audit-readiness-quiz');
-    $calculator_page = get_page_by_path('280e-tax-calculator');
-    
-    // Only create if they don't exist and we're in admin or doing a one-time setup
-    if ((!$checklist_page || !$guide_page || !$quiz_page || !$calculator_page) && (is_admin() || defined('DOING_CRON'))) {
-        cbkny_create_download_pages();
-    }
-}
-add_action('init', 'cbkny_force_create_pages');
+// DISABLED - Force create pages on theme load (one-time only)
+// function cbkny_force_create_pages() {
+//     // Check if pages already exist
+//     $checklist_page = get_page_by_path('ny-cannabis-compliance-checklist');
+//     $guide_page = get_page_by_path('280e-deduction-guide');
+//     $quiz_page = get_page_by_path('audit-readiness-quiz');
+//     $calculator_page = get_page_by_path('280e-tax-calculator');
+//     
+//     // Only create if they don't exist and we're in admin or doing a one-time setup
+//     if ((!$checklist_page || !$guide_page || !$quiz_page || !$calculator_page) && (is_admin() || defined('DOING_CRON'))) {
+//         cbkny_create_download_pages();
+//     }
+// }
+// add_action('init', 'cbkny_force_create_pages');
 
 // Fix resources page slug typo
 function cbkny_fix_resources_slug() {
@@ -302,19 +302,19 @@ function cbkny_create_resource_category_pages() {
     }
 }
 
-// Force create resource category pages on theme load (one-time only)
-function cbkny_force_create_resource_category_pages() {
-    // Check if category pages already exist
-    $free_guides_page = get_page_by_path('free-guides');
-    $templates_page = get_page_by_path('templates');
-    $assessment_tools_page = get_page_by_path('assessment-tools');
-    
-    // Only create if they don't exist and we're in admin or doing a one-time setup
-    if ((!$free_guides_page || !$templates_page || !$assessment_tools_page) && (is_admin() || defined('DOING_CRON'))) {
-        cbkny_create_resource_category_pages();
-    }
-}
-add_action('init', 'cbkny_force_create_resource_category_pages');
+// DISABLED - Force create resource category pages on theme load (one-time only)
+// function cbkny_force_create_resource_category_pages() {
+//     // Check if category pages already exist
+//     $free_guides_page = get_page_by_path('free-guides');
+//     $templates_page = get_page_by_path('templates');
+//     $assessment_tools_page = get_page_by_path('assessment-tools');
+//     
+//     // Only create if they don't exist and we're in admin or doing a one-time setup
+//     if ((!$free_guides_page || !$templates_page || !$assessment_tools_page) && (is_admin() || defined('DOING_CRON'))) {
+//         cbkny_create_resource_category_pages();
+//     }
+// }
+// add_action('init', 'cbkny_force_create_resource_category_pages');
 
 // Create legal pages on theme activation
 function cbkny_create_legal_pages() {
@@ -361,35 +361,35 @@ function cbkny_create_legal_pages() {
 }
 add_action('after_switch_theme', 'cbkny_create_legal_pages');
 
-// Force create legal pages on theme load (one-time only)
-function cbkny_force_create_legal_pages() {
-    // Check if legal pages already exist
-    $terms_page = get_page_by_path('terms-of-service');
-    $cookie_page = get_page_by_path('cookie-policy');
-    $disclaimer_page = get_page_by_path('disclaimer');
-    
-    // Only create if they don't exist and we're in admin or doing a one-time setup
-    if ((!$terms_page || !$cookie_page || !$disclaimer_page) && (is_admin() || defined('DOING_CRON'))) {
-        cbkny_create_legal_pages();
-    }
-}
-add_action('init', 'cbkny_force_create_legal_pages');
+// DISABLED - Force create legal pages on theme load (one-time only)
+// function cbkny_force_create_legal_pages() {
+//     // Check if legal pages already exist
+//     $terms_page = get_page_by_path('terms-of-service');
+//     $cookie_page = get_page_by_path('cookie-policy');
+//     $disclaimer_page = get_page_by_path('disclaimer');
+//     
+//     // Only create if they don't exist and we're in admin or doing a one-time setup
+//     if ((!$terms_page || !$cookie_page || !$disclaimer_page) && (is_admin() || defined('DOING_CRON'))) {
+//         cbkny_create_legal_pages();
+//     }
+// }
+// add_action('init', 'cbkny_force_create_legal_pages');
 
-// Clean up phantom pages (run once)
-function cbkny_cleanup_phantom_pages() {
-    $resources_page = get_page_by_path('resources');
-    if (!$resources_page) return;
-    
-    // List of pages that should only exist as children of resources
-    $phantom_slugs = array('free-guides', 'templates', 'assessment-tools');
-    
-    foreach ($phantom_slugs as $slug) {
-        $standalone_page = get_page_by_path($slug);
-        
-        // If there's a standalone page that's not a child of resources, delete it
-        if ($standalone_page && $standalone_page->post_parent != $resources_page->ID) {
-            wp_delete_post($standalone_page->ID, true);
-        }
-    }
-}
-add_action('init', 'cbkny_cleanup_phantom_pages');
+// DISABLED - Clean up phantom pages (run once)
+// function cbkny_cleanup_phantom_pages() {
+//     $resources_page = get_page_by_path('resources');
+//     if (!$resources_page) return;
+//     
+//     // List of pages that should only exist as children of resources
+//     $phantom_slugs = array('free-guides', 'templates', 'assessment-tools');
+//     
+//     foreach ($phantom_slugs as $slug) {
+//         $standalone_page = get_page_by_path($slug);
+//         
+//         // If there's a standalone page that's not a child of resources, delete it
+//         if ($standalone_page && $standalone_page->post_parent != $resources_page->ID) {
+//             wp_delete_post($standalone_page->ID, true);
+//         }
+//     }
+// }
+// add_action('init', 'cbkny_cleanup_phantom_pages');
