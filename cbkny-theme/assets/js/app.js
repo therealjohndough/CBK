@@ -77,4 +77,153 @@
       }
     }
   });
+
+  // Animation utilities
+  function isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+
+  function isElementPartiallyInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+    return rect.top < windowHeight && rect.bottom > 0;
+  }
+
+  // Scroll-triggered animations
+  function initScrollAnimations() {
+    const animatedElements = document.querySelectorAll('[data-animate]');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const element = entry.target;
+          const animationType = element.getAttribute('data-animate');
+          const delay = element.getAttribute('data-delay') || 0;
+          
+          setTimeout(() => {
+            element.classList.add(`animate-${animationType}`);
+            element.classList.add('animated');
+          }, delay);
+          
+          observer.unobserve(element);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    });
+    
+    animatedElements.forEach(el => {
+      observer.observe(el);
+    });
+  }
+
+  // Staggered card animations
+  function initStaggeredAnimations() {
+    const cardGroups = document.querySelectorAll('.animate-stagger');
+    
+    cardGroups.forEach(group => {
+      const cards = group.querySelectorAll('.card, .grid > div');
+      cards.forEach((card, index) => {
+        card.setAttribute('data-animate', 'fade-in-up');
+        card.setAttribute('data-delay', index * 100);
+      });
+    });
+  }
+
+  // Enhanced button interactions
+  function initButtonAnimations() {
+    const buttons = document.querySelectorAll('.btn');
+    
+    buttons.forEach(button => {
+      button.addEventListener('click', function(e) {
+        // Create ripple effect
+        const ripple = document.createElement('span');
+        const rect = this.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height);
+        const x = e.clientX - rect.left - size / 2;
+        const y = e.clientY - rect.top - size / 2;
+        
+        ripple.style.cssText = `
+          position: absolute;
+          width: ${size}px;
+          height: ${size}px;
+          left: ${x}px;
+          top: ${y}px;
+          background: rgba(255, 255, 255, 0.3);
+          border-radius: 50%;
+          transform: scale(0);
+          animation: ripple 0.6s linear;
+          pointer-events: none;
+        `;
+        
+        this.appendChild(ripple);
+        
+        setTimeout(() => {
+          ripple.remove();
+        }, 600);
+      });
+    });
+  }
+
+  // Loading states for forms and downloads
+  window.showLoadingState = function(element, text = 'Loading...') {
+    const originalText = element.textContent;
+    element.disabled = true;
+    element.innerHTML = `<span class="loading-spinner"></span> ${text}`;
+    
+    return () => {
+      element.disabled = false;
+      element.textContent = originalText;
+    };
+  };
+
+  // Enhanced download function with animations
+  window.downloadResource = function(resourceType) {
+    const downloadBtn = event.target;
+    const hideLoading = window.showLoadingState(downloadBtn, 'Preparing download...');
+    
+    const email = prompt('Enter your email to download this resource:');
+    if (email && email.includes('@')) {
+      // Simulate download preparation with animation
+      setTimeout(() => {
+        hideLoading();
+        downloadBtn.innerHTML = '✓ Downloaded!';
+        downloadBtn.classList.add('btn-success');
+        
+        // Track the download
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'download', {
+            'event_category': 'lead_magnet',
+            'event_label': resourceType,
+            'value': 1
+          });
+        }
+        
+        // Reset after 2 seconds
+        setTimeout(() => {
+          downloadBtn.innerHTML = 'Download Again';
+          downloadBtn.classList.remove('btn-success');
+        }, 2000);
+      }, 1500);
+    } else if (email) {
+      hideLoading();
+      alert('Please enter a valid email address.');
+    } else {
+      hideLoading();
+    }
+  };
+
+  // Initialize animations when DOM is loaded
+  document.addEventListener('DOMContentLoaded', function() {
+    initScrollAnimations();
+    initStaggeredAnimations();
+    initButtonAnimations();
+  });
 })();

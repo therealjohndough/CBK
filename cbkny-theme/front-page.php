@@ -1,24 +1,24 @@
 <?php get_header(); ?>
 <main class="container">
-  <section class="hero">
-    <h1><?php echo esc_html(cbkny_get_option('cbkny_hero_title', 'Cannabis Bookkeeping for New York Operators')); ?></h1>
-    <p><?php echo esc_html(cbkny_get_option('cbkny_hero_subtitle', 'OCM & 280E compliant accounting that keeps you audit-ready')); ?></p>
-    <p>
-      <a class="btn btn-primary" href="<?php echo esc_url(cbkny_get_option('cbkny_hero_primary_button_link', '/contact')); ?>">
+  <section class="hero" data-animate="fade-in">
+    <h1 data-animate="fade-in-up" data-delay="200"><?php echo esc_html(cbkny_get_option('cbkny_hero_title', 'Cannabis Bookkeeping for New York Operators')); ?></h1>
+    <p data-animate="fade-in-up" data-delay="400"><?php echo esc_html(cbkny_get_option('cbkny_hero_subtitle', 'OCM & 280E compliant accounting that keeps you audit-ready')); ?></p>
+    <p data-animate="fade-in-up" data-delay="600">
+      <a class="btn btn-primary animate-pulse" href="<?php echo esc_url(cbkny_get_option('cbkny_hero_primary_button_link', '/contact')); ?>">
         <?php echo esc_html(cbkny_get_option('cbkny_hero_primary_button_text', 'Book Free Consultation')); ?>
       </a>
       <a class="btn btn-secondary" href="<?php echo esc_url(cbkny_get_option('cbkny_hero_secondary_button_link', '/resources')); ?>">
         <?php echo esc_html(cbkny_get_option('cbkny_hero_secondary_button_text', 'Get Free Resources')); ?>
       </a>
     </p>
-    <div class="proof-strip" aria-label="Trusted by">
+    <div class="proof-strip" aria-label="Trusted by" data-animate="fade-in-up" data-delay="800">
       <span style="color: var(--cbkny-gray); font-weight: 600;">
         <?php echo esc_html(cbkny_get_option('cbkny_trust_badge_text', 'Trusted by NY cannabis operators statewide')); ?>
       </span>
     </div>
   </section>
 
-  <section class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); margin: 4rem 0;">
+  <section class="grid animate-stagger" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); margin: 4rem 0;">
     <div class="card">
       <h3><?php echo esc_html(cbkny_get_option('cbkny_service_1_title', 'Monthly Bookkeeping')); ?></h3>
       <p><?php echo esc_html(cbkny_get_option('cbkny_service_1_description', 'Full cannabis accounting & reconciliations built for OCM and IRS 280E compliance. Stay audit-ready with accurate expense categorization.')); ?></p>

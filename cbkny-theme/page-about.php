@@ -1,11 +1,11 @@
 <?php get_header(); ?>
 <main class="container">
-  <section class="hero">
-    <h1>About Rosanna St. John</h1>
-    <p>Your trusted cannabis accounting specialist in New York</p>
+  <section class="hero" data-animate="fade-in">
+    <h1 data-animate="fade-in-up" data-delay="200">About Rosanna St. John</h1>
+    <p data-animate="fade-in-up" data-delay="400">Your trusted cannabis accounting specialist in New York</p>
   </section>
 
-  <section class="about-grid" style="display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; margin: 4rem 0; align-items: start;">
+  <section class="about-grid" style="display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; margin: 4rem 0; align-items: start;" data-animate="fade-in-up">
     <div>
       <div style="width: 100%; height: 300px; background: var(--cbkny-light-gray); border-radius: 1rem; display: flex; align-items: center; justify-content: center; color: var(--cbkny-gray); overflow: hidden;">
         <img src="<?php echo esc_url(cbkny_get_option('cbkny_about_photo_url', 'http://johnd501.sg-host.com/wp-content/uploads/2025/10/Rosanna-St-John-Canna-Bookkeeper-New-York-Cannabis-Industry.webp')); ?>" 
