@@ -17,7 +17,7 @@
         <li>✓ Quarterly tax deadlines</li>
         <li>✓ Audit preparation checklist</li>
       </ul>
-      <button class="btn btn-primary" onclick="downloadResource('compliance-checklist')" style="width: 100%;">Download Free Guide</button>
+      <a href="/ny-cannabis-compliance-checklist" class="btn btn-primary" style="width: 100%; display: inline-block; text-align: center;">Download Free Guide</a>
     </div>
 
     <div class="card" style="padding: 2rem; text-align: center;">
@@ -30,7 +30,7 @@
         <li>✓ Multi-entity strategies</li>
         <li>✓ Audit defense tactics</li>
       </ul>
-      <button class="btn btn-primary" onclick="downloadResource('280e-guide')" style="width: 100%;">Download Free Guide</button>
+      <a href="/280e-deduction-guide" class="btn btn-primary" style="width: 100%; display: inline-block; text-align: center;">Download Free Guide</a>
     </div>
 
     <div class="card" style="padding: 2rem; text-align: center;">
@@ -43,7 +43,7 @@
         <li>✓ Priority action items</li>
         <li>✓ Compliance score</li>
       </ul>
-      <button class="btn btn-primary" onclick="startAssessment()" style="width: 100%;">Take Assessment</button>
+      <a href="/audit-readiness-quiz" class="btn btn-primary" style="width: 100%; display: inline-block; text-align: center;">Take Assessment</a>
     </div>
 
     <div class="card" style="padding: 2rem; text-align: center;">
@@ -57,6 +57,19 @@
         <li>✓ Year-end summary reports</li>
       </ul>
       <button class="btn btn-primary" onclick="downloadResource('cogs-template')" style="width: 100%;">Download Template</button>
+    </div>
+
+    <div class="card" style="padding: 2rem; text-align: center;">
+      <div style="width: 80px; height: 80px; background: var(--cbkny-pink); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: var(--cbkny-white); font-size: 2rem;">🧮</div>
+      <h3 style="color: var(--cbkny-pink); margin-bottom: 1rem;">280E Tax Impact Calculator</h3>
+      <p style="margin-bottom: 1.5rem;">Calculate exactly how 280E affects your tax burden and see potential savings from optimization strategies.</p>
+      <ul style="text-align: left; margin-bottom: 2rem; font-size: 0.9rem;">
+        <li>✓ Real-time tax calculations</li>
+        <li>✓ 280E impact analysis</li>
+        <li>✓ Multi-entity savings calculator</li>
+        <li>✓ Visual tax breakdown charts</li>
+      </ul>
+      <a href="/280e-tax-calculator" class="btn btn-primary" style="width: 100%; display: inline-block; text-align: center;">Use Calculator</a>
     </div>
   </section>
 

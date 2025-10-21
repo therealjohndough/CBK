@@ -64,3 +64,6 @@ require_once get_template_directory() . '/inc/page-templates.php';
 
 // Widget areas
 require_once get_template_directory() . '/inc/widgets.php';
+
+// Cookie consent
+require_once get_template_directory() . '/inc/cookie-consent.php';

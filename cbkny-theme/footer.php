@@ -34,12 +34,12 @@
       </div>
 
       <div>
-        <h4 style="color: var(--cbkny-black); margin-bottom: 1rem;">Quick Links</h4>
+        <h4 style="color: var(--cbkny-black); margin-bottom: 1rem;">Legal & Policies</h4>
         <ul style="list-style: none; padding: 0; margin: 0;">
-          <li style="margin-bottom: 0.5rem;"><a href="/about" style="color: var(--cbkny-gray); text-decoration: none;">About Us</a></li>
-          <li style="margin-bottom: 0.5rem;"><a href="/contact" style="color: var(--cbkny-gray); text-decoration: none;">Contact</a></li>
-          <li style="margin-bottom: 0.5rem;"><a href="/privacy" style="color: var(--cbkny-gray); text-decoration: none;">Privacy Policy</a></li>
-          <li style="margin-bottom: 0.5rem;"><a href="/terms" style="color: var(--cbkny-gray); text-decoration: none;">Terms of Service</a></li>
+          <li style="margin-bottom: 0.5rem;"><a href="/privacy-policy" style="color: var(--cbkny-gray); text-decoration: none;">Privacy Policy</a></li>
+          <li style="margin-bottom: 0.5rem;"><a href="/terms-of-service" style="color: var(--cbkny-gray); text-decoration: none;">Terms of Service</a></li>
+          <li style="margin-bottom: 0.5rem;"><a href="/cookie-policy" style="color: var(--cbkny-gray); text-decoration: none;">Cookie Policy</a></li>
+          <li style="margin-bottom: 0.5rem;"><a href="/disclaimer" style="color: var(--cbkny-gray); text-decoration: none;">Disclaimer</a></li>
         </ul>
       </div>
     </div>
