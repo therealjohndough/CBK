@@ -330,11 +330,21 @@ function cbkny_customize_register($wp_customize) {
   ]);
 
   $wp_customize->add_setting('cbkny_linkedin_url', [
-    'default' => '',
+    'default' => 'https://www.linkedin.com/in/rosanna-st-john-76839a36/',
     'sanitize_callback' => 'esc_url_raw',
   ]);
   $wp_customize->add_control('cbkny_linkedin_url', [
     'label' => 'LinkedIn URL',
+    'section' => 'cbkny_social',
+    'type' => 'url',
+  ]);
+
+  $wp_customize->add_setting('cbkny_instagram_url', [
+    'default' => 'https://www.instagram.com/cannabookkeeper',
+    'sanitize_callback' => 'esc_url_raw',
+  ]);
+  $wp_customize->add_control('cbkny_instagram_url', [
+    'label' => 'Instagram URL',
     'section' => 'cbkny_social',
     'type' => 'url',
   ]);

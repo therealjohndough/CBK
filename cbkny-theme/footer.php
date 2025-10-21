@@ -34,6 +34,33 @@
       </div>
 
       <div>
+        <h4 style="color: var(--cbkny-black); margin-bottom: 1rem;">Connect With Us</h4>
+        <div style="display: flex; gap: 1rem; margin-bottom: 1rem;">
+          <?php if (cbkny_get_option('cbkny_linkedin_url')): ?>
+          <a href="<?php echo esc_url(cbkny_get_option('cbkny_linkedin_url')); ?>" target="_blank" rel="noopener" style="color: var(--cbkny-pink); font-size: 1.5rem; text-decoration: none;" aria-label="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <?php endif; ?>
+          
+          <?php if (cbkny_get_option('cbkny_instagram_url')): ?>
+          <a href="<?php echo esc_url(cbkny_get_option('cbkny_instagram_url')); ?>" target="_blank" rel="noopener" style="color: var(--cbkny-pink); font-size: 1.5rem; text-decoration: none;" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <?php endif; ?>
+          
+          <?php if (cbkny_get_option('cbkny_twitter_url')): ?>
+          <a href="<?php echo esc_url(cbkny_get_option('cbkny_twitter_url')); ?>" target="_blank" rel="noopener" style="color: var(--cbkny-pink); font-size: 1.5rem; text-decoration: none;" aria-label="Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <?php endif; ?>
+          
+          <?php if (cbkny_get_option('cbkny_facebook_url')): ?>
+          <a href="<?php echo esc_url(cbkny_get_option('cbkny_facebook_url')); ?>" target="_blank" rel="noopener" style="color: var(--cbkny-pink); font-size: 1.5rem; text-decoration: none;" aria-label="Facebook">
+            <i class="fab fa-facebook"></i>
+          </a>
+          <?php endif; ?>
+        </div>
+        
         <h4 style="color: var(--cbkny-black); margin-bottom: 1rem;">Legal & Policies</h4>
         <ul style="list-style: none; padding: 0; margin: 0;">
           <li style="margin-bottom: 0.5rem;"><a href="/privacy-policy" style="color: var(--cbkny-gray); text-decoration: none;">Privacy Policy</a></li>

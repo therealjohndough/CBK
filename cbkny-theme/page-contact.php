@@ -28,6 +28,24 @@
         <p style="color: var(--cbkny-gray); font-size: 0.9rem;">Serving all of New York State</p>
       </div>
 
+      <div style="margin-bottom: 2rem;">
+        <h3 style="color: var(--cbkny-black); margin-bottom: 1rem;">Follow Us</h3>
+        <div style="display: flex; gap: 1rem;">
+          <?php if (cbkny_get_option('cbkny_linkedin_url')): ?>
+          <a href="<?php echo esc_url(cbkny_get_option('cbkny_linkedin_url')); ?>" target="_blank" rel="noopener" style="color: var(--cbkny-pink); font-size: 1.5rem; text-decoration: none;" aria-label="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <?php endif; ?>
+          
+          <?php if (cbkny_get_option('cbkny_instagram_url')): ?>
+          <a href="<?php echo esc_url(cbkny_get_option('cbkny_instagram_url')); ?>" target="_blank" rel="noopener" style="color: var(--cbkny-pink); font-size: 1.5rem; text-decoration: none;" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <?php endif; ?>
+        </div>
+        <p style="color: var(--cbkny-gray); font-size: 0.9rem; margin-top: 0.5rem;">Connect with us on social media for cannabis accounting tips and industry updates.</p>
+      </div>
+
       <div style="background: var(--cbkny-light-gray); padding: 1.5rem; border-radius: 0.5rem; margin-top: 2rem;">
         <h4 style="color: var(--cbkny-pink); margin-bottom: 1rem;">Quick Response Guarantee</h4>
         <p style="margin-bottom: 0;">We respond to all inquiries within 24 hours, and often much sooner. For urgent matters, call or text our direct line.</p>
