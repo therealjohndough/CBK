@@ -360,8 +360,8 @@ function cbkny_force_create_legal_pages() {
     $cookie_page = get_page_by_path('cookie-policy');
     $disclaimer_page = get_page_by_path('disclaimer');
     
-    // Only create if they don't exist (temporarily removing admin check for one-time creation)
-    if (!$terms_page || !$cookie_page || !$disclaimer_page) {
+    // Only create if they don't exist and we're in admin or doing a one-time setup
+    if ((!$terms_page || !$cookie_page || !$disclaimer_page) && (is_admin() || defined('DOING_CRON'))) {
         cbkny_create_legal_pages();
     }
 }
