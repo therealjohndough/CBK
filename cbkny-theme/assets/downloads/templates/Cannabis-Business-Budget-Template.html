@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cannabis Business Budget Template</title>
+    <style>
+        @page {
+            size: 8.5in 11in;
+            margin: 0.75in;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fafafa;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .page {
+            background: white;
+            min-height: 10in;
+            padding: 1in;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-bottom: 0.5in;
+            position: relative;
+        }
+        
+        .header {
+            text-align: center;
+            border-bottom: 3px solid #FF4D4D;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .logo {
+            color: #FF4D4D;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .title {
+            font-size: 28px;
+            font-weight: bold;
+            color: #000;
+            margin: 0;
+        }
+        
+        .subtitle {
+            font-size: 16px;
+            color: #666;
+            margin: 10px 0 0 0;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            background: #FF4D4D;
+            color: white;
+            padding: 10px 15px;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+        
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 12px;
+        }
+        
+        .table th,
+        .table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        
+        .table th {
+            background: #FF4D4D;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        .highlight-box {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        .highlight-title {
+            font-weight: bold;
+            color: #856404;
+            margin-bottom: 10px;
+        }
+        
+        .warning-box {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        .warning-title {
+            font-weight: bold;
+            color: #721c24;
+            margin-bottom: 10px;
+        }
+        
+        .notes-section {
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+        
+        .notes-title {
+            font-weight: bold;
+            color: #FF4D4D;
+            margin-bottom: 10px;
+        }
+        
+        .notes-lines {
+            border-bottom: 1px solid #ddd;
+            height: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            left: 1in;
+            right: 1in;
+            text-align: center;
+            font-size: 10px;
+            color: #666;
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+        }
+        
+        .page-number {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-size: 12px;
+            color: #666;
+        }
+        
+        .formula {
+            background: #e9ecef;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: monospace;
+            font-size: 11px;
+        }
+        
+        @media print {
+            body { background: white; }
+            .page { box-shadow: none; margin-bottom: 0; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Page 1: Cover & Instructions -->
+    <div class="page">
+        <div class="header">
+            <div class="logo">Canna Bookkeeper™ NY</div>
+            <h1 class="title">Cannabis Business Budget Template</h1>
+            <p class="subtitle">Comprehensive Budget Planning for Cannabis Operations</p>
+        </div>
+        
+        <div class="highlight-box">
+            <div class="highlight-title">🎯 What This Template Provides</div>
+            <p>This comprehensive Excel template helps you create detailed budgets for your cannabis business, including revenue projections, expense planning, and cash flow management.</p>
+        </div>
+        
+        <div class="section">
+            <h2 style="color: #FF4D4D; border-bottom: 2px solid #FF4D4D; padding-bottom: 5px;">📊 Template Includes:</h2>
+            <ul style="line-height: 2;">
+                <li><strong>Revenue Projections</strong> - Sales forecasting and pricing strategies</li>
+                <li><strong>COGS Budget</strong> - Cost of goods sold planning and tracking</li>
+                <li><strong>Operating Expenses</strong> - All business expenses categorized by type</li>
+                <li><strong>Cash Flow Projections</strong> - Monthly cash flow analysis</li>
+                <li><strong>Break-Even Analysis</strong> - Determine your break-even point</li>
+                <li><strong>Scenario Planning</strong> - Best case, worst case, and realistic scenarios</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2 style="color: #FF4D4D; border-bottom: 2px solid #FF4D4D; padding-bottom: 5px;">🔧 How to Use This Template:</h2>
+            <ol style="line-height: 1.8;">
+                <li><strong>Download the Excel file</strong> from the website</li>
+                <li><strong>Customize for your business</strong> - Add your specific revenue streams and expenses</li>
+                <li><strong>Enter your projections</strong> - Fill in your revenue and expense estimates</li>
+                <li><strong>Review scenarios</strong> - Test different assumptions and outcomes</li>
+                <li><strong>Monitor actual vs budget</strong> - Track performance against your budget</li>
+            </ol>
+        </div>
+        
+        <div class="notes-section">
+            <div class="notes-title">📝 Budget Planning Notes:</div>
+            <div class="notes-lines"></div>
+            <div class="notes-lines"></div>
+            <div class="notes-lines"></div>
+            <div class="notes-lines"></div>
+        </div>
+        
+        <div class="footer">
+            <p><strong>Canna Bookkeeper™ NY</strong> | Professional Cannabis Accounting Services | cbkny.com</p>
+            <p>This template is for informational purposes only. Consult with qualified professionals for specific financial advice.</p>
+        </div>
+        <div class="page-number">Page 1</div>
+    </div>
+
+    <!-- Page 2: Revenue Projections -->
+    <div class="page">
+        <div class="header">
+            <div class="logo">Canna Bookkeeper™ NY</div>
+            <h1 class="title">Revenue Projections</h1>
+            <p class="subtitle">Monthly Revenue Planning</p>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">Sales Forecast</div>
+            
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Month</th>
+                        <th>Units Sold</th>
+                        <th>Average Price</th>
+                        <th>Total Revenue</th>
+                        <th>Growth %</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>January</td>
+                        <td>_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>_____%</td>
+                    </tr>
+                    <tr>
+                        <td>February</td>
+                        <td>_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>_____%</td>
+                    </tr>
+                    <tr>
+                        <td>March</td>
+                        <td>_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>_____%</td>
+                    </tr>
+                    <tr>
+                        <td>April</td>
+                        <td>_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>_____%</td>
+                    </tr>
+                    <tr>
+                        <td>May</td>
+                        <td>_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>_____%</td>
+                    </tr>
+                    <tr>
+                        <td>June</td>
+                        <td>_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>_____%</td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>_____%</td>
+                    </tr>
+                    <tr>
+                        <td>August</td>
+                        <td>_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>_____%</td>
+                    </tr>
+                    <tr>
+                        <td>September</td>
+                        <td>_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>_____%</td>
+                    </tr>
+                    <tr>
+                        <td>October</td>
+                        <td>_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>_____%</td>
+                    </tr>
+                    <tr>
+                        <td>November</td>
+                        <td>_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>_____%</td>
+                    </tr>
+                    <tr>
+                        <td>December</td>
+                        <td>_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>_____%</td>
+                    </tr>
+                    <tr style="background: #FF4D4D; color: white; font-weight: bold;">
+                        <td>Annual Total</td>
+                        <td>_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>_____%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">Revenue Streams</div>
+            
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Revenue Stream</th>
+                        <th>Monthly Amount</th>
+                        <th>Annual Amount</th>
+                        <th>% of Total</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Retail Sales</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>_____%</td>
+                        <td>________________</td>
+                    </tr>
+                    <tr>
+                        <td>Wholesale Sales</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>_____%</td>
+                        <td>________________</td>
+                    </tr>
+                    <tr>
+                        <td>Processing Services</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>_____%</td>
+                        <td>________________</td>
+                    </tr>
+                    <tr>
+                        <td>Testing Services</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>_____%</td>
+                        <td>________________</td>
+                    </tr>
+                    <tr>
+                        <td>Other Revenue</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>_____%</td>
+                        <td>________________</td>
+                    </tr>
+                    <tr style="background: #FF4D4D; color: white; font-weight: bold;">
+                        <td>Total Revenue</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>100%</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">Pricing Strategy</div>
+            
+            <div class="content-box">
+                <p><strong>Product Pricing:</strong></p>
+                <ul>
+                    <li>Flower: $_____ per gram</li>
+                    <li>Edibles: $_____ per package</li>
+                    <li>Concentrates: $_____ per gram</li>
+                    <li>Topicals: $_____ per unit</li>
+                </ul>
+                
+                <p><strong>Pricing Factors:</strong></p>
+                <ul>
+                    <li>Cost of production: $_____</li>
+                    <li>Desired profit margin: _____%</li>
+                    <li>Market competition: $_____</li>
+                    <li>Tax considerations: $_____</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="notes-section">
+            <div class="notes-title">📝 Revenue Planning Notes:</div>
+            <div class="notes-lines"></div>
+            <div class="notes-lines"></div>
+            <div class="notes-lines"></div>
+            <div class="notes-lines"></div>
+        </div>
+        
+        <div class="page-number">Page 2</div>
+    </div>
+
+    <!-- Page 3: COGS Budget -->
+    <div class="page">
+        <div class="header">
+            <div class="logo">Canna Bookkeeper™ NY</div>
+            <h1 class="title">COGS Budget</h1>
+            <p class="subtitle">Cost of Goods Sold Planning</p>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">Direct Materials Budget</div>
+            
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Material</th>
+                        <th>Monthly Usage</th>
+                        <th>Unit Cost</th>
+                        <th>Monthly Cost</th>
+                        <th>Annual Cost</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Seeds/Clones</td>
+                        <td>_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                    </tr>
+                    <tr>
+                        <td>Soil/Growing Medium</td>
+                        <td>_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                    </tr>
+                    <tr>
+                        <td>Nutrients/Fertilizers</td>
+                        <td>_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                    </tr>
+                    <tr>
+                        <td>Packaging Materials</td>
+                        <td>_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                    </tr>
+                    <tr>
+                        <td>Other Materials</td>
+                        <td>_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                    </tr>
+                    <tr style="background: #FF4D4D; color: white; font-weight: bold;">
+                        <td colspan="3">Total Direct Materials</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">Direct Labor Budget</div>
+            
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Position</th>
+                        <th>Hours/Month</th>
+                        <th>Hourly Rate</th>
+                        <th>Monthly Cost</th>
+                        <th>Annual Cost</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Growing Staff</td>
+                        <td>_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                    </tr>
+                    <tr>
+                        <td>Harvesting Staff</td>
+                        <td>_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                    </tr>
+                    <tr>
+                        <td>Processing Staff</td>
+                        <td>_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                    </tr>
+                    <tr>
+                        <td>Quality Control</td>
+                        <td>_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                    </tr>
+                    <tr>
+                        <td>Other Production Staff</td>
+                        <td>_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                    </tr>
+                    <tr style="background: #FF4D4D; color: white; font-weight: bold;">
+                        <td colspan="3">Total Direct Labor</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">Facility Costs (Allocated to COGS)</div>
+            
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Cost Type</th>
+                        <th>Total Cost</th>
+                        <th>Production %</th>
+                        <th>COGS Allocation</th>
+                        <th>Annual COGS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Rent/Mortgage</td>
+                        <td>$_____</td>
+                        <td>_____%</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                    </tr>
+                    <tr>
+                        <td>Utilities (Electric)</td>
+                        <td>$_____</td>
+                        <td>_____%</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                    </tr>
+                    <tr>
+                        <td>Utilities (Water)</td>
+                        <td>$_____</td>
+                        <td>_____%</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                    </tr>
+                    <tr>
+                        <td>Maintenance & Repairs</td>
+                        <td>$_____</td>
+                        <td>_____%</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                    </tr>
+                    <tr>
+                        <td>Security</td>
+                        <td>$_____</td>
+                        <td>_____%</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                    </tr>
+                    <tr style="background: #FF4D4D; color: white; font-weight: bold;">
+                        <td colspan="3">Total Facility COGS</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">Total COGS Summary</div>
+            
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>COGS Component</th>
+                        <th>Monthly Amount</th>
+                        <th>Annual Amount</th>
+                        <th>% of Revenue</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Direct Materials</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>_____%</td>
+                    </tr>
+                    <tr>
+                        <td>Direct Labor</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>_____%</td>
+                    </tr>
+                    <tr>
+                        <td>Facility Costs</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>_____%</td>
+                    </tr>
+                    <tr style="background: #FF4D4D; color: white; font-weight: bold;">
+                        <td>Total COGS</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>_____%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="notes-section">
+            <div class="notes-title">📝 COGS Budget Notes:</div>
+            <div class="notes-lines"></div>
+            <div class="notes-lines"></div>
+            <div class="notes-lines"></div>
+            <div class="notes-lines"></div>
+        </div>
+        
+        <div class="page-number">Page 3</div>
+    </div>
+
+    <!-- Page 4: Operating Expenses -->
+    <div class="page">
+        <div class="header">
+            <div class="logo">Canna Bookkeeper™ NY</div>
+            <h1 class="title">Operating Expenses</h1>
+            <p class="subtitle">Non-Deductible Business Expenses</p>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">Marketing & Advertising</div>
+            
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Expense Type</th>
+                        <th>Monthly Amount</th>
+                        <th>Annual Amount</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Digital Marketing</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>________________</td>
+                    </tr>
+                    <tr>
+                        <td>Print Advertising</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>________________</td>
+                    </tr>
+                    <tr>
+                        <td>Social Media</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>________________</td>
+                    </tr>
+                    <tr>
+                        <td>Events & Sponsorships</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>________________</td>
+                    </tr>
+                    <tr>
+                        <td>Other Marketing</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>________________</td>
+                    </tr>
+                    <tr style="background: #FF4D4D; color: white; font-weight: bold;">
+                        <td>Total Marketing</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">General & Administrative</div>
+            
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Expense Type</th>
+                        <th>Monthly Amount</th>
+                        <th>Annual Amount</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Office Rent</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>________________</td>
+                    </tr>
+                    <tr>
+                        <td>Office Supplies</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>________________</td>
+                    </tr>
+                    <tr>
+                        <td>Professional Services</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>________________</td>
+                    </tr>
+                    <tr>
+                        <td>Insurance</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>________________</td>
+                    </tr>
+                    <tr>
+                        <td>Legal Fees</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>________________</td>
+                    </tr>
+                    <tr>
+                        <td>Accounting Fees</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>________________</td>
+                    </tr>
+                    <tr>
+                        <td>Other G&A</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>________________</td>
+                    </tr>
+                    <tr style="background: #FF4D4D; color: white; font-weight: bold;">
+                        <td>Total G&A</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">Other Operating Expenses</div>
+            
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Expense Type</th>
+                        <th>Monthly Amount</th>
+                        <th>Annual Amount</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Travel & Entertainment</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>________________</td>
+                    </tr>
+                    <tr>
+                        <td>Software & Technology</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>________________</td>
+                    </tr>
+                    <tr>
+                        <td>Training & Development</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>________________</td>
+                    </tr>
+                    <tr>
+                        <td>Banking & Finance</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>________________</td>
+                    </tr>
+                    <tr>
+                        <td>Other Expenses</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>________________</td>
+                    </tr>
+                    <tr style="background: #FF4D4D; color: white; font-weight: bold;">
+                        <td>Total Other</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">Total Operating Expenses</div>
+            
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Expense Category</th>
+                        <th>Monthly Amount</th>
+                        <th>Annual Amount</th>
+                        <th>% of Revenue</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Marketing & Advertising</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>_____%</td>
+                    </tr>
+                    <tr>
+                        <td>General & Administrative</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>_____%</td>
+                    </tr>
+                    <tr>
+                        <td>Other Operating</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>_____%</td>
+                    </tr>
+                    <tr style="background: #FF4D4D; color: white; font-weight: bold;">
+                        <td>Total Operating Expenses</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>_____%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="notes-section">
+            <div class="notes-title">📝 Operating Expense Notes:</div>
+            <div class="notes-lines"></div>
+            <div class="notes-lines"></div>
+            <div class="notes-lines"></div>
+            <div class="notes-lines"></div>
+        </div>
+        
+        <div class="page-number">Page 4</div>
+    </div>
+
+    <!-- Page 5: Cash Flow & Break-Even Analysis -->
+    <div class="page">
+        <div class="header">
+            <div class="logo">Canna Bookkeeper™ NY</div>
+            <h1 class="title">Cash Flow & Break-Even Analysis</h1>
+            <p class="subtitle">Financial Planning & Analysis</p>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">Monthly Cash Flow Projection</div>
+            
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Month</th>
+                        <th>Revenue</th>
+                        <th>COGS</th>
+                        <th>Operating Expenses</th>
+                        <th>Net Cash Flow</th>
+                        <th>Cumulative</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>January</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                    </tr>
+                    <tr>
+                        <td>February</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                    </tr>
+                    <tr>
+                        <td>March</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                    </tr>
+                    <tr>
+                        <td>April</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                    </tr>
+                    <tr>
+                        <td>May</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                    </tr>
+                    <tr>
+                        <td>June</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                    </tr>
+                    <tr>
+                        <td>August</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                    </tr>
+                    <tr>
+                        <td>September</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                    </tr>
+                    <tr>
+                        <td>October</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                    </tr>
+                    <tr>
+                        <td>November</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                    </tr>
+                    <tr>
+                        <td>December</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                    </tr>
+                    <tr style="background: #FF4D4D; color: white; font-weight: bold;">
+                        <td>Annual Total</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">Break-Even Analysis</div>
+            
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Amount</th>
+                        <th>Calculation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Fixed Costs (Monthly)</td>
+                        <td>$_____</td>
+                        <td>Operating expenses</td>
+                    </tr>
+                    <tr>
+                        <td>Variable Costs per Unit</td>
+                        <td>$_____</td>
+                        <td>COGS per unit</td>
+                    </tr>
+                    <tr>
+                        <td>Selling Price per Unit</td>
+                        <td>$_____</td>
+                        <td>Average selling price</td>
+                    </tr>
+                    <tr>
+                        <td>Contribution Margin</td>
+                        <td>$_____</td>
+                        <td>Price - Variable Cost</td>
+                    </tr>
+                    <tr>
+                        <td>Break-Even Units</td>
+                        <td>_____</td>
+                        <td>Fixed Costs ÷ Contribution Margin</td>
+                    </tr>
+                    <tr>
+                        <td>Break-Even Revenue</td>
+                        <td>$_____</td>
+                        <td>Break-Even Units × Price</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">Scenario Planning</div>
+            
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Scenario</th>
+                        <th>Revenue</th>
+                        <th>COGS</th>
+                        <th>Operating Expenses</th>
+                        <th>Net Income</th>
+                        <th>Tax Liability</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Best Case</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                    </tr>
+                    <tr>
+                        <td>Realistic</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                    </tr>
+                    <tr>
+                        <td>Worst Case</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="notes-section">
+            <div class="notes-title">📝 Financial Analysis Notes:</div>
+            <div class="notes-lines"></div>
+            <div class="notes-lines"></div>
+            <div class="notes-lines"></div>
+            <div class="notes-lines"></div>
+        </div>
+        
+        <div class="page-number">Page 5</div>
+    </div>
+</body>
+</html>

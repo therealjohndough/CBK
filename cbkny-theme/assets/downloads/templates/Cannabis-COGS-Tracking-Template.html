@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cannabis COGS Tracking Template</title>
+    <style>
+        @page {
+            size: 8.5in 11in;
+            margin: 0.75in;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fafafa;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .page {
+            background: white;
+            min-height: 10in;
+            padding: 1in;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-bottom: 0.5in;
+            position: relative;
+        }
+        
+        .header {
+            text-align: center;
+            border-bottom: 3px solid #FF4D4D;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .logo {
+            color: #FF4D4D;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .title {
+            font-size: 28px;
+            font-weight: bold;
+            color: #000;
+            margin: 0;
+        }
+        
+        .subtitle {
+            font-size: 16px;
+            color: #666;
+            margin: 10px 0 0 0;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            background: #FF4D4D;
+            color: white;
+            padding: 10px 15px;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+        
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 12px;
+        }
+        
+        .table th,
+        .table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        
+        .table th {
+            background: #FF4D4D;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        .highlight-box {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        .highlight-title {
+            font-weight: bold;
+            color: #856404;
+            margin-bottom: 10px;
+        }
+        
+        .notes-section {
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+        
+        .notes-title {
+            font-weight: bold;
+            color: #FF4D4D;
+            margin-bottom: 10px;
+        }
+        
+        .notes-lines {
+            border-bottom: 1px solid #ddd;
+            height: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            left: 1in;
+            right: 1in;
+            text-align: center;
+            font-size: 10px;
+            color: #666;
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+        }
+        
+        .page-number {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-size: 12px;
+            color: #666;
+        }
+        
+        .formula {
+            background: #e9ecef;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: monospace;
+            font-size: 11px;
+        }
+        
+        @media print {
+            body { background: white; }
+            .page { box-shadow: none; margin-bottom: 0; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Page 1: Cover & Instructions -->
+    <div class="page">
+        <div class="header">
+            <div class="logo">Canna Bookkeeper™ NY</div>
+            <h1 class="title">Cannabis COGS Tracking Template</h1>
+            <p class="subtitle">Excel Template for 280E Compliant Cost of Goods Sold Tracking</p>
+        </div>
+        
+        <div class="highlight-box">
+            <div class="highlight-title">🎯 What This Template Provides</div>
+            <p>This comprehensive Excel template helps you track and calculate Cost of Goods Sold (COGS) in compliance with IRC 280E requirements for cannabis businesses.</p>
+        </div>
+        
+        <div class="section">
+            <h2 style="color: #FF4D4D; border-bottom: 2px solid #FF4D4D; padding-bottom: 5px;">📊 Template Includes:</h2>
+            <ul style="line-height: 2;">
+                <li><strong>Monthly COGS Tracking Sheets</strong> - 12 months of detailed COGS tracking</li>
+                <li><strong>Direct Materials Tracker</strong> - Seeds, soil, nutrients, packaging</li>
+                <li><strong>Direct Labor Calculator</strong> - Production labor allocation</li>
+                <li><strong>Facility Cost Allocation</strong> - Rent, utilities, maintenance</li>
+                <li><strong>Inventory Valuation</strong> - FIFO, LIFO, and weighted average methods</li>
+                <li><strong>Year-End Summary</strong> - Annual COGS calculations and reports</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2 style="color: #FF4D4D; border-bottom: 2px solid #FF4D4D; padding-bottom: 5px;">🔧 How to Use This Template:</h2>
+            <ol style="line-height: 1.8;">
+                <li><strong>Download the Excel file</strong> from the website</li>
+                <li><strong>Customize for your business</strong> - Add your specific cost categories</li>
+                <li><strong>Enter monthly data</strong> - Track all COGS components throughout the year</li>
+                <li><strong>Review calculations</strong> - Ensure formulas are working correctly</li>
+                <li><strong>Generate reports</strong> - Use the summary sheets for tax preparation</li>
+            </ol>
+        </div>
+        
+        <div class="notes-section">
+            <div class="notes-title">📝 Template Customization Notes:</div>
+            <div class="notes-lines"></div>
+            <div class="notes-lines"></div>
+            <div class="notes-lines"></div>
+            <div class="notes-lines"></div>
+        </div>
+        
+        <div class="footer">
+            <p><strong>Canna Bookkeeper™ NY</strong> | Professional Cannabis Accounting Services | cbkny.com</p>
+            <p>This template is for informational purposes only. Consult with qualified professionals for specific tax advice.</p>
+        </div>
+        <div class="page-number">Page 1</div>
+    </div>
+
+    <!-- Page 2: Monthly COGS Tracking Sheet -->
+    <div class="page">
+        <div class="header">
+            <div class="logo">Canna Bookkeeper™ NY</div>
+            <h1 class="title">Monthly COGS Tracking Sheet</h1>
+            <p class="subtitle">Month: ___________ Year: ___________</p>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">Direct Materials</div>
+            
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Quantity</th>
+                        <th>Unit Cost</th>
+                        <th>Total Cost</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Seeds/Clones</td>
+                        <td>_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>________________</td>
+                    </tr>
+                    <tr>
+                        <td>Soil/Growing Medium</td>
+                        <td>_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>________________</td>
+                    </tr>
+                    <tr>
+                        <td>Nutrients/Fertilizers</td>
+                        <td>_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>________________</td>
+                    </tr>
+                    <tr>
+                        <td>Packaging Materials</td>
+                        <td>_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>________________</td>
+                    </tr>
+                    <tr>
+                        <td>Other Direct Materials</td>
+                        <td>_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>________________</td>
+                    </tr>
+                    <tr style="background: #FF4D4D; color: white; font-weight: bold;">
+                        <td colspan="3">Total Direct Materials</td>
+                        <td>$_____</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">Direct Labor</div>
+            
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Employee/Position</th>
+                        <th>Hours Worked</th>
+                        <th>Hourly Rate</th>
+                        <th>Total Cost</th>
+                        <th>Production %</th>
+                        <th>COGS Allocation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Growing Staff</td>
+                        <td>_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>100%</td>
+                        <td>$_____</td>
+                    </tr>
+                    <tr>
+                        <td>Harvesting Staff</td>
+                        <td>_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>100%</td>
+                        <td>$_____</td>
+                    </tr>
+                    <tr>
+                        <td>Processing Staff</td>
+                        <td>_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>100%</td>
+                        <td>$_____</td>
+                    </tr>
+                    <tr>
+                        <td>Quality Control</td>
+                        <td>_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>100%</td>
+                        <td>$_____</td>
+                    </tr>
+                    <tr style="background: #FF4D4D; color: white; font-weight: bold;">
+                        <td colspan="5">Total Direct Labor COGS</td>
+                        <td>$_____</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">Facility Costs (Allocated to COGS)</div>
+            
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Cost Type</th>
+                        <th>Total Cost</th>
+                        <th>Production %</th>
+                        <th>COGS Allocation</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Rent/Mortgage</td>
+                        <td>$_____</td>
+                        <td>_____%</td>
+                        <td>$_____</td>
+                        <td>________________</td>
+                    </tr>
+                    <tr>
+                        <td>Utilities (Electric)</td>
+                        <td>$_____</td>
+                        <td>_____%</td>
+                        <td>$_____</td>
+                        <td>________________</td>
+                    </tr>
+                    <tr>
+                        <td>Utilities (Water)</td>
+                        <td>$_____</td>
+                        <td>_____%</td>
+                        <td>$_____</td>
+                        <td>________________</td>
+                    </tr>
+                    <tr>
+                        <td>Maintenance & Repairs</td>
+                        <td>$_____</td>
+                        <td>_____%</td>
+                        <td>$_____</td>
+                        <td>________________</td>
+                    </tr>
+                    <tr>
+                        <td>Security</td>
+                        <td>$_____</td>
+                        <td>_____%</td>
+                        <td>$_____</td>
+                        <td>________________</td>
+                    </tr>
+                    <tr style="background: #FF4D4D; color: white; font-weight: bold;">
+                        <td colspan="3">Total Facility COGS</td>
+                        <td>$_____</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="notes-section">
+            <div class="notes-title">📝 Monthly COGS Notes:</div>
+            <div class="notes-lines"></div>
+            <div class="notes-lines"></div>
+            <div class="notes-lines"></div>
+            <div class="notes-lines"></div>
+        </div>
+        
+        <div class="page-number">Page 2</div>
+    </div>
+
+    <!-- Page 3: Inventory Valuation -->
+    <div class="page">
+        <div class="header">
+            <div class="logo">Canna Bookkeeper™ NY</div>
+            <h1 class="title">Inventory Valuation Methods</h1>
+            <p class="subtitle">Choose Your Inventory Valuation Method</p>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">FIFO (First In, First Out) Method</div>
+            
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Quantity</th>
+                        <th>Unit Cost</th>
+                        <th>Total Cost</th>
+                        <th>Remaining Qty</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Jan 1</td>
+                        <td>100</td>
+                        <td>$10.00</td>
+                        <td>$1,000</td>
+                        <td>100</td>
+                    </tr>
+                    <tr>
+                        <td>Jan 15</td>
+                        <td>150</td>
+                        <td>$12.00</td>
+                        <td>$1,800</td>
+                        <td>250</td>
+                    </tr>
+                    <tr>
+                        <td>Jan 30</td>
+                        <td>200</td>
+                        <td>$15.00</td>
+                        <td>$3,000</td>
+                        <td>450</td>
+                    </tr>
+                    <tr style="background: #FF4D4D; color: white; font-weight: bold;">
+                        <td colspan="4">Total Inventory Value</td>
+                        <td>$5,800</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="highlight-box">
+                <div class="highlight-title">💡 FIFO Method</div>
+                <p>Assumes the first items purchased are the first items sold. Generally results in higher inventory values during periods of rising costs.</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">LIFO (Last In, First Out) Method</div>
+            
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Quantity</th>
+                        <th>Unit Cost</th>
+                        <th>Total Cost</th>
+                        <th>Remaining Qty</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Jan 1</td>
+                        <td>100</td>
+                        <td>$10.00</td>
+                        <td>$1,000</td>
+                        <td>100</td>
+                    </tr>
+                    <tr>
+                        <td>Jan 15</td>
+                        <td>150</td>
+                        <td>$12.00</td>
+                        <td>$1,800</td>
+                        <td>250</td>
+                    </tr>
+                    <tr>
+                        <td>Jan 30</td>
+                        <td>200</td>
+                        <td>$15.00</td>
+                        <td>$3,000</td>
+                        <td>450</td>
+                    </tr>
+                    <tr style="background: #FF4D4D; color: white; font-weight: bold;">
+                        <td colspan="4">Total Inventory Value</td>
+                        <td>$5,800</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="highlight-box">
+                <div class="highlight-title">💡 LIFO Method</div>
+                <p>Assumes the last items purchased are the first items sold. Generally results in lower inventory values during periods of rising costs.</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">Weighted Average Method</div>
+            
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Quantity</th>
+                        <th>Unit Cost</th>
+                        <th>Total Cost</th>
+                        <th>Weighted Avg</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Jan 1</td>
+                        <td>100</td>
+                        <td>$10.00</td>
+                        <td>$1,000</td>
+                        <td>$10.00</td>
+                    </tr>
+                    <tr>
+                        <td>Jan 15</td>
+                        <td>150</td>
+                        <td>$12.00</td>
+                        <td>$1,800</td>
+                        <td>$11.20</td>
+                    </tr>
+                    <tr>
+                        <td>Jan 30</td>
+                        <td>200</td>
+                        <td>$15.00</td>
+                        <td>$3,000</td>
+                        <td>$12.89</td>
+                    </tr>
+                    <tr style="background: #FF4D4D; color: white; font-weight: bold;">
+                        <td colspan="4">Total Inventory Value</td>
+                        <td>$5,800</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="highlight-box">
+                <div class="highlight-title">💡 Weighted Average Method</div>
+                <p>Calculates the average cost of all inventory items. Provides a middle ground between FIFO and LIFO methods.</p>
+            </div>
+        </div>
+        
+        <div class="notes-section">
+            <div class="notes-title">📝 Inventory Method Selection Notes:</div>
+            <div class="notes-lines"></div>
+            <div class="notes-lines"></div>
+            <div class="notes-lines"></div>
+            <div class="notes-lines"></div>
+        </div>
+        
+        <div class="page-number">Page 3</div>
+    </div>
+
+    <!-- Page 4: Year-End Summary -->
+    <div class="page">
+        <div class="header">
+            <div class="logo">Canna Bookkeeper™ NY</div>
+            <h1 class="title">Year-End COGS Summary</h1>
+            <p class="subtitle">Tax Year: ___________</p>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">Annual COGS Calculation</div>
+            
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Month</th>
+                        <th>Direct Materials</th>
+                        <th>Direct Labor</th>
+                        <th>Facility Costs</th>
+                        <th>Total COGS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>January</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                    </tr>
+                    <tr>
+                        <td>February</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                    </tr>
+                    <tr>
+                        <td>March</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                    </tr>
+                    <tr>
+                        <td>April</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                    </tr>
+                    <tr>
+                        <td>May</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                    </tr>
+                    <tr>
+                        <td>June</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                    </tr>
+                    <tr>
+                        <td>August</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                    </tr>
+                    <tr>
+                        <td>September</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                    </tr>
+                    <tr>
+                        <td>October</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                    </tr>
+                    <tr>
+                        <td>November</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                    </tr>
+                    <tr>
+                        <td>December</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                    </tr>
+                    <tr style="background: #FF4D4D; color: white; font-weight: bold;">
+                        <td>Total Annual COGS</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">COGS as Percentage of Revenue</div>
+            
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Month</th>
+                        <th>Revenue</th>
+                        <th>COGS</th>
+                        <th>COGS %</th>
+                        <th>Gross Profit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>January</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>_____%</td>
+                        <td>$_____</td>
+                    </tr>
+                    <tr>
+                        <td>February</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>_____%</td>
+                        <td>$_____</td>
+                    </tr>
+                    <tr>
+                        <td>March</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>_____%</td>
+                        <td>$_____</td>
+                    </tr>
+                    <tr>
+                        <td>April</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>_____%</td>
+                        <td>$_____</td>
+                    </tr>
+                    <tr>
+                        <td>May</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>_____%</td>
+                        <td>$_____</td>
+                    </tr>
+                    <tr>
+                        <td>June</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>_____%</td>
+                        <td>$_____</td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>_____%</td>
+                        <td>$_____</td>
+                    </tr>
+                    <tr>
+                        <td>August</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>_____%</td>
+                        <td>$_____</td>
+                    </tr>
+                    <tr>
+                        <td>September</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>_____%</td>
+                        <td>$_____</td>
+                    </tr>
+                    <tr>
+                        <td>October</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>_____%</td>
+                        <td>$_____</td>
+                    </tr>
+                    <tr>
+                        <td>November</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>_____%</td>
+                        <td>$_____</td>
+                    </tr>
+                    <tr>
+                        <td>December</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>_____%</td>
+                        <td>$_____</td>
+                    </tr>
+                    <tr style="background: #FF4D4D; color: white; font-weight: bold;">
+                        <td>Annual Totals</td>
+                        <td>$_____</td>
+                        <td>$_____</td>
+                        <td>_____%</td>
+                        <td>$_____</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">Tax Impact Analysis</div>
+            
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Amount</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Total Revenue</td>
+                        <td>$_____</td>
+                        <td>Gross sales for the year</td>
+                    </tr>
+                    <tr>
+                        <td>Total COGS</td>
+                        <td>$_____</td>
+                        <td>Deductible under 280E</td>
+                    </tr>
+                    <tr>
+                        <td>Gross Profit</td>
+                        <td>$_____</td>
+                        <td>Revenue minus COGS</td>
+                    </tr>
+                    <tr>
+                        <td>Non-Deductible Expenses</td>
+                        <td>$_____</td>
+                        <td>Marketing, admin, etc.</td>
+                    </tr>
+                    <tr>
+                        <td>Taxable Income</td>
+                        <td>$_____</td>
+                        <td>Gross profit (280E impact)</td>
+                    </tr>
+                    <tr>
+                        <td>Tax Rate</td>
+                        <td>_____%</td>
+                        <td>Your applicable tax rate</td>
+                    </tr>
+                    <tr style="background: #FF4D4D; color: white; font-weight: bold;">
+                        <td>Tax Liability</td>
+                        <td>$_____</td>
+                        <td>Tax on gross profit</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="notes-section">
+            <div class="notes-title">📝 Year-End Analysis Notes:</div>
+            <div class="notes-lines"></div>
+            <div class="notes-lines"></div>
+            <div class="notes-lines"></div>
+            <div class="notes-lines"></div>
+        </div>
+        
+        <div class="page-number">Page 4</div>
+    </div>
+
+    <!-- Page 5: Instructions & Best Practices -->
+    <div class="page">
+        <div class="header">
+            <div class="logo">Canna Bookkeeper™ NY</div>
+            <h1 class="title">Template Instructions & Best Practices</h1>
+            <p class="subtitle">How to Use This Template Effectively</p>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">Setup Instructions</div>
+            
+            <div class="highlight-box">
+                <div class="highlight-title">🔧 Initial Setup</div>
+                <ol style="line-height: 1.8;">
+                    <li><strong>Download the Excel template</strong> from the website</li>
+                    <li><strong>Customize cost categories</strong> to match your business</li>
+                    <li><strong>Set up allocation percentages</strong> for facility costs</li>
+                    <li><strong>Choose inventory valuation method</strong> (FIFO, LIFO, or weighted average)</li>
+                    <li><strong>Test formulas</strong> with sample data</li>
+                </ol>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">Monthly Data Entry</div>
+            
+            <div class="content-box">
+                <p><strong>Step 1:</strong> Enter all direct materials purchased during the month</p>
+                <p><strong>Step 2:</strong> Record all direct labor hours and rates</p>
+                <p><strong>Step 3:</strong> Allocate facility costs based on production percentage</p>
+                <p><strong>Step 4:</strong> Update inventory valuations</p>
+                <p><strong>Step 5:</strong> Review calculations for accuracy</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">Best Practices</div>
+            
+            <div class="content-box">
+                <ul>
+                    <li><strong>Consistency is key</strong> - Use the same allocation methods throughout the year</li>
+                    <li><strong>Document everything</strong> - Keep receipts and supporting documentation</li>
+                    <li><strong>Review monthly</strong> - Don't wait until year-end to review calculations</li>
+                    <li><strong>Backup regularly</strong> - Keep multiple copies of your template</li>
+                    <li><strong>Consult professionals</strong> - Have a CPA review your calculations</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">Common Mistakes to Avoid</div>
+            
+            <div class="warning-box">
+                <div class="warning-title">❌ Common Mistakes</div>
+                <ul>
+                    <li>Including non-deductible expenses in COGS</li>
+                    <li>Inconsistent allocation methods</li>
+                    <li>Missing direct labor costs</li>
+                    <li>Incorrect facility cost allocations</li>
+                    <li>Not documenting allocation methodologies</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">Getting Help</div>
+            
+            <div class="highlight-box">
+                <div class="highlight-title">🚀 Need Professional Help?</div>
+                <p>Our team of cannabis accounting experts can help you set up and maintain your COGS tracking system. We can also review your calculations and ensure compliance with 280E requirements.</p>
+                <p><strong>Contact:</strong> cbkny.com | (716) XXX-XXXX</p>
+            </div>
+        </div>
+        
+        <div class="notes-section">
+            <div class="notes-title">📝 Additional Notes & Questions:</div>
+            <div class="notes-lines"></div>
+            <div class="notes-lines"></div>
+            <div class="notes-lines"></div>
+            <div class="notes-lines"></div>
+        </div>
+        
+        <div class="footer">
+            <p><strong>Canna Bookkeeper™ NY</strong> | Professional Cannabis Accounting Services | cbkny.com</p>
+            <p>This template is for informational purposes only. Consult with qualified professionals for specific tax advice.</p>
+        </div>
+        <div class="page-number">Page 5</div>
+    </div>
+</body>
+</html>
