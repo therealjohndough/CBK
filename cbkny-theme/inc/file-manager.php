@@ -20,6 +20,30 @@ function cbkny_create_downloads_directory() {
         $htaccess_content .= "RewriteCond %{HTTP_REFERER} !^https?://" . $_SERVER['HTTP_HOST'] . " [NC]\n";
         $htaccess_content .= "RewriteRule \\.(pdf|xlsx|xls)$ - [F]\n";
         file_put_contents($downloads_dir . '/.htaccess', $htaccess_content);
+        
+        // Copy theme files to uploads directory
+        cbkny_copy_theme_files_to_uploads();
+    }
+}
+
+// Copy files from theme directory to uploads directory
+function cbkny_copy_theme_files_to_uploads() {
+    $upload_dir = wp_upload_dir();
+    $downloads_dir = $upload_dir['basedir'] . '/cbkny-downloads';
+    $theme_dir = get_template_directory() . '/assets/downloads';
+    
+    // Copy PDFs
+    $pdf_files = glob($theme_dir . '/pdfs/*.pdf');
+    foreach ($pdf_files as $file) {
+        $filename = basename($file);
+        copy($file, $downloads_dir . '/pdfs/' . $filename);
+    }
+    
+    // Copy Excel files
+    $excel_files = glob($theme_dir . '/templates/*.xlsx');
+    foreach ($excel_files as $file) {
+        $filename = basename($file);
+        copy($file, $downloads_dir . '/templates/' . $filename);
     }
 }
 add_action('after_switch_theme', 'cbkny_create_downloads_directory');
