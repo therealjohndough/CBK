@@ -54,8 +54,8 @@
         <p><strong>Finance Chair</strong> - Leading financial oversight and strategic planning for Buffalo's premier cannabis industry network.</p>
       </div>
       <div style="text-align: center; padding: 2rem; border: 2px solid var(--cbkny-pink); border-radius: 1rem;">
-        <h4 style="color: var(--cbkny-pink); margin-bottom: 1rem;">AAF (Association of Accounting Firms)</h4>
-        <p><strong>Finance Chair</strong> - Managing financial operations and strategic initiatives for the accounting professionals association.</p>
+        <h4 style="color: var(--cbkny-pink); margin-bottom: 1rem;">AAF (Advertising Awards Organization)</h4>
+        <p><strong>Finance Chair</strong> - Managing financial operations and strategic initiatives for the advertising awards organization.</p>
       </div>
       <div style="text-align: center; padding: 2rem; border: 2px solid var(--cbkny-pink); border-radius: 1rem;">
         <h4 style="color: var(--cbkny-pink); margin-bottom: 1rem;">NY Cannabis Growers & Processors Association</h4>
