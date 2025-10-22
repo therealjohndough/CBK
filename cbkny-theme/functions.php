@@ -656,3 +656,67 @@ function cbkny_create_pillar_content_admin_page() {
     echo '</form>';
     echo '</div>';
 }
+
+// Add sitemap management admin menu
+function cbkny_add_sitemap_management_menu() {
+    add_management_page(
+        'Sitemap Management',
+        'Sitemap Management',
+        'manage_options',
+        'cbkny-sitemap-management',
+        'cbkny_sitemap_management_admin_page'
+    );
+}
+add_action('admin_menu', 'cbkny_add_sitemap_management_menu');
+
+// Admin page for sitemap management
+function cbkny_sitemap_management_admin_page() {
+    if (isset($_POST['submit_sitemap'])) {
+        cbkny_submit_sitemap_to_search_engines();
+        echo '<div class="notice notice-success"><p>Sitemap submitted to Google and Bing successfully!</p></div>';
+    }
+    
+    echo '<div class="wrap">';
+    echo '<h1>Sitemap Management</h1>';
+    echo '<p>Manage your XML sitemaps and search engine submissions.</p>';
+    
+    echo '<div class="card" style="max-width: 800px; padding: 20px; margin: 20px 0;">';
+    echo '<h2>Current Sitemaps</h2>';
+    echo '<ul>';
+    echo '<li><strong>Main Sitemap:</strong> <a href="' . home_url('/?sitemap=xml') . '" target="_blank">' . home_url('/?sitemap=xml') . '</a></li>';
+    echo '<li><strong>WordPress Sitemap:</strong> <a href="' . home_url('/wp-sitemap.xml') . '" target="_blank">' . home_url('/wp-sitemap.xml') . '</a></li>';
+    echo '<li><strong>Sitemap Index:</strong> <a href="' . home_url('/?sitemap=index') . '" target="_blank">' . home_url('/?sitemap=index') . '</a></li>';
+    echo '</ul>';
+    echo '</div>';
+    
+    echo '<div class="card" style="max-width: 800px; padding: 20px; margin: 20px 0;">';
+    echo '<h2>Search Engine Submission</h2>';
+    echo '<p>Submit your sitemap to Google and Bing for faster indexing.</p>';
+    echo '<form method="post">';
+    echo '<input type="submit" name="submit_sitemap" class="button button-primary" value="Submit Sitemap to Search Engines">';
+    echo '</form>';
+    echo '</div>';
+    
+    echo '<div class="card" style="max-width: 800px; padding: 20px; margin: 20px 0;">';
+    echo '<h2>Manual Submission Links</h2>';
+    echo '<p>You can also submit your sitemap manually to search engines:</p>';
+    echo '<ul>';
+    echo '<li><strong>Google Search Console:</strong> <a href="https://search.google.com/search-console" target="_blank">https://search.google.com/search-console</a></li>';
+    echo '<li><strong>Bing Webmaster Tools:</strong> <a href="https://www.bing.com/webmasters" target="_blank">https://www.bing.com/webmasters</a></li>';
+    echo '</ul>';
+    echo '</div>';
+    
+    echo '<div class="card" style="max-width: 800px; padding: 20px; margin: 20px 0;">';
+    echo '<h2>Sitemap Features</h2>';
+    echo '<ul>';
+    echo '<li>✅ Automatic sitemap generation</li>';
+    echo '<li>✅ Priority-based URL organization</li>';
+    echo '<li>✅ Automatic search engine pinging</li>';
+    echo '<li>✅ Enhanced robots.txt</li>';
+    echo '<li>✅ Sitemap index for large sites</li>';
+    echo '<li>✅ Real-time updates on content changes</li>';
+    echo '</ul>';
+    echo '</div>';
+    
+    echo '</div>';
+}

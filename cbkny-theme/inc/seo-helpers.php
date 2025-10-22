@@ -244,22 +244,30 @@ function cbkny_output_local_business_schema() {
 }
 add_action('wp_head', 'cbkny_output_local_business_schema', 30);
 
-// Generate XML sitemap
+// Enhanced XML sitemap generator
 function cbkny_generate_sitemap() {
     if (!isset($_GET['sitemap']) || $_GET['sitemap'] !== 'xml') return;
     
     header('Content-Type: application/xml; charset=UTF-8');
     
-    $posts = get_posts(array(
+    // Get all published pages
+    $pages = get_posts(array(
         'post_type' => 'page',
         'post_status' => 'publish',
         'numberposts' => -1
     ));
     
-    echo '<?xml version="1.0" encoding="UTF-8"?>';
-    echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
+    // Get all published posts
+    $posts = get_posts(array(
+        'post_type' => 'post',
+        'post_status' => 'publish',
+        'numberposts' => -1
+    ));
     
-    // Homepage
+    echo '<?xml version="1.0" encoding="UTF-8"?>';
+    echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">';
+    
+    // Homepage (highest priority)
     echo '<url>';
     echo '<loc>' . home_url('/') . '</loc>';
     echo '<lastmod>' . date('c') . '</lastmod>';
@@ -267,13 +275,58 @@ function cbkny_generate_sitemap() {
     echo '<priority>1.0</priority>';
     echo '</url>';
     
-    // Pages
+    // Important service pages (high priority)
+    $high_priority_pages = array('services', 'about', 'contact', 'resources');
+    foreach ($high_priority_pages as $slug) {
+        $page = get_page_by_path($slug);
+        if ($page) {
+            echo '<url>';
+            echo '<loc>' . get_permalink($page->ID) . '</loc>';
+            echo '<lastmod>' . date('c', strtotime($page->post_modified)) . '</lastmod>';
+            echo '<changefreq>monthly</changefreq>';
+            echo '<priority>0.9</priority>';
+            echo '</url>';
+        }
+    }
+    
+    // Pillar content pages (high priority)
+    $pillar_pages = array(
+        'ultimate-guide-cannabis-accounting-new-york',
+        '280e-tax-compliance-complete-resource',
+        'ny-ocm-reporting-requirements-complete-guide',
+        'cannabis-business-startup-financial-guide'
+    );
+    foreach ($pillar_pages as $slug) {
+        $page = get_page_by_path($slug);
+        if ($page) {
+            echo '<url>';
+            echo '<loc>' . get_permalink($page->ID) . '</loc>';
+            echo '<lastmod>' . date('c', strtotime($page->post_modified)) . '</lastmod>';
+            echo '<changefreq>monthly</changefreq>';
+            echo '<priority>0.9</priority>';
+            echo '</url>';
+        }
+    }
+    
+    // All other pages
+    foreach ($pages as $post) {
+        if (!in_array($post->post_name, $high_priority_pages) && !in_array($post->post_name, $pillar_pages)) {
+            echo '<url>';
+            echo '<loc>' . get_permalink($post->ID) . '</loc>';
+            echo '<lastmod>' . date('c', strtotime($post->post_modified)) . '</lastmod>';
+            echo '<changefreq>monthly</changefreq>';
+            echo '<priority>0.8</priority>';
+            echo '</url>';
+        }
+    }
+    
+    // Blog posts
     foreach ($posts as $post) {
         echo '<url>';
         echo '<loc>' . get_permalink($post->ID) . '</loc>';
         echo '<lastmod>' . date('c', strtotime($post->post_modified)) . '</lastmod>';
-        echo '<changefreq>monthly</changefreq>';
-        echo '<priority>0.8</priority>';
+        echo '<changefreq>weekly</changefreq>';
+        echo '<priority>0.7</priority>';
         echo '</url>';
     }
     
@@ -287,6 +340,89 @@ function cbkny_add_sitemap_to_robots() {
     echo "\nSitemap: " . home_url('/?sitemap=xml') . "\n";
 }
 add_action('do_robots', 'cbkny_add_sitemap_to_robots');
+
+// Automatic sitemap submission to search engines
+function cbkny_submit_sitemap_to_search_engines() {
+    $sitemap_url = home_url('/?sitemap=xml');
+    
+    // Submit to Google
+    $google_url = 'https://www.google.com/ping?sitemap=' . urlencode($sitemap_url);
+    wp_remote_get($google_url, array('timeout' => 5));
+    
+    // Submit to Bing
+    $bing_url = 'https://www.bing.com/ping?sitemap=' . urlencode($sitemap_url);
+    wp_remote_get($bing_url, array('timeout' => 5));
+}
+add_action('publish_post', 'cbkny_submit_sitemap_to_search_engines');
+add_action('publish_page', 'cbkny_submit_sitemap_to_search_engines');
+
+// Create sitemap index for large sites
+function cbkny_create_sitemap_index() {
+    if (!isset($_GET['sitemap']) || $_GET['sitemap'] !== 'index') return;
+    
+    header('Content-Type: application/xml; charset=UTF-8');
+    
+    echo '<?xml version="1.0" encoding="UTF-8"?>';
+    echo '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
+    
+    // Main sitemap
+    echo '<sitemap>';
+    echo '<loc>' . home_url('/?sitemap=xml') . '</loc>';
+    echo '<lastmod>' . date('c') . '</lastmod>';
+    echo '</sitemap>';
+    
+    // WordPress sitemap
+    echo '<sitemap>';
+    echo '<loc>' . home_url('/wp-sitemap.xml') . '</loc>';
+    echo '<lastmod>' . date('c') . '</lastmod>';
+    echo '</sitemap>';
+    
+    echo '</sitemapindex>';
+    exit;
+}
+add_action('init', 'cbkny_create_sitemap_index');
+
+// Enhanced robots.txt with better directives
+function cbkny_enhanced_robots_txt() {
+    echo "User-agent: *\n";
+    echo "Allow: /\n\n";
+    
+    // Disallow admin areas
+    echo "Disallow: /wp-admin/\n";
+    echo "Disallow: /wp-includes/\n";
+    echo "Disallow: /wp-content/plugins/\n";
+    echo "Disallow: /wp-content/themes/\n";
+    echo "Disallow: /wp-content/uploads/backup/\n";
+    echo "Disallow: /wp-content/cache/\n";
+    echo "Disallow: /wp-content/upgrade/\n";
+    echo "Disallow: /wp-content/uploads/wpforms/\n";
+    echo "Disallow: /wp-json/\n";
+    echo "Disallow: /xmlrpc.php\n";
+    echo "Disallow: /readme.html\n";
+    echo "Disallow: /license.txt\n\n";
+    
+    // Allow important directories
+    echo "Allow: /wp-content/uploads/\n";
+    echo "Allow: /wp-content/themes/cbkny-theme/assets/\n\n";
+    
+    // Sitemaps
+    echo "Sitemap: " . home_url('/?sitemap=xml') . "\n";
+    echo "Sitemap: " . home_url('/wp-sitemap.xml') . "\n";
+    echo "Sitemap: " . home_url('/?sitemap=index') . "\n\n";
+    
+    // Crawl delay
+    echo "Crawl-delay: 1\n";
+}
+add_filter('robots_txt', 'cbkny_enhanced_robots_txt');
+
+// Add sitemap ping on content updates
+function cbkny_ping_sitemap_on_update($post_id) {
+    // Only ping for published content
+    if (get_post_status($post_id) === 'publish') {
+        cbkny_submit_sitemap_to_search_engines();
+    }
+}
+add_action('save_post', 'cbkny_ping_sitemap_on_update');
 
 // Breadcrumb navigation
 function cbkny_breadcrumbs() {
