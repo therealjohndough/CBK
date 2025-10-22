@@ -5,7 +5,7 @@ function cbkny_output_schema() {
   $data = [
     "@context" => "https://schema.org",
     "@type" => "ProfessionalService",
-    "name" => "Canna Bookkeeper™ NY",
+    "name" => cbkny_get_option('cbkny_business_name', 'Canna Bookkeeper™ NY'),
     "alternateName" => "Canna Bookkeeper LLC",
     "url" => home_url('/'),
     "description" => "Professional cannabis accounting services in New York. 280E compliance, OCM reporting, and audit-ready bookkeeping for dispensaries, cultivators, and processors.",
@@ -70,8 +70,8 @@ function cbkny_output_schema() {
       "addressRegion" => "NY",
       "addressCountry" => "US"
     ],
-    "telephone" => "+1716-XXX-XXXX",
-    "email" => "info@cbkny.com",
+    "telephone" => cbkny_get_option('cbkny_phone', '+1-716-XXX-XXXX'),
+    "email" => cbkny_get_option('cbkny_email', 'info@cbkny.com'),
     "openingHours" => "Mo-Fr 09:00-17:00",
     "priceRange" => "$500-$3000",
     "aggregateRating" => [

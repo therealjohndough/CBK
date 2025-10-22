@@ -1,5 +1,7 @@
 <?php get_header(); ?>
 <main class="container">
+  <?php cbkny_breadcrumbs(); ?>
+  
   <section class="hero">
     <h1>Contact Canna Bookkeeper</h1>
     <p>Get in touch for your free cannabis accounting consultation</p>

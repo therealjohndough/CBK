@@ -1,5 +1,7 @@
 <?php get_header(); ?>
 <main class="container">
+  <?php cbkny_breadcrumbs(); ?>
+  
   <section class="hero">
     <h1>Services Built for Cannabis Operators</h1>
     <p>Comprehensive accounting solutions designed specifically for New York's cannabis industry</p>

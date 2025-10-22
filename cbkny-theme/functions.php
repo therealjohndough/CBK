@@ -25,6 +25,44 @@ add_action('wp_enqueue_scripts', function() {
   ]);
 });
 
+// Performance optimizations
+function cbkny_performance_optimizations() {
+    // Remove unnecessary WordPress features
+    remove_action('wp_head', 'wp_generator');
+    remove_action('wp_head', 'wlwmanifest_link');
+    remove_action('wp_head', 'rsd_link');
+    remove_action('wp_head', 'wp_shortlink_wp_head');
+    remove_action('wp_head', 'adjacent_posts_rel_link_wp_head');
+    
+    // Disable emoji scripts
+    remove_action('wp_head', 'print_emoji_detection_script', 7);
+    remove_action('wp_print_styles', 'print_emoji_styles');
+    remove_action('admin_print_scripts', 'print_emoji_detection_script');
+    remove_action('admin_print_styles', 'print_emoji_styles');
+    
+    // Disable XML-RPC
+    add_filter('xmlrpc_enabled', '__return_false');
+    
+    // Remove query strings from static resources
+    add_filter('script_loader_src', 'cbkny_remove_query_strings', 15, 1);
+    add_filter('style_loader_src', 'cbkny_remove_query_strings', 15, 1);
+}
+add_action('init', 'cbkny_performance_optimizations');
+
+function cbkny_remove_query_strings($src) {
+    if (strpos($src, '?ver=')) {
+        $src = remove_query_arg('ver', $src);
+    }
+    return $src;
+}
+
+// Add preload for critical resources
+function cbkny_add_preload_links() {
+    echo '<link rel="preload" href="' . get_template_directory_uri() . '/style.css" as="style">';
+    echo '<link rel="preload" href="' . get_template_directory_uri() . '/assets/js/app.js" as="script">';
+}
+add_action('wp_head', 'cbkny_add_preload_links', 1);
+
 // ACF JSON for portable field groups (optional)
 add_filter('acf/settings/save_json', function($path) {
   return get_template_directory() . '/acf-json';
@@ -70,6 +108,12 @@ require_once get_template_directory() . '/inc/cookie-consent.php';
 
 // File management system
 require_once get_template_directory() . '/inc/file-manager.php';
+
+// SEO helper functions
+require_once get_template_directory() . '/inc/seo-helpers.php';
+
+// Blog functionality
+require_once get_template_directory() . '/inc/blog-functions.php';
 
 // Enqueue Lottie loader
 function cbkny_enqueue_lottie_loader() {

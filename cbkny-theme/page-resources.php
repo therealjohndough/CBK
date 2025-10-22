@@ -1,10 +1,6 @@
 <?php get_header(); ?>
 <main class="container">
-  <!-- Breadcrumb Navigation -->
-  <nav style="margin: 1rem 0; font-size: 0.9rem;">
-    <a href="/" style="color: var(--cbkny-gray); text-decoration: none;">Home</a> > 
-    <span style="color: var(--cbkny-pink);">Resources</span>
-  </nav>
+  <?php cbkny_breadcrumbs(); ?>
 
   <section class="hero">
     <h1>Free Cannabis Accounting Resources</h1>

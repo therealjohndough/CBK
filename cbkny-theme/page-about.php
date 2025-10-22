@@ -1,5 +1,7 @@
 <?php get_header(); ?>
 <main class="container">
+  <?php cbkny_breadcrumbs(); ?>
+  
   <section class="hero" data-animate="fade-in">
     <h1 data-animate="fade-in-up" data-delay="200">About Rosanna St. John</h1>
     <p data-animate="fade-in-up" data-delay="400">Your trusted cannabis accounting specialist in New York</p>

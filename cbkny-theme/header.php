@@ -3,7 +3,32 @@
 <head>
 <meta charset="<?php bloginfo('charset'); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Professional cannabis accounting services in New York. 280E compliance, OCM reporting, and audit-ready bookkeeping for dispensaries, cultivators, and processors.">
+<meta name="description" content="<?php echo esc_attr(cbkny_get_meta_description()); ?>">
+<meta name="keywords" content="<?php echo esc_attr(cbkny_get_meta_keywords()); ?>">
+<meta name="author" content="Canna Bookkeeper™ NY">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="<?php echo esc_url(cbkny_get_canonical_url()); ?>">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="<?php echo esc_url(cbkny_get_canonical_url()); ?>">
+<meta property="og:title" content="<?php echo esc_attr(cbkny_get_og_title()); ?>">
+<meta property="og:description" content="<?php echo esc_attr(cbkny_get_meta_description()); ?>">
+<meta property="og:image" content="<?php echo esc_url(cbkny_get_og_image()); ?>">
+<meta property="og:site_name" content="Canna Bookkeeper™ NY">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="<?php echo esc_url(cbkny_get_canonical_url()); ?>">
+<meta property="twitter:title" content="<?php echo esc_attr(cbkny_get_og_title()); ?>">
+<meta property="twitter:description" content="<?php echo esc_attr(cbkny_get_meta_description()); ?>">
+<meta property="twitter:image" content="<?php echo esc_url(cbkny_get_og_image()); ?>">
+
+<!-- Preconnect to external domains -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+<link rel="dns-prefetch" href="//www.google-analytics.com">
+
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
