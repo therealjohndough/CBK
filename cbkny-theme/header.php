@@ -41,7 +41,7 @@
     
     <!-- Mobile Menu Toggle -->
     <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
-      <i class="fas fa-bars"></i>
+      ☰
     </button>
     
     <!-- Desktop Menu -->
@@ -70,7 +70,7 @@
     <div class="mobile-menu-header">
       <img src="<?php echo esc_url(cbkny_get_option('cbkny_logo_url', 'http://johnd501.sg-host.com/wp-content/uploads/2025/10/cbk-logo.webp')); ?>" alt="<?php echo esc_attr(cbkny_get_option('cbkny_business_name', 'Canna Bookkeeper™ NY')); ?>" style="height: 40px; width: auto;">
       <button class="mobile-menu-close" aria-label="Close mobile menu">
-        <i class="fas fa-times"></i>
+        ✕
       </button>
     </div>
     

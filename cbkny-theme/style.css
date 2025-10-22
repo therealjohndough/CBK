@@ -518,6 +518,7 @@ i.fas:hover, i.fab:hover {
   cursor: pointer;
   padding: 0.5rem;
   z-index: 1001;
+  font-weight: bold;
 }
 
 .mobile-menu-toggle:hover {
@@ -558,6 +559,7 @@ i.fas:hover, i.fab:hover {
   color: var(--cbkny-pink);
   cursor: pointer;
   padding: 0.5rem;
+  font-weight: bold;
 }
 
 .mobile-menu-close:hover {
