@@ -612,3 +612,12 @@ function cbkny_create_pillar_content_pages() {
     }
 }
 add_action('after_switch_theme', 'cbkny_create_pillar_content_pages');
+
+// Manual trigger to create pillar content pages
+function cbkny_manual_create_pillar_pages() {
+    if (isset($_GET['create_pillar_pages']) && $_GET['create_pillar_pages'] == '1') {
+        cbkny_create_pillar_content_pages();
+        echo '<div class="notice notice-success"><p>Pillar content pages created successfully!</p></div>';
+    }
+}
+add_action('admin_notices', 'cbkny_manual_create_pillar_pages');
