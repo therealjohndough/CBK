@@ -237,6 +237,15 @@ function cbkny_add_admin_menu() {
         'cbkny-create-pages',
         'cbkny_create_pages_admin_page'
     );
+    
+    // Add article publishing menu
+    add_management_page(
+        'Publish Articles',
+        'Publish Articles',
+        'manage_options',
+        'cbkny-publish-articles',
+        'cbkny_publish_articles_admin_page'
+    );
 }
 add_action('admin_menu', 'cbkny_add_admin_menu');
 
@@ -721,4 +730,78 @@ function cbkny_sitemap_management_admin_page() {
     echo '</div>';
     
     echo '</div>';
+}
+
+// Admin page for publishing articles
+function cbkny_publish_articles_admin_page() {
+    if (isset($_POST['publish_articles'])) {
+        $result = cbkny_publish_all_articles();
+        if ($result) {
+            echo '<div class="notice notice-success"><p>All articles published successfully!</p></div>';
+        } else {
+            echo '<div class="notice notice-error"><p>Some articles may not have been published. Check the pages list.</p></div>';
+        }
+    }
+    
+    echo '<div class="wrap">';
+    echo '<h1>Publish Articles</h1>';
+    echo '<p>Click the button below to publish all pillar content and educational articles.</p>';
+    
+    echo '<h2>Articles to be published:</h2>';
+    echo '<h3>Pillar Content (4 articles):</h3>';
+    echo '<ul>';
+    echo '<li><a href="/ultimate-guide-cannabis-accounting-new-york" target="_blank">Ultimate Guide to Cannabis Accounting in New York</a></li>';
+    echo '<li><a href="/280e-tax-compliance-complete-resource" target="_blank">280E Tax Compliance: Complete Resource</a></li>';
+    echo '<li><a href="/ny-ocm-reporting-requirements-complete-guide" target="_blank">NY OCM Reporting Requirements: Complete Guide</a></li>';
+    echo '<li><a href="/cannabis-business-startup-financial-guide" target="_blank">Cannabis Business Startup Financial Guide</a></li>';
+    echo '</ul>';
+    
+    echo '<h3>Educational Articles (6 articles):</h3>';
+    echo '<ul>';
+    echo '<li><a href="/understanding-280e-complete-guide" target="_blank">Understanding 280E: A Complete Guide</a></li>';
+    echo '<li><a href="/ocm-reporting-requirements-explained" target="_blank">OCM Reporting Requirements Explained</a></li>';
+    echo '<li><a href="/multi-entity-cannabis-business-structures" target="_blank">Multi-Entity Cannabis Business Structures</a></li>';
+    echo '<li><a href="/preparing-cannabis-business-audits" target="_blank">Preparing for Cannabis Business Audits</a></li>';
+    echo '<li><a href="/cannabis-inventory-tracking-best-practices" target="_blank">Cannabis Inventory Tracking Best Practices</a></li>';
+    echo '<li><a href="/ny-cannabis-tax-deadlines-penalties" target="_blank">NY Cannabis Tax Deadlines & Penalties</a></li>';
+    echo '</ul>';
+    
+    echo '<form method="post">';
+    echo '<input type="submit" name="publish_articles" class="button button-primary" value="Publish All Articles">';
+    echo '</form>';
+    echo '</div>';
+}
+
+// Function to publish all articles
+function cbkny_publish_all_articles() {
+    $articles = array(
+        // Pillar Content
+        'ultimate-guide-cannabis-accounting-new-york' => 'Ultimate Guide to Cannabis Accounting in New York',
+        '280e-tax-compliance-complete-resource' => '280E Tax Compliance: Complete Resource',
+        'ny-ocm-reporting-requirements-complete-guide' => 'NY OCM Reporting Requirements: Complete Guide',
+        'cannabis-business-startup-financial-guide' => 'Cannabis Business Startup Financial Guide',
+        
+        // Educational Articles
+        'understanding-280e-complete-guide' => 'Understanding 280E: A Complete Guide',
+        'ocm-reporting-requirements-explained' => 'OCM Reporting Requirements Explained',
+        'multi-entity-cannabis-business-structures' => 'Multi-Entity Cannabis Business Structures',
+        'preparing-cannabis-business-audits' => 'Preparing for Cannabis Business Audits',
+        'cannabis-inventory-tracking-best-practices' => 'Cannabis Inventory Tracking Best Practices',
+        'ny-cannabis-tax-deadlines-penalties' => 'NY Cannabis Tax Deadlines & Penalties'
+    );
+    
+    $published = 0;
+    
+    foreach ($articles as $slug => $title) {
+        $page = get_page_by_path($slug);
+        if ($page) {
+            wp_update_post(array(
+                'ID' => $page->ID,
+                'post_status' => 'publish'
+            ));
+            $published++;
+        }
+    }
+    
+    return $published > 0;
 }
