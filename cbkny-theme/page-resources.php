@@ -86,43 +86,73 @@
   </section>
 
   <section style="background: var(--cbkny-light-gray); padding: 3rem; border-radius: 1rem; margin: 4rem 0;">
+    <h2 style="text-align: center; color: var(--cbkny-black); margin-bottom: 2rem;">Pillar Content</h2>
+    <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
+      
+      <div class="card">
+        <h3 style="color: var(--cbkny-pink); margin-bottom: 1rem;">Ultimate Guide to Cannabis Accounting in New York</h3>
+        <p style="margin-bottom: 1rem;">Everything you need to know about cannabis accounting, 280E compliance, and OCM reporting for New York operators.</p>
+        <a href="/ultimate-guide-cannabis-accounting-new-york" style="color: var(--cbkny-pink); text-decoration: none; font-weight: 600;">Read More →</a>
+      </div>
+
+      <div class="card">
+        <h3 style="color: var(--cbkny-pink); margin-bottom: 1rem;">280E Tax Compliance: Complete Resource</h3>
+        <p style="margin-bottom: 1rem;">A comprehensive resource for understanding and implementing 280E tax compliance for cannabis businesses.</p>
+        <a href="/280e-tax-compliance-complete-resource" style="color: var(--cbkny-pink); text-decoration: none; font-weight: 600;">Read More →</a>
+      </div>
+
+      <div class="card">
+        <h3 style="color: var(--cbkny-pink); margin-bottom: 1rem;">NY OCM Reporting Requirements: Complete Guide</h3>
+        <p style="margin-bottom: 1rem;">Navigate New York's Office of Cannabis Management reporting requirements with confidence.</p>
+        <a href="/ny-ocm-reporting-requirements-complete-guide" style="color: var(--cbkny-pink); text-decoration: none; font-weight: 600;">Read More →</a>
+      </div>
+
+      <div class="card">
+        <h3 style="color: var(--cbkny-pink); margin-bottom: 1rem;">Cannabis Business Startup Financial Guide</h3>
+        <p style="margin-bottom: 1rem;">Essential financial guidance for starting and growing a successful cannabis business.</p>
+        <a href="/cannabis-business-startup-financial-guide" style="color: var(--cbkny-pink); text-decoration: none; font-weight: 600;">Read More →</a>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: var(--cbkny-light-gray); padding: 3rem; border-radius: 1rem; margin: 4rem 0;">
     <h2 style="text-align: center; color: var(--cbkny-black); margin-bottom: 2rem;">Educational Articles</h2>
     <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
       
       <div class="card">
         <h3 style="color: var(--cbkny-pink); margin-bottom: 1rem;">Understanding 280E: A Complete Guide</h3>
         <p style="margin-bottom: 1rem;">Everything you need to know about 280E tax law and how it affects your cannabis business deductions.</p>
-        <a href="#" style="color: var(--cbkny-pink); text-decoration: none; font-weight: 600;">Read More →</a>
+        <a href="/understanding-280e-complete-guide" style="color: var(--cbkny-pink); text-decoration: none; font-weight: 600;">Read More →</a>
       </div>
 
       <div class="card">
         <h3 style="color: var(--cbkny-pink); margin-bottom: 1rem;">OCM Reporting Requirements Explained</h3>
         <p style="margin-bottom: 1rem;">Navigate New York's Office of Cannabis Management reporting requirements with confidence.</p>
-        <a href="#" style="color: var(--cbkny-pink); text-decoration: none; font-weight: 600;">Read More →</a>
+        <a href="/ocm-reporting-requirements-explained" style="color: var(--cbkny-pink); text-decoration: none; font-weight: 600;">Read More →</a>
       </div>
 
       <div class="card">
         <h3 style="color: var(--cbkny-pink); margin-bottom: 1rem;">Multi-Entity Cannabis Business Structures</h3>
         <p style="margin-bottom: 1rem;">Learn how to structure multiple entities for maximum tax efficiency and compliance.</p>
-        <a href="#" style="color: var(--cbkny-pink); text-decoration: none; font-weight: 600;">Read More →</a>
+        <a href="/multi-entity-cannabis-business-structures" style="color: var(--cbkny-pink); text-decoration: none; font-weight: 600;">Read More →</a>
       </div>
 
       <div class="card">
         <h3 style="color: var(--cbkny-pink); margin-bottom: 1rem;">Preparing for Cannabis Business Audits</h3>
         <p style="margin-bottom: 1rem;">Essential steps to prepare your cannabis business for potential IRS audits.</p>
-        <a href="#" style="color: var(--cbkny-pink); text-decoration: none; font-weight: 600;">Read More →</a>
+        <a href="/preparing-cannabis-business-audits" style="color: var(--cbkny-pink); text-decoration: none; font-weight: 600;">Read More →</a>
       </div>
 
       <div class="card">
         <h3 style="color: var(--cbkny-pink); margin-bottom: 1rem;">Cannabis Inventory Tracking Best Practices</h3>
         <p style="margin-bottom: 1rem;">How to track inventory for 280E compliance and accurate COGS calculations.</p>
-        <a href="#" style="color: var(--cbkny-pink); text-decoration: none; font-weight: 600;">Read More →</a>
+        <a href="/cannabis-inventory-tracking-best-practices" style="color: var(--cbkny-pink); text-decoration: none; font-weight: 600;">Read More →</a>
       </div>
 
       <div class="card">
         <h3 style="color: var(--cbkny-pink); margin-bottom: 1rem;">NY Cannabis Tax Deadlines & Penalties</h3>
         <p style="margin-bottom: 1rem;">Important tax deadlines and penalties every NY cannabis operator should know.</p>
-        <a href="#" style="color: var(--cbkny-pink); text-decoration: none; font-weight: 600;">Read More →</a>
+        <a href="/ny-cannabis-tax-deadlines-penalties" style="color: var(--cbkny-pink); text-decoration: none; font-weight: 600;">Read More →</a>
       </div>
     </div>
   </section>
