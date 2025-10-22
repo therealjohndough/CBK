@@ -38,7 +38,14 @@
     <a href="<?php echo esc_url(home_url('/')); ?>" class="site-branding" style="display: flex; align-items: center; text-decoration: none;">
       <img src="<?php echo esc_url(cbkny_get_option('cbkny_logo_url', 'http://johnd501.sg-host.com/wp-content/uploads/2025/10/cbk-logo.webp')); ?>" alt="<?php echo esc_attr(cbkny_get_option('cbkny_business_name', 'Canna Bookkeeper™ NY')); ?>" style="height: <?php echo esc_attr(cbkny_get_option('cbkny_logo_height', '60')); ?>px; max-height: <?php echo esc_attr(cbkny_get_option('cbkny_logo_height', '60')); ?>px; width: auto;">
     </a>
-    <nav aria-label="<?php esc_attr_e('Primary', 'cbkny'); ?>">
+    
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+      <i class="fas fa-bars"></i>
+    </button>
+    
+    <!-- Desktop Menu -->
+    <nav aria-label="<?php esc_attr_e('Primary', 'cbkny'); ?>" class="desktop-menu">
       <?php 
       wp_nav_menu([
         'theme_location' => 'primary',
@@ -56,6 +63,58 @@
       ]); 
       ?>
     </nav>
+  </div>
+  
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu-header">
+      <img src="<?php echo esc_url(cbkny_get_option('cbkny_logo_url', 'http://johnd501.sg-host.com/wp-content/uploads/2025/10/cbk-logo.webp')); ?>" alt="<?php echo esc_attr(cbkny_get_option('cbkny_business_name', 'Canna Bookkeeper™ NY')); ?>" style="height: 40px; width: auto;">
+      <button class="mobile-menu-close" aria-label="Close mobile menu">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    
+    <nav aria-label="<?php esc_attr_e('Mobile Navigation', 'cbkny'); ?>">
+      <?php 
+      wp_nav_menu([
+        'theme_location' => 'primary',
+        'container' => false,
+        'menu_class' => 'mobile-menu-list',
+        'fallback_cb' => function() {
+          echo '<ul class="mobile-menu-list">';
+          echo '<li><a href="' . home_url('/') . '">Home</a></li>';
+          echo '<li><a href="' . home_url('/services') . '">Services</a></li>';
+          echo '<li><a href="' . home_url('/about') . '">About</a></li>';
+          echo '<li><a href="' . home_url('/resources') . '">Resources</a></li>';
+          echo '<li><a href="' . home_url('/contact') . '">Contact</a></li>';
+          echo '</ul>';
+        }
+      ]); 
+      ?>
+    </nav>
+    
+    <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--cbkny-border);">
+      <p style="color: var(--cbkny-gray); font-size: 0.9rem; margin-bottom: 1rem;">
+        <strong>Phone:</strong> <?php echo esc_html(cbkny_get_option('cbkny_phone', '(716) XXX-XXXX')); ?><br>
+        <strong>Email:</strong> <?php echo esc_html(cbkny_get_option('cbkny_email', 'info@cbkny.com')); ?>
+      </p>
+      
+      <div style="display: flex; gap: 1rem; justify-content: center;">
+        <?php if (cbkny_get_option('cbkny_linkedin_url')): ?>
+        <a href="<?php echo esc_url(cbkny_get_option('cbkny_linkedin_url')); ?>" target="_blank" rel="noopener" style="color: var(--cbkny-pink); font-size: 1.5rem; text-decoration: none;" aria-label="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <?php endif; ?>
+        
+        <?php 
+        $instagram_url = cbkny_get_option('cbkny_instagram_url', 'https://www.instagram.com/cannabookkeeper');
+        if ($instagram_url): ?>
+        <a href="<?php echo esc_url($instagram_url); ?>" target="_blank" rel="noopener" style="color: var(--cbkny-pink); font-size: 1.5rem; text-decoration: none;" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <?php endif; ?>
+      </div>
+    </div>
   </div>
 </header>
 <main id="main">

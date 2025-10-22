@@ -220,10 +220,63 @@
     }
   };
 
+  // Mobile menu functionality
+  function initMobileMenu() {
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const mobileMenuClose = document.querySelector('.mobile-menu-close');
+    const body = document.body;
+    
+    if (mobileMenuToggle && mobileMenu) {
+      // Open mobile menu
+      mobileMenuToggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        mobileMenu.classList.add('active');
+        body.style.overflow = 'hidden'; // Prevent background scrolling
+        mobileMenuToggle.setAttribute('aria-expanded', 'true');
+      });
+      
+      // Close mobile menu
+      function closeMobileMenu() {
+        mobileMenu.classList.remove('active');
+        body.style.overflow = ''; // Restore scrolling
+        mobileMenuToggle.setAttribute('aria-expanded', 'false');
+      }
+      
+      // Close button
+      if (mobileMenuClose) {
+        mobileMenuClose.addEventListener('click', closeMobileMenu);
+      }
+      
+      // Close on escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+          closeMobileMenu();
+        }
+      });
+      
+      // Close on outside click
+      mobileMenu.addEventListener('click', function(e) {
+        if (e.target === mobileMenu) {
+          closeMobileMenu();
+        }
+      });
+      
+      // Close on menu link click
+      const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+      mobileMenuLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          setTimeout(closeMobileMenu, 100); // Small delay for smooth transition
+        });
+      });
+    }
+  }
+
   // Initialize animations when DOM is loaded
   document.addEventListener('DOMContentLoaded', function() {
     initScrollAnimations();
     initStaggeredAnimations();
     initButtonAnimations();
+    initMobileMenu();
   });
 })();
