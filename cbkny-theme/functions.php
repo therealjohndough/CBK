@@ -621,3 +621,38 @@ function cbkny_manual_create_pillar_pages() {
     }
 }
 add_action('admin_notices', 'cbkny_manual_create_pillar_pages');
+
+// Add admin menu for pillar content creation
+function cbkny_add_pillar_content_menu() {
+    add_management_page(
+        'Create Pillar Content Pages',
+        'Create Pillar Content',
+        'manage_options',
+        'cbkny-create-pillar-content',
+        'cbkny_create_pillar_content_admin_page'
+    );
+}
+add_action('admin_menu', 'cbkny_add_pillar_content_menu');
+
+// Admin page for creating pillar content pages
+function cbkny_create_pillar_content_admin_page() {
+    if (isset($_POST['create_pillar_pages'])) {
+        cbkny_create_pillar_content_pages();
+        echo '<div class="notice notice-success"><p>Pillar content pages created successfully!</p></div>';
+    }
+    
+    echo '<div class="wrap">';
+    echo '<h1>Create Pillar Content Pages</h1>';
+    echo '<p>Click the button below to create the SEO pillar content pages for your cannabis accounting business.</p>';
+    echo '<p><strong>Pages to be created:</strong></p>';
+    echo '<ul>';
+    echo '<li><a href="/ultimate-guide-cannabis-accounting-new-york" target="_blank">Ultimate Guide to Cannabis Accounting in New York</a></li>';
+    echo '<li><a href="/280e-tax-compliance-complete-resource" target="_blank">280E Tax Compliance: Complete Resource</a></li>';
+    echo '<li><a href="/ny-ocm-reporting-requirements-complete-guide" target="_blank">NY OCM Reporting Requirements: Complete Guide</a></li>';
+    echo '<li><a href="/cannabis-business-startup-financial-guide" target="_blank">Cannabis Business Startup Financial Guide</a></li>';
+    echo '</ul>';
+    echo '<form method="post">';
+    echo '<input type="submit" name="create_pillar_pages" class="button button-primary" value="Create Pillar Content Pages">';
+    echo '</form>';
+    echo '</div>';
+}
