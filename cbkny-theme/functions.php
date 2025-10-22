@@ -210,37 +210,23 @@ add_action('after_switch_theme', 'cbkny_create_download_pages');
 // }
 // add_action('init', 'cbkny_force_create_pages');
 
-// Fix resources page slug and title typo
+// Fix resources page slug and title typo - FORCE UPDATE
 function cbkny_fix_resources_slug() {
-    // Check if there's a page with the wrong slug
-    $wrong_page = get_page_by_path('resouces');
-    $correct_page = get_page_by_path('resources');
+    // Force update any page with wrong title or slug
+    global $wpdb;
     
-    if ($wrong_page && !$correct_page) {
-        // Update the slug and title
-        wp_update_post(array(
-            'ID' => $wrong_page->ID,
-            'post_name' => 'resources',
-            'post_title' => 'Resources'
-        ));
-    }
+    // Update any page with wrong title
+    $wpdb->query("UPDATE {$wpdb->posts} SET post_title = 'Resources' WHERE post_title = 'Resouces' AND post_type = 'page'");
     
-    // Also check for pages with wrong title
-    $pages_with_wrong_title = get_posts(array(
-        'post_type' => 'page',
-        'post_title' => 'Resouces',
-        'numberposts' => 1
-    ));
+    // Update any page with wrong slug
+    $wpdb->query("UPDATE {$wpdb->posts} SET post_name = 'resources' WHERE post_name = 'resouces' AND post_type = 'page'");
     
-    if (!empty($pages_with_wrong_title)) {
-        wp_update_post(array(
-            'ID' => $pages_with_wrong_title[0]->ID,
-            'post_title' => 'Resources',
-            'post_name' => 'resources'
-        ));
+    // Clear any caches
+    if (function_exists('wp_cache_flush')) {
+        wp_cache_flush();
     }
 }
-add_action('init', 'cbkny_fix_resources_slug');
+add_action('init', 'cbkny_fix_resources_slug', 1);
 
 // Add admin menu for page creation
 function cbkny_add_admin_menu() {
