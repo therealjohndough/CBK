@@ -210,16 +210,32 @@ add_action('after_switch_theme', 'cbkny_create_download_pages');
 // }
 // add_action('init', 'cbkny_force_create_pages');
 
-// Fix resources page slug typo
+// Fix resources page slug and title typo
 function cbkny_fix_resources_slug() {
     // Check if there's a page with the wrong slug
     $wrong_page = get_page_by_path('resouces');
     $correct_page = get_page_by_path('resources');
     
     if ($wrong_page && !$correct_page) {
-        // Update the slug
+        // Update the slug and title
         wp_update_post(array(
             'ID' => $wrong_page->ID,
+            'post_name' => 'resources',
+            'post_title' => 'Resources'
+        ));
+    }
+    
+    // Also check for pages with wrong title
+    $pages_with_wrong_title = get_posts(array(
+        'post_type' => 'page',
+        'post_title' => 'Resouces',
+        'numberposts' => 1
+    ));
+    
+    if (!empty($pages_with_wrong_title)) {
+        wp_update_post(array(
+            'ID' => $pages_with_wrong_title[0]->ID,
+            'post_title' => 'Resources',
             'post_name' => 'resources'
         ));
     }
