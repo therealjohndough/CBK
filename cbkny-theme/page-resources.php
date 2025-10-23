@@ -122,7 +122,7 @@
       <div class="card">
         <h3 style="color: var(--cbkny-pink); margin-bottom: 1rem;">Understanding 280E: A Complete Guide</h3>
         <p style="margin-bottom: 1rem;">Everything you need to know about 280E tax law and how it affects your cannabis business deductions.</p>
-        <a href="/understanding-280e-complete-guide" style="color: var(--cbkny-pink); text-decoration: none; font-weight: 600;">Read More →</a>
+        <a href="/understanding-280e-a-complete-guide" style="color: var(--cbkny-pink); text-decoration: none; font-weight: 600;">Read More →</a>
       </div>
 
       <div class="card">

@@ -844,7 +844,7 @@ function cbkny_publish_articles_admin_page() {
     
     echo '<h3>Educational Articles (6 articles):</h3>';
     echo '<ul>';
-    echo '<li><a href="/understanding-280e-complete-guide" target="_blank">Understanding 280E: A Complete Guide</a></li>';
+    echo '<li><a href="/understanding-280e-a-complete-guide" target="_blank">Understanding 280E: A Complete Guide</a></li>';
     echo '<li><a href="/ocm-reporting-requirements-explained" target="_blank">OCM Reporting Requirements Explained</a></li>';
     echo '<li><a href="/multi-entity-cannabis-business-structures" target="_blank">Multi-Entity Cannabis Business Structures</a></li>';
     echo '<li><a href="/preparing-cannabis-business-audits" target="_blank">Preparing for Cannabis Business Audits</a></li>';
@@ -868,7 +868,7 @@ function cbkny_publish_all_articles() {
         'cannabis-business-startup-financial-guide' => 'Cannabis Business Startup Financial Guide',
         
         // Educational Articles
-        'understanding-280e-complete-guide' => 'Understanding 280E: A Complete Guide',
+        'understanding-280e-a-complete-guide' => 'Understanding 280E: A Complete Guide',
         'ocm-reporting-requirements-explained' => 'OCM Reporting Requirements Explained',
         'multi-entity-cannabis-business-structures' => 'Multi-Entity Cannabis Business Structures',
         'preparing-cannabis-business-audits' => 'Preparing for Cannabis Business Audits',
