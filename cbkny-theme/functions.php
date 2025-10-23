@@ -955,3 +955,18 @@ function cbkny_home_redirect() {
     }
 }
 add_action('template_redirect', 'cbkny_home_redirect');
+
+// Breadcrumbs function
+function cbkny_breadcrumbs() {
+    if (is_front_page()) return;
+    
+    echo '<nav class="breadcrumbs" style="margin-bottom: 1rem; font-size: 0.9rem;">';
+    echo '<a href="' . home_url('/') . '" style="color: var(--cbkny-pink); text-decoration: none;">Home</a>';
+    
+    if (is_page()) {
+        echo ' <span style="margin: 0 0.5rem; color: var(--cbkny-gray);">›</span> ';
+        echo '<span style="color: var(--cbkny-gray);">' . get_the_title() . '</span>';
+    }
+    
+    echo '</nav>';
+}
