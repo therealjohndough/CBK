@@ -6,7 +6,6 @@ Template Name: Understanding 280E: A Complete Guide
 get_header(); ?>
 
 <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 2rem;">
-  <?php cbkny_breadcrumbs(); ?>
   
   <article style="margin: 2rem 0;">
     <header style="text-align: center; margin-bottom: 3rem;">
