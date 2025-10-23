@@ -929,7 +929,11 @@ function cbkny_blog_redirects() {
         '/f/empowering-cannabis-businesses-the-story-of-canna-bookkeeper%E2%84%A2%EF%B8%8F/' => '/about/',
         '/f/meet-my-friends-at-her-seed-bank/' => '/about/',
         '/f/ready-to-grow-with-us/' => '/contact/',
-        '/f/consulting-two-accountants/' => '/services/'
+        '/f/consulting-two-accountants/' => '/services/',
+        
+        // Highlights to Press & Media redirect
+        '/highlights' => '/press-media/',
+        '/highlights/' => '/press-media/'
     );
     
     // Check for exact matches
