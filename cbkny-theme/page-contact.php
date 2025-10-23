@@ -7,7 +7,7 @@
     <p>Get in touch for your free cannabis accounting consultation</p>
   </section>
 
-  <section style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin: 4rem 0;">
+  <section class="contact-grid" style="display: grid; grid-template-columns: 1fr; gap: 2rem; margin: 2rem 0;">
     
     <div>
       <h2 style="color: var(--cbkny-black); margin-bottom: 2rem;">Get In Touch</h2>
@@ -60,7 +60,7 @@
       <div class="card" style="padding: 2rem;">
         <h2 style="color: var(--cbkny-black); margin-bottom: 1.5rem;">Contact Form</h2>
         <form id="contact-form" style="display: grid; gap: 1rem;">
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+          <div class="contact-form-row" style="display: grid; grid-template-columns: 1fr; gap: 1rem;">
             <div>
               <label for="first-name" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">First Name *</label>
               <input type="text" id="first-name" name="first_name" required style="width: 100%;">

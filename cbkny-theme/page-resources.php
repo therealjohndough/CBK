@@ -17,7 +17,7 @@
     </div>
   </section>
 
-  <section class="grid" style="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin: 4rem 0;">
+  <section class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 4rem 0; max-width: 100%; overflow-x: hidden;">
     
     <div class="card" style="padding: 2rem; text-align: center;">
       <div style="display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: var(--cbkny-pink); font-size: 3rem;"><i class="fas fa-clipboard-check"></i></div>
@@ -87,7 +87,7 @@
 
   <section style="background: var(--cbkny-light-gray); padding: 3rem; border-radius: 1rem; margin: 4rem 0;">
     <h2 style="text-align: center; color: var(--cbkny-black); margin-bottom: 2rem;">Pillar Content</h2>
-    <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
+    <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-bottom: 3rem; max-width: 100%; overflow-x: hidden;">
       
       <div class="card">
         <h3 style="color: var(--cbkny-pink); margin-bottom: 1rem;">Ultimate Guide to Cannabis Accounting in New York</h3>
@@ -117,7 +117,7 @@
 
   <section style="background: var(--cbkny-light-gray); padding: 3rem; border-radius: 1rem; margin: 4rem 0;">
     <h2 style="text-align: center; color: var(--cbkny-black); margin-bottom: 2rem;">Educational Articles</h2>
-    <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+    <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; max-width: 100%; overflow-x: hidden;">
       
       <div class="card">
         <h3 style="color: var(--cbkny-pink); margin-bottom: 1rem;">Understanding 280E: A Complete Guide</h3>

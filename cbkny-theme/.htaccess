@@ -1,0 +1,32 @@
+# CBKNY Blog Redirects for Migration
+# Redirects from old cbkny.com blog pages to new site resources
+
+RewriteEngine On
+
+# High Priority - Lead Magnets & Tax Content
+RewriteRule ^f/free-download-new-york-potency-tax-calculator/?$ /download/ [R=301,L]
+RewriteRule ^f/new-york-state-sales-tax-calendar-2024/?$ /resources/ [R=301,L]
+RewriteRule ^f/new-york-business-tax-calendar-2024/?$ /resources/ [R=301,L]
+RewriteRule ^f/three-key-strategies-for-cannabis-accountancy-as-told-by-cbk/?$ /ultimate-guide-cannabis-accounting/ [R=301,L]
+
+# Educational Content
+RewriteRule ^f/tips-for-diy-bookkeeping/?$ /monthly-bookkeeping/ [R=301,L]
+RewriteRule ^f/six-tips-for-better-organization/?$ /resources/ [R=301,L]
+RewriteRule ^f/our-take-hr-compliance-for-cannabis-businesses/?$ /ocm-reporting-guide/ [R=301,L]
+RewriteRule ^f/the-tightrope-walk/?$ /about/ [R=301,L]
+
+# Company Story & Partnerships
+RewriteRule ^f/empowering-cannabis-businesses-the-story-of-canna-bookkeeper%E2%84%A2%EF%B8%8F/?$ /about/ [R=301,L]
+RewriteRule ^f/meet-my-friends-at-her-seed-bank/?$ /about/ [R=301,L]
+RewriteRule ^f/ready-to-grow-with-us/?$ /contact/ [R=301,L]
+RewriteRule ^f/consulting-two-accountants/?$ /services/ [R=301,L]
+
+# Home page redirect
+RewriteRule ^home/?$ / [R=301,L]
+
+# Additional WordPress redirects
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]

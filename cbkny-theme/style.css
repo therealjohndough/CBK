@@ -535,7 +535,7 @@ i.fas:hover, i.fab:hover {
   height: 100vh;
   background: var(--cbkny-white);
   z-index: 1000;
-  padding: 1.5rem;
+  padding: 2rem;
   overflow-y: auto;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
@@ -548,9 +548,9 @@ i.fas:hover, i.fab:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 2rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid var(--cbkny-border);
+  margin-bottom: 3rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid var(--cbkny-border);
 }
 
 .mobile-menu-close {
@@ -561,6 +561,7 @@ i.fas:hover, i.fab:hover {
   cursor: pointer;
   padding: 0.5rem;
   font-weight: bold;
+  line-height: 1;
 }
 
 .mobile-menu-close:hover {
@@ -571,25 +572,33 @@ i.fas:hover, i.fab:hover {
   list-style: none;
   padding: 0;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .mobile-menu li {
-  margin-bottom: 1rem;
+  margin-bottom: 0;
 }
 
 .mobile-menu a {
   display: block;
-  padding: 1rem 0;
+  padding: 1.25rem 1rem;
   color: var(--cbkny-black);
   text-decoration: none;
   font-size: 1.2rem;
   font-weight: 600;
-  border-bottom: 1px solid var(--cbkny-border);
-  transition: color 0.3s ease;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  text-align: center;
+  border: 1px solid transparent;
 }
 
-.mobile-menu a:hover {
+.mobile-menu a:hover,
+.mobile-menu a:focus {
   color: var(--cbkny-pink);
+  background: var(--cbkny-light-gray);
+  border-color: var(--cbkny-pink);
 }
 
 /* Mobile overflow fixes */
@@ -599,17 +608,66 @@ i.fas:hover, i.fab:hover {
 
 html {
   overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
 }
 
 body {
   overflow-x: hidden;
   width: 100%;
   max-width: 100vw;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
   max-width: 100%;
   overflow-x: hidden;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Prevent horizontal scrolling */
+* {
+  max-width: 100%;
+}
+
+/* Fix common overflow issues */
+img, video, iframe, embed, object {
+  max-width: 100%;
+  height: auto;
+}
+
+table {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  display: block;
+  white-space: nowrap;
+}
+
+pre, code {
+  max-width: 100%;
+  overflow-x: auto;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+/* Fix long words and URLs */
+h1, h2, h3, h4, h5, h6, p, li, span, div, a {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  max-width: 100%;
+}
+
+/* Fix button overflow */
+.btn {
+  max-width: 100%;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 /* Responsive Design */
@@ -863,18 +921,21 @@ body {
     max-width: 100vw;
     padding: 0 1rem;
     overflow-x: hidden;
+    width: 100%;
   }
   
   /* Ensure all content fits within viewport */
   .grid {
     max-width: 100%;
     overflow-x: hidden;
+    width: 100%;
   }
   
   .card {
     max-width: 100%;
     overflow-x: hidden;
     word-wrap: break-word;
+    width: 100%;
   }
   
   /* Fix long text overflow */
@@ -882,11 +943,13 @@ body {
     word-wrap: break-word;
     overflow-wrap: break-word;
     hyphens: auto;
+    max-width: 100%;
   }
   
   p, li, span, div {
     word-wrap: break-word;
     overflow-wrap: break-word;
+    max-width: 100%;
   }
   
   /* Fix button overflow */
@@ -894,6 +957,7 @@ body {
     max-width: 100%;
     white-space: normal;
     word-wrap: break-word;
+    overflow-wrap: break-word;
   }
   
   /* Fix table overflow */
@@ -916,6 +980,126 @@ body {
     max-width: 100%;
     overflow-x: auto;
     word-wrap: break-word;
+    white-space: pre-wrap;
+  }
+  
+  /* Fix form elements */
+  input, textarea, select {
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* Fix navigation overflow */
+  .menu, .mobile-menu {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  
+  /* Fix footer overflow */
+  .footer {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  
+  /* Fix hero section overflow */
+  .hero {
+    max-width: 100%;
+    overflow-x: hidden;
+    padding: 1rem;
+  }
+  
+  /* Fix section overflow */
+  section {
+    max-width: 100%;
+    overflow-x: hidden;
+    padding: 0 1rem;
+  }
+  
+  /* Contact page mobile fixes */
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+    padding: 0 !important;
+    margin: 2rem 0 !important;
+  }
+
+  .contact-form-row {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  /* Override any inline two-column grids on mobile */
+  section[style*="grid-template-columns: 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+
+  #contact-form div[style*="grid-template-columns: 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Fix all inline grid layouts */
+  [style*="grid-template-columns"] {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* Ensure sections with background don't overflow */
+  section[style*="background"] {
+    max-width: 100%;
+    overflow-x: hidden;
+    padding: 2rem 1rem !important;
+    margin: 2rem 0 !important;
+  }
+
+  /* Mobile menu improvements */
+  .mobile-menu {
+    padding: 1.5rem !important;
+  }
+
+  .mobile-menu-header {
+    margin-bottom: 2rem !important;
+    padding-bottom: 1rem !important;
+  }
+
+  .mobile-menu a {
+    font-size: 1.1rem !important;
+    padding: 1rem !important;
+  }
+
+  /* Resources page specific fixes */
+  .grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  
+  /* Fix resources page cards */
+  .card {
+    max-width: 100%;
+    overflow-x: hidden;
+    word-wrap: break-word;
+    padding: 1.5rem;
+  }
+  
+  /* Fix resources page buttons */
+  .btn {
+    max-width: 100%;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  /* Fix resources page modal */
+  .modal-content {
+    margin: 1rem;
+    padding: 1.5rem;
+    max-width: calc(100vw - 2rem);
+    overflow-x: hidden;
   }
 }
 
@@ -979,10 +1163,31 @@ body {
   .grid {
     max-width: 100vw;
     overflow-x: hidden;
+    width: 100%;
   }
   
   .card {
     max-width: 100%;
+    overflow-x: hidden;
+    width: 100%;
+  }
+  
+  /* Force all elements to fit */
+  body, html {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+  
+  /* Fix any remaining overflow issues */
+  .container, .hero, section, .card, .btn, .menu, .footer {
+    max-width: 100%;
+    overflow-x: hidden;
+    width: 100%;
+  }
+  
+  /* Prevent horizontal scrolling completely */
+  body {
+    position: relative;
     overflow-x: hidden;
   }
 }

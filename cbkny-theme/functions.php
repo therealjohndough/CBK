@@ -668,6 +668,92 @@ function cbkny_create_pillar_content_admin_page() {
     echo '</div>';
 }
 
+// Function to fix pillar content page templates
+function cbkny_fix_pillar_content_templates() {
+    $pages_to_fix = array(
+        'ultimate-guide-cannabis-accounting-new-york' => 'page-ultimate-guide-cannabis-accounting.php',
+        '280e-tax-compliance-complete-resource' => 'page-280e-compliance-guide.php',
+        'ny-ocm-reporting-requirements-complete-guide' => 'page-ocm-reporting-guide.php',
+        'cannabis-business-startup-financial-guide' => 'page-cannabis-startup-financial-guide.php'
+    );
+    
+    $fixed_count = 0;
+    
+    foreach ($pages_to_fix as $slug => $template) {
+        // Get the page
+        $page = get_page_by_path($slug);
+        
+        if ($page) {
+            // Update the page template
+            $updated = update_post_meta($page->ID, '_wp_page_template', $template);
+            
+            if ($updated) {
+                $fixed_count++;
+            }
+        }
+    }
+    
+    return $fixed_count;
+}
+
+// Add admin menu for fixing templates
+function cbkny_add_fix_templates_menu() {
+    add_management_page(
+        'Fix Pillar Content Templates',
+        'Fix Templates',
+        'manage_options',
+        'cbkny-fix-templates',
+        'cbkny_fix_templates_admin_page'
+    );
+}
+add_action('admin_menu', 'cbkny_add_fix_templates_menu');
+
+
+// Function to fix page templates for pillar content
+function cbkny_fix_pillar_templates() {
+    $pages_to_fix = array(
+        350 => 'page-ultimate-guide-cannabis-accounting.php', // Ultimate Guide
+        351 => 'page-280e-compliance-guide.php', // 280E Compliance
+        352 => 'page-ocm-reporting-guide.php', // OCM Reporting
+        362 => 'page-cannabis-startup-financial-guide.php' // Startup Guide
+    );
+    
+    $fixed_count = 0;
+    
+    foreach ($pages_to_fix as $page_id => $template) {
+        $updated = update_post_meta($page_id, '_wp_page_template', $template);
+        
+        if ($updated) {
+            $fixed_count++;
+        }
+    }
+    
+    return $fixed_count;
+}
+
+// Admin page for fixing templates
+function cbkny_fix_templates_admin_page() {
+    if (isset($_POST['fix_templates'])) {
+        $fixed_count = cbkny_fix_pillar_templates();
+        echo '<div class="notice notice-success"><p>Fixed ' . $fixed_count . ' page templates successfully!</p></div>';
+    }
+    
+    echo '<div class="wrap">';
+    echo '<h1>Fix Page Templates</h1>';
+    echo '<p>This will assign the correct page templates to your pillar content pages.</p>';
+    echo '<p><strong>Pages to be fixed:</strong></p>';
+    echo '<ul>';
+    echo '<li>Ultimate Guide to Cannabis Accounting in New York → Ultimate Guide Cannabis Accounting</li>';
+    echo '<li>280E Tax Compliance: Complete Resource → 280E Compliance Guide</li>';
+    echo '<li>NY OCM Reporting Requirements: Complete Guide → OCM Reporting Guide</li>';
+    echo '<li>Cannabis Business Startup Financial Guide → Cannabis Startup Financial Guide</li>';
+    echo '</ul>';
+    echo '<form method="post">';
+    echo '<input type="submit" name="fix_templates" class="button button-primary" value="Fix Page Templates">';
+    echo '</form>';
+    echo '</div>';
+}
+
 // Add sitemap management admin menu
 function cbkny_add_sitemap_management_menu() {
     add_management_page(
@@ -805,3 +891,67 @@ function cbkny_publish_all_articles() {
     
     return $published > 0;
 }
+
+// Blog redirects for migration from old cbkny.com
+function cbkny_blog_redirects() {
+    // Only run on frontend
+    if (is_admin()) return;
+    
+    $current_url = $_SERVER['REQUEST_URI'];
+    $redirects = array(
+        // High Priority - Lead Magnets & Tax Content
+        '/f/free-download-new-york-potency-tax-calculator' => '/download/',
+        '/f/new-york-state-sales-tax-calendar-2024' => '/resources/',
+        '/f/new-york-business-tax-calendar-2024' => '/resources/',
+        '/f/three-key-strategies-for-cannabis-accountancy-as-told-by-cbk' => '/ultimate-guide-cannabis-accounting/',
+        
+        // Educational Content
+        '/f/tips-for-diy-bookkeeping' => '/monthly-bookkeeping/',
+        '/f/six-tips-for-better-organization' => '/resources/',
+        '/f/our-take-hr-compliance-for-cannabis-businesses' => '/ocm-reporting-guide/',
+        '/f/the-tightrope-walk' => '/about/',
+        
+        // Company Story & Partnerships
+        '/f/empowering-cannabis-businesses-the-story-of-canna-bookkeeper%E2%84%A2%EF%B8%8F' => '/about/',
+        '/f/meet-my-friends-at-her-seed-bank' => '/about/',
+        '/f/ready-to-grow-with-us' => '/contact/',
+        '/f/consulting-two-accountants' => '/services/',
+        
+        // Handle trailing slashes
+        '/f/free-download-new-york-potency-tax-calculator/' => '/download/',
+        '/f/new-york-state-sales-tax-calendar-2024/' => '/resources/',
+        '/f/new-york-business-tax-calendar-2024/' => '/resources/',
+        '/f/three-key-strategies-for-cannabis-accountancy-as-told-by-cbk/' => '/ultimate-guide-cannabis-accounting/',
+        '/f/tips-for-diy-bookkeeping/' => '/monthly-bookkeeping/',
+        '/f/six-tips-for-better-organization/' => '/resources/',
+        '/f/our-take-hr-compliance-for-cannabis-businesses/' => '/ocm-reporting-guide/',
+        '/f/the-tightrope-walk/' => '/about/',
+        '/f/empowering-cannabis-businesses-the-story-of-canna-bookkeeper%E2%84%A2%EF%B8%8F/' => '/about/',
+        '/f/meet-my-friends-at-her-seed-bank/' => '/about/',
+        '/f/ready-to-grow-with-us/' => '/contact/',
+        '/f/consulting-two-accountants/' => '/services/'
+    );
+    
+    // Check for exact matches
+    foreach ($redirects as $old_path => $new_path) {
+        if ($current_url === $old_path) {
+            wp_redirect(home_url($new_path), 301);
+            exit;
+        }
+    }
+}
+add_action('template_redirect', 'cbkny_blog_redirects');
+
+// Home page redirect (handle /home to /)
+function cbkny_home_redirect() {
+    if (is_admin()) return;
+    
+    $current_url = $_SERVER['REQUEST_URI'];
+    
+    // Redirect /home to homepage
+    if ($current_url === '/home' || $current_url === '/home/') {
+        wp_redirect(home_url('/'), 301);
+        exit;
+    }
+}
+add_action('template_redirect', 'cbkny_home_redirect');
