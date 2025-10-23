@@ -57,6 +57,8 @@
           echo '<li><a href="' . home_url('/services') . '">Services</a></li>';
           echo '<li><a href="' . home_url('/about') . '">About</a></li>';
           echo '<li><a href="' . home_url('/resources') . '">Resources</a></li>';
+          echo '<li><a href="' . home_url('/faq') . '">FAQ</a></li>';
+          echo '<li><a href="' . home_url('/press-media') . '">Press & Media</a></li>';
           echo '<li><a href="' . home_url('/contact') . '">Contact</a></li>';
           echo '</ul>';
         }
@@ -86,6 +88,8 @@
           echo '<li><a href="' . home_url('/services') . '">Services</a></li>';
           echo '<li><a href="' . home_url('/about') . '">About</a></li>';
           echo '<li><a href="' . home_url('/resources') . '">Resources</a></li>';
+          echo '<li><a href="' . home_url('/faq') . '">FAQ</a></li>';
+          echo '<li><a href="' . home_url('/press-media') . '">Press & Media</a></li>';
           echo '<li><a href="' . home_url('/contact') . '">Contact</a></li>';
           echo '</ul>';
         }
