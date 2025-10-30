@@ -115,6 +115,12 @@ require_once get_template_directory() . '/inc/seo-helpers.php';
 // Blog functionality
 require_once get_template_directory() . '/inc/blog-functions.php';
 
+// Google Tag Manager and Analytics tracking
+require_once get_template_directory() . '/inc/tracking.php';
+
+// Tracking admin page
+require_once get_template_directory() . '/inc/tracking-admin.php';
+
 // Enqueue Lottie loader
 function cbkny_enqueue_lottie_loader() {
     wp_enqueue_script('cbkny-lottie-loader', get_template_directory_uri() . '/assets/js/lottie-loader.js', array(), '1.0.0', true);
